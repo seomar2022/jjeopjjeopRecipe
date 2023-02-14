@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>농산물 직거래 마당</title>
+    <title>shopping</title>
 
     <th:block th:replace="fragments/head :: links"></th:block>
     <link href="/static/css/produce.css" th:href="@{/css/produce.css}" rel="stylesheet"/>
@@ -12,9 +12,9 @@
 <div class="site-section">
         <div class="container">
             <div class="d-flex flex-column align-items-center">
-                <h1>농산물 직거래 마당</h1>
+                <h1>shopping</h1>
             </div>
-            <button class="btn btn-warning btn-lg mb-3"><a th:href="@{/produce/write}" class="a-to-black">판매글 쓰기</a></button>
+            <button class="btn btn-warning btn-lg mb-3"><a th:href="@{/produce/write}" class="a-to-black">投稿</a></button>
             <div class="row mb-5">
                 <div class="col-md-12 order-2"><!-- 얘가 우측통째로 -->
                     <!--================드롭다운 시작=================-->
@@ -23,24 +23,24 @@
                             <div class="d-flex">
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-warning btn-md dropdown-toggle m-1" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        분류
+                                        カテゴリー
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                                        <a class="dropdown-item" th:href="@{/produce/list/0}">전체</a>
-                                        <a class="dropdown-item" th:href="@{/produce/list/1}">채소</a>
-                                        <a class="dropdown-item" th:href="@{/produce/list/2}">과일</a>
-                                        <a class="dropdown-item" th:href="@{/produce/list/3}">곡물</a>
-                                        <a class="dropdown-item" th:href="@{/produce/list/4}">기타</a>
+                                        <a class="dropdown-item" th:href="@{/produce/list/0}">全て</a>
+                                        <a class="dropdown-item" th:href="@{/produce/list/1}">野菜</a>
+                                        <a class="dropdown-item" th:href="@{/produce/list/2}">果物</a>
+                                        <a class="dropdown-item" th:href="@{/produce/list/3}">米・雑穀</a>
+                                        <a class="dropdown-item" th:href="@{/produce/list/4}">その他</a>
                                     </div>
                                 </div>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-warning btn-md dropdown-toggle m-1" id="dropdownMenuReference" data-toggle="dropdown">
-                                        정렬
+                                        並び替え
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                                        <a class="dropdown-item" th:href="@{/produce/list/0}">최신순</a>
-                                        <a class="dropdown-item" th:href="@{/produce/list/sort/1}">판매량 순</a>
-                                        <a class="dropdown-item" th:href="@{/produce/list/sort/2}">리뷰 순</a>
+                                        <a class="dropdown-item" th:href="@{/produce/list/0}">最新商品</a>
+                                        <a class="dropdown-item" th:href="@{/produce/list/sort/1}">販売</a>
+                                        <a class="dropdown-item" th:href="@{/produce/list/sort/2}">カスタマーレビュー</a>
                                     </div>
                                 </div>
                             </div>
@@ -64,13 +64,13 @@
                                     </a>
                                 </figure>
                                 <div class="block-4-text p-4">
-                                    <h3 class="text-dark font-weight-bold" th:text="${produce.produce_name}">상품명</h3>
+                                    <h3 class="text-dark font-weight-bold" th:text="${produce.produce_name}">商品名</h3>
                                     <th:block th:each="item : ${idToBusinessName}">
                                         <th:block th:if="${produce.user_id == item.key}">
-                                            <p class="mb-0 text-secondary" th:text="${item.value}">판매자</p>
+                                            <p class="mb-0 text-secondary" th:text="${item.value}">販売者</p>
                                         </th:block>
                                     </th:block>
-                                    <p class="font-weight-bold" data-th-text="${#numbers.formatInteger(produce.price, 3, 'COMMA') + '원'}" >상품가격</p>
+                                    <p class="font-weight-bold" data-th-text="${#numbers.formatInteger(produce.price, 3, 'COMMA') + '円'}" >価格</p>
                                 </div>
                             </div>
                         </div>

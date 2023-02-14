@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>리뷰수정</title>
+    <title>カスタマーレビュー修正</title>
 
 <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
     <th:block th:replace="fragments/head :: links"> </th:block>
@@ -12,7 +12,7 @@
 <section class="form_section layout_padding mt-5">
     <div class="container">
         <div class="heading_container d-block text-center">
-            <h2>리뷰 수정</h2>
+            <h2>カスタマーレビュー修正</h2>
         </div>
         <!--    d-flex justify-content-center" 내부요소들을 가운데 정렬하기-->
         <div class="row d-flex justify-content-center">
@@ -28,7 +28,7 @@
 <!-- https://velog.io/@max9106/Thymeleaf-%EC%9E%90%EC%A3%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%AC%B8%EB%B2%95
 th:field: 각각 필드들을 매핑을 해주는 역할을 한다. 설정해 준 값으로, th:object에 설정해 준 객체의 내부와 매칭해준다.
 잘모르겠는데 이거없으면 기존에 저장된 별점이 나오지 않음. -->
-                                <option value="">점수선택</option>
+                                <option value="">点数選択</option>
                                 <option th:value="0.5">0.5</option>
                                 <option th:value="1">1</option>
                                 <option th:value="1.5">1.5</option>
@@ -41,19 +41,19 @@ th:field: 각각 필드들을 매핑을 해주는 역할을 한다. 설정해 �
                                 <option th:value="5">5</option>
                             </select>
                             <div class="invalid-feedback" th:errors="*{rating}">
-                                에러메시지
+                                エラーメッセージ
                             </div>
                         </div>
                         <div>
-                            <textarea class="form-control" name="content" placeholder="리뷰를 작성해주세요(~자 이내로 작성해주세요)"
+                            <textarea class="form-control" name="content" placeholder="レビューの作成"
                                       th:text="*{content}" th:field="*{content}" th:errorclass="is-invalid"></textarea>
                             <div class="invalid-feedback" th:errors="*{content}">
-                                에러메시지
+                                エラーメッセージ
                             </div>
                         </div>
                         <input type="hidden" name="pay_num" th:value="*{pay_num}">
                         <div class="btn_box d-flex justify-content-center">
-                            <button type="submit">수정</button>
+                            <button type="submit">修正</button>
                         </div>
                     </form>
                 </div>

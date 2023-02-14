@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
-        <title>장바구니</title>
+        <title>カート</title>
         <th:block th:replace="fragments/head :: links"> </th:block>
         <link href="/static/css/produce.css" th:href="@{/css/produce.css}" rel="stylesheet"/>
     </head>
@@ -15,17 +15,17 @@
     <div class="col" th:replace="fragments/userSidebar :: userSidebar"></div>
     <div id="content" class="pt-5">
         <div class="container py-5 h-100">
-            <h4 class="row d-flex justify-content-center align-items-center mb-3">장바구니</h4>
+            <h4 class="row d-flex justify-content-center align-items-center mb-3">カート</h4>
             <table class="table table-hover text-center">
                 <thead>
                     <tr>
-                        <th scope="col">일련번호</th>
-                        <th scope="col">상품명</th>
-                        <th scope="col">판매자</th>
-                        <th scope="col">수량 </th>
-                        <th scope="col">총가격</th>
-                        <th scope="col">결제</th>
-                        <th scope="col">삭제</th>
+                        <th scope="col">連番</th>
+                        <th scope="col">商品名</th>
+                        <th scope="col">販売者</th>
+                        <th scope="col">数量</th>
+                        <th scope="col">合計</th>
+                        <th scope="col">支払い</th>
+                        <th scope="col">削除</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +33,7 @@
                         <input type="hidden" th:value="${produceDTO.produce_num}">
                         <tr>
                             <th:block th:each="payDTO : ${produceDTO.payDTOList}">
-                                <td th:text="${page.perPage * page.page + produceDTOStat.count}">일련번호</td>
+                                <td th:text="${page.perPage * page.page + produceDTOStat.count}">連番</td>
                                 <!--페이지당 보이는 게시글 수 * 현재페이지번호 + 한페이지당 일련번호로 계산해서 페이지 넘어가도 일련번호 이어지게 만듧.-->
                                 <td>
                                     <th:block th:if="${produceDTO.end_of_sale == 0}">
@@ -46,22 +46,22 @@
                                 </td>
                                 <th:block th:each="item : ${idToBusinessName}">
                                     <th:block th:if="${produceDTO.user_id == item.key}">
-                                        <td th:text="${item.value}">판매자</td>
+                                        <td th:text="${item.value}">販売者</td>
                                     </th:block>
                                 </th:block>
-                                <td th:text="${payDTO.quantity}">수량</td>
-                                <td data-th-text="${#numbers.formatInteger(payDTO.total_price, 3, 'COMMA') + '원'}">총가격</td>
+                                <td th:text="${payDTO.quantity}">数量</td>
+                                <td data-th-text="${#numbers.formatInteger(payDTO.total_price, 3, 'COMMA') + '원'}">合計</td>
                                 <td>
                                     <th:block th:if="${produceDTO.end_of_sale == 0}">
                                         <form method="post" th:action="@{/kakaoPay/{pay_num}(pay_num=${payDTO.pay_num})}">
-                                            <button class="btn btn-md btn-warning">카카오페이로 결제하기</button>
+                                            <button class="btn btn-md btn-warning">バーコード決済</button>
                                         </form>
                                     </th:block>
                                     <th:block th:unless="${produceDTO.end_of_sale == 0}">
-                                        결제불가(판매종료)</th:block>
+                                        販売終了</th:block>
                                 </td>
                                 <td><a th:href="@{/mypage/cart/delete/{pay_num}(pay_num=${payDTO.pay_num})}">
-                                    <button type="button" class="btn btn-md btn-warning confirmDeletion">삭제</button></a>
+                                    <button type="button" class="btn btn-md btn-warning confirmDeletion">削除</button></a>
                                 </td>
                             </th:block>
                         </tr>
