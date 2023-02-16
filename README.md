@@ -69,6 +69,15 @@ Tool : IntelliJ, VS Code, GitHub
 お支払いはカカオペイ(バーコード決済)を通じて行われます。 
 マイページで買い物かごの項目と決済内訳を確認できます。
 ```
+- 投稿
+![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-ff89dfc240.gif)
+- フィルタリングとソート
+![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-5774351228.gif)
+- カートに追加と決済
+![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-64baa9f0ab.gif)
+![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-0ebdfde9c8.gif)
+
+
 
 
 <br>
