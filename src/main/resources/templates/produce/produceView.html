@@ -50,10 +50,10 @@
                     </div>
                     <h2 class="text-dark" th:text="${produceDTO.produce_name}" style="display: inline-block">商品名</h2>
                     <th:block th:unless="${#lists.isEmpty(list)}">
-                         &nbsp&nbsp<span class="text-dark h5" th:text="'レビュー: '+ ${#numbers.formatDecimal(#aggregates.sum(list.![rating])*1.0 / #lists.size(list), 1, 1)} + '점'"> </span>
+                         &nbsp&nbsp<span class="text-dark h5" th:text="'レビュー: '+ ${#numbers.formatDecimal(#aggregates.sum(list.![rating])*1.0 / #lists.size(list), 1, 1)} + '点'"> </span>
                     </th:block>
                     <p th:text="'['+${businessName}+']'">seller_name</p>
-                    <span><strong class="text-dark h4" data-th-text="${#numbers.formatInteger(produceDTO.price, 3, 'COMMA') + '원'}">상품가격</strong></span>
+                    <span><strong class="text-dark h4" data-th-text="${#numbers.formatInteger(produceDTO.price, 3, 'COMMA') + '円'}">상품가격</strong></span>
                     <p th:text="${produceDTO.produce_description}" class="mt-2">상품설명</p>
 
                     <form name="cartWrite" id="cartWrite" method="post">

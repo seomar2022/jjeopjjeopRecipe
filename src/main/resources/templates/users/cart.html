@@ -41,7 +41,7 @@
                                         </a>
                                     </th:block>
                                     <th:block th:unless="${produceDTO.end_of_sale == 0}">
-                                        <a href="#" style="color:black" th:text="${produceDTO.produce_name} + '(판매종료)'">\</a>
+                                        <a href="#" style="color:black" th:text="${produceDTO.produce_name} + '(販売終了)'">\</a>
                                     </th:block>
                                 </td>
                                 <th:block th:each="item : ${idToBusinessName}">
@@ -50,7 +50,7 @@
                                     </th:block>
                                 </th:block>
                                 <td th:text="${payDTO.quantity}">数量</td>
-                                <td data-th-text="${#numbers.formatInteger(payDTO.total_price, 3, 'COMMA') + '원'}">合計</td>
+                                <td data-th-text="${#numbers.formatInteger(payDTO.total_price, 3, 'COMMA') + '円'}">合計</td>
                                 <td>
                                     <th:block th:if="${produceDTO.end_of_sale == 0}">
                                         <form method="post" th:action="@{/kakaoPay/{pay_num}(pay_num=${payDTO.pay_num})}">
