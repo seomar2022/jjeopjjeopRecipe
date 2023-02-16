@@ -6,15 +6,8 @@
 
 ---
 
-![팀프로젝트 역할분담](https://user-images.githubusercontent.com/96387509/187103328-3288ff52-5982-4b4a-8ca1-e06a535321c7.png)
 
-<br>
-<br>
-
-
-###担当
-
-<hr>
+### members
 
 ソ・ジョンア・・・ショッピング
 
@@ -45,7 +38,7 @@
 
 <br>
 <br>
-### 技術
+### Tools
 
 ```
 Backend: Java 11, Spring boot 2.7.2, Gradle, MyBatis, thymeleaf, Ajax
@@ -54,12 +47,7 @@ Front : HTML5, CSS, JavaScript, JQuery, Bootstrap
 Tool : IntelliJ, VS Code, GitHub
 ```
 
-<br>
-<br>
-
-# 機能の紹介
-
----
+機能紹介
 ---
 ### ショッピング
 ```
@@ -69,15 +57,15 @@ Tool : IntelliJ, VS Code, GitHub
 お支払いはカカオペイ(バーコード決済)を通じて行われます。 
 マイページで買い物かごの項目と決済内訳を確認できます。
 ```
-- 投稿
-![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-ff89dfc240.gif)
-- フィルタリングとソート
-![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-5774351228.gif)
-- カートに追加と決済
+- 投稿  
+![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-ff89dfc240.gif)  
+
+- フィルタリングとソート  
+![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-5774351228.gif)  
+
+- カートに追加と決済  
 ![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-64baa9f0ab.gif)
 ![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-0ebdfde9c8.gif)
-
-
 
 
 <br>
