@@ -58,16 +58,18 @@ Tool : IntelliJ, VS Code, GitHub
 マイページで買い物かごの項目と決済内訳を確認できます。
 ```
 - 投稿  
-![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-ff89dfc240.gif)  
+  ![writing](https://user-images.githubusercontent.com/118463057/219688331-50232824-4e72-4fb6-be02-2bd7ed069f91.gif)
+
 
 - フィルタリングとソート  
-![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-5774351228.gif)  
+ ![sorting](https://user-images.githubusercontent.com/118463057/219687779-6e0716e1-16b5-40be-a41a-2dec656b70ef.gif)
+
+
 
 - カートに追加と決済  
-![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-64baa9f0ab.gif)
-![totalsearch](https://im4.ezgif.com/tmp/ezgif-4-0ebdfde9c8.gif)
-
-
+  ![cart](https://user-images.githubusercontent.com/118463057/219686541-24f02adc-8335-4f4a-8626-983a53de7dff.gif)
+![payment](https://user-images.githubusercontent.com/118463057/219686983-2c5a04c8-1a85-4ef2-8dd6-f9fd42d4cd7c.gif)
+ 
 <br>
 <br>
 
@@ -94,7 +96,8 @@ Tool : IntelliJ, VS Code, GitHub
 レシピを分類別に閲覧することができ、作成日、スクラップ、照会数を基準に整列して閲覧することができます。
 検索ページでも同じ機能が提供されます。
 レシピ本文照会ページでは、スクラップ、クリップボードへのリンクコピー、申告、コメント作成および修正が可能です。
-レシピを作成するときは、好きなだけレシピ分類を追加したり、料理段階を追加したりできます。```
+レシピを作成するときは、好きなだけレシピ分類を追加したり、料理段階を追加したりできます。
+```
 
   
   ![list인덱스](https://user-images.githubusercontent.com/101542378/188267504-b63a69ff-1208-4186-9d6d-4a945050d3d7.png)
