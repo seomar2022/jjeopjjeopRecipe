@@ -11,14 +11,11 @@
 
 ソ・ジョンア・・・ショッピング
 
-メンバー１・・・
-コミュニティボード、総合検索、インデックス
+メンバー１・・・ コミュニティボード、総合検索、インデックス
 
-メンバー２・・・
-会員管理
+メンバー２・・・ 会員管理
 
-メンバー３・・・
-管理者機能
+メンバー３・・・ 管理者機能
 
 メンバー４・・・レシピ
 
@@ -66,7 +63,7 @@ Tool : IntelliJ, VS Code, GitHub
 
 
 
-- カートに追加と決済  
+- カートに追加と決済(バーコード決済)  
   ![cart](https://user-images.githubusercontent.com/118463057/219686541-24f02adc-8335-4f4a-8626-983a53de7dff.gif)
 ![payment](https://user-images.githubusercontent.com/118463057/219686983-2c5a04c8-1a85-4ef2-8dd6-f9fd42d4cd7c.gif)
  
