@@ -34,13 +34,13 @@
                         <a href="/admin/u_index" class="nav-link category">회원 관리</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/admin/r_index" class="nav-link category">레시피 관리</a>
+                        <a href="/admin/r_index" class="nav-link category">レシピ 관리</a>
                     </li>
                     <li class="list-group-item">
                         <a href="/admin/s_index" class="nav-link category">판매자 관리</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/admin/c_index" class="nav-link category">게시판 관리</a>
+                        <a href="/admin/c_index" class="nav-link category">掲示板 관리</a>
                     </li>
                 </ul>
             </div>
@@ -58,14 +58,14 @@
                             <a th:href="@{/recipe/view/{rcp_seq}(rcp_seq=${rcp.rcp_seq}, rcp_sort=${rcp_sort}, cate_seq=${cate_seq}, page=${pagenation.page})}">
                                 <img th:if="${not #strings.isEmpty(rcp.filename)}" th:src="@{${rcp.filepath}+${rcp.filename}}" width="250px" height="180px" class="rounded float" />
                                 <img th:if="${#strings.isEmpty(rcp.filename)}" src="/media/images/rcp_mainimg.png" width="250px" height="180px" class="rounded float" />
-                                <p th:text="${rcp.rcp_name}" class="text-start fw-bold">레시피 제목</p>
+                                <p th:text="${rcp.rcp_name}" class="text-start fw-bold">レシピ タイトル</p>
                             </a>
                             <p class="d-flex justify-content-between">
-              <span th:text="${rcp.user_id}" class="left">닉네임</span
+              <span th:text="${rcp.user_id}" class="left">ニックネーム</span
               ><span th:text="'신고'+${rcp.report}" class="right">신고수</span>
                             </p>
                             <p class="d-flex justify-content-between">
-                                <span th:text="${rcp.time}" class="left">시간</span><span th:text="${rcp.difficulty}">난이도 하</span
+                                <span th:text="${rcp.time}" class="left">時間</span><span th:text="${rcp.difficulty}">難易度 하</span
                             ><a th:href="@{/recipe/delete(rcp_seq=${rcp.rcp_seq})}" class="btn btn btn-secondary">삭제</a>
                             </p>
                         </div>

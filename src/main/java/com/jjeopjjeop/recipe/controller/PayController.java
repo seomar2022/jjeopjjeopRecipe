@@ -38,7 +38,7 @@ public class PayController {
     private ProduceDTO produceDTO2;
 
     //판매글 상세페이지에서 버튼 클릭하여 장바구니에 넣기
-    @MySecured //로그인안한상태로 클릭시 로그인 페이지로 넘어가게
+    @MySecured //ログイン안한상태로 클릭시 ログイン 페이지로 넘어가게
     @PostMapping("/cart/write")
     public String cartWrite(PayDTO payDTO){
         payService.cartWriteProcess(payDTO);

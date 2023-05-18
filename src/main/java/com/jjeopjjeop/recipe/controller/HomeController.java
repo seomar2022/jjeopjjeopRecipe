@@ -43,7 +43,7 @@ public class HomeController {
         return "index";
     }
 
-//통합검색 시작
+//통합検索 시작
     @GetMapping("/search")
     public String searchPage(){
         return "searchPage";
@@ -62,21 +62,21 @@ public class HomeController {
         int recipeByKeywordCnt = recipeService.searchCountProcess(keyword, 0);
         if(recipeByKeywordCnt!=0){
             Pagenation pagenation = new Pagenation(1, recipeByKeywordCnt, true);
-            //검색결과 8개보다 많을때 8개만 출력
+            //検索결과 8개보다 많을때 8개만 출력
             if(recipeByKeywordCnt>8){
                 pagenation.setStartRow(1);
                 pagenation.setEndRow(8);
             }
             rcpList = recipeService.searchListProcess(pagenation, 0, 0, keyword);
             redirectAttributes.addFlashAttribute("rcpList",rcpList);
-            redirectAttributes.addFlashAttribute("rcpListSize",recipeByKeywordCnt);//검색결과 전체개수
+            redirectAttributes.addFlashAttribute("rcpListSize",recipeByKeywordCnt);//検索결과 전체개수
         }else{
-            //검색결과가 0개이면
+            //検索결과가 0개이면
             redirectAttributes.addFlashAttribute("NoRcpList",true);
         }
 
 
-        //shopping - 쇼핑에는 키워드 검색 기능이 따로 없어서 만듦
+        //shopping - 쇼핑에는 키워드 検索 기능이 따로 없어서 만듦
         List<ProduceDTO> productListAll = produceService.findProduceByKeyword(keyword);
         int totalCnt = productListAll.size();
 
@@ -84,7 +84,7 @@ public class HomeController {
             redirectAttributes.addFlashAttribute("NoProduceList",true);
         }else{
             List<ProduceDTO> productList = productListAll.size()>4 ? getSmallProductList(productListAll):productListAll;
-            redirectAttributes.addFlashAttribute("produceList",productList);//상품 4개
+            redirectAttributes.addFlashAttribute("produceList",productList);//商品 4개
             redirectAttributes.addFlashAttribute("produceListSize",productListAll.size());
 
             //더보기 결과 페이지네이션을 위해
@@ -109,12 +109,12 @@ public class HomeController {
 
     @GetMapping("/moreProduce")
     public ModelAndView produceList(@RequestParam(value="page", required=false, defaultValue = "0") int page, String keyword, HttpSession session, ModelAndView mav) {
-       //1페이지 이상으로갈때 keyword파라미터 없어지는걸 대비.
+       //1페이지以上으로갈때 keyword파라미터 없어지는걸 대비.
         if(StringUtils.isEmpty(keyword)){
             keyword= (String) session.getAttribute("keyword");
         }
 
-        // 검색결과 전체 레코드 수
+        // 検索결과 전체 레코드 수
         int totalRecord = (int) session.getAttribute("productListAllTotalCnt");
 
         Pagenation pagenation = new Pagenation(page,9, totalRecord);
@@ -137,10 +137,10 @@ public class HomeController {
         // 전체 페이지 수
         Pagenation pagenation = new Pagenation(page, recipeService.searchCountProcess(keyword, 0), true);
 
-        // 레시피 분류 목록
+        // レシピ カテゴリー 목록
         List<CategoryDTO> cateList = recipeService.cateListProcess();
 
-        // 검색 레시피 목록
+        // 検索 レシピ 목록
         List<RecipeDTO> rcpList = recipeService.searchListProcess(pagenation, rcp_sort, cate_seq, keyword);
 
         mav.addObject("rcp_sort", rcp_sort);

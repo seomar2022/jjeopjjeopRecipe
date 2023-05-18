@@ -20,7 +20,7 @@
         $.getJSON("/recipe/comment/list", {rcp_seq : rcp_seq, commentCurrentPage : commentCurrentPage}, function(obj){
             let comment_list = '';
 
-            // 댓글 내용 출력
+            // コメント 내용 출력
             $(obj.list).each(function(i, obj){
                 comment_list += '<p>';
                 comment_list += '<b><span class="left" style="font-size: 15px;">'+ obj.user_id +'</span></b>&nbsp&nbsp&nbsp';
@@ -37,7 +37,7 @@
 
             $(".comment_area").html(comment_list);
 
-            // 댓글 페이징 처리
+            // コメント 페이징 처리
             let page_list = '';
             startPageNum = obj.page.startPageNum;
             endPageNum = obj.page.endPageNum;
@@ -62,7 +62,7 @@
         });
     }
 
-    // 댓글 출력 관리
+    // コメント 출력 관리
     $(document).on("click", ".page-link", function(){
         commentCurrentPage = $(this).text().trim();
         if(commentCurrentPage=="»"){
@@ -77,7 +77,7 @@
 
     });
 
-    // 댓글 작성 관리
+    // コメント 작성 관리
     coWriteBtn.onclick = function(){
         var commentData = {
         "rcp_seq": $("#rcp_seq").val(),
@@ -93,7 +93,7 @@
 			    getCommentList();
 			    $("#comment_txt").val('');
                 count = count + 1;
-			    $("#coCount").text('댓글 ' + count);
+			    $("#coCount").text('コメント ' + count);
 			},
 			error : function(data) {
 			    $('#needLoginBtn').click();
@@ -101,7 +101,7 @@
         });
     };
 
-    // 댓글 수정 관리
+    // コメント 수정 관리
     $(document).on("click", ".coUpdateBtn", function(){
         $(this).css("display", "none");
         var coUpdateConfirmBtn = '<span id="coUpdateConfirmBtn" class="viewBtn" style="color: blue;">수정 완료</span>';
@@ -135,7 +135,7 @@
         });
     });
 
-    // 댓글 삭제 관리
+    // コメント 삭제 관리
     $(document).on("click", ".coDeleteBtn", function(){
         $(this).css("display", "none");
         var coDeleteConfirmBtn = '<span id="coDeleteConfirmBtn" class="viewBtn">삭제 확인</span>';
@@ -158,7 +158,7 @@
                 $("#coDeleteConfirmBtn").after(coDeleteBtn);
 
                 count = count - 1;
-			    $("#coCount").text('댓글 ' + count);
+			    $("#coCount").text('コメント ' + count);
 			},
 			error : function(data) {
 			    $('#needLoginBtn').click();
@@ -166,7 +166,7 @@
         });
     });
 
-    // 스크랩 관리
+    // 保存 관리
     var scraps = $("#scraps").val();
     var scrapBtn = document.getElementById("scrapBtn");
 

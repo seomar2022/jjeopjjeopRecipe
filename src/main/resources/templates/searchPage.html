@@ -79,7 +79,7 @@
     </nav>
 
     <main class="container">
-      <h1 class="m-4 pb-3">통합검색</h1>
+      <h1 class="m-4 pb-3">통합検索</h1>
 
       <form class="mt-3" id="search-form" th:action="@{/search}" method="post">
         <div class="input-div">
@@ -89,26 +89,26 @@
             class="form-control"
             id="inputPassword2 search-input"
             name="keyword"
-            placeholder="재료를 검색해보세요."
+            placeholder="材料를 検索해보세요."
           />
         </div>
         <div>
-          <button type="submit" class="btn btn-primary mb-3">검색</button>
+          <button type="submit" class="btn btn-primary mb-3">検索</button>
         </div>
       </form>
-      <h4 th:if="${keyword}" th:text="|'${keyword}' 검색결과 :|">키워드 검색결과</h4>
+      <h4 th:if="${keyword}" th:text="|'${keyword}' 検索결과 :|">키워드 検索결과</h4>
       <div th:if="${NoKeyword}" class="alert alert-danger" role="alert">
-        검색어를 입력해주세요!
+        検索어를 입력해주세요!
       </div>
-      <!-- ================상품 검색결과==================== -->
+      <!-- ================商品 検索결과==================== -->
       <div th:if="${NoProduceList}">
-        <h4>연관 상품이 없습니다.</h4>
+        <h4>연관 商品이 없습니다.</h4>
       </div>
       <div class="shopping-popular bg-white mb-5" th:if="${produceList}">
         <div class="d-flex title">
-          <p>총 <h5 class="rcpSize" th:text="${produceListSize}"> 00 </h5>개의 상품이 있습니다</p>
+          <p>총 <h5 class="rcpSize" th:text="${produceListSize}"> 00 </h5>개의 商品이 있습니다</p>
 
-          <!-- 품절임박한 상품 순으로 정렬된 레시피 페이지로 이동 -->
+          <!-- 품절임박한 商品 순으로 정렬된 レシピ 페이지로 이동 -->
           <h6 class="ms-auto" th:if="${produceListSize > 4}">
             <a th:href="@{|/moreProduce?keyword=${keyword}|}">> 더보기</a>
           </h6>
@@ -125,14 +125,14 @@
               style="cursor: pointer"
             >
               <figure class="block-4-image">
-                <!--                                    이미지 클릭해도 상세페이지로 가게 설정함. 아님 아예 a태그 이벤트 막는게 나은가?-->
+                <!--                                    イメージ 클릭해도 상세페이지로 가게 설정함. 아님 아예 a태그 이벤트 막는게 나은가?-->
                 <a
                   th:href="@{/produce/view/{produce_num}(produce_num=${produce.produce_num})}"
                 >
                   <img
                     class="img-fluid"
                     th:src="${produce.produce_image_path}"
-                    alt="상품이미지"
+                    alt="商品イメージ"
                   />
                 </a>
               </figure>
@@ -141,7 +141,7 @@
                   class="text-dark font-weight-bold"
                   th:text="${produce.produce_name}"
                 >
-                  상품명
+                  商品명
                 </h3>
                 <p class="mb-0 text-secondary" th:text="${produce.user_id}">
                   판매자
@@ -150,7 +150,7 @@
                   class="font-weight-bold"
                   data-th-text="${#numbers.formatInteger(produce.price, 3, 'COMMA') + '원'}"
                 >
-                  상품가격
+                  商品価格
                 </p>
               </div>
             </div>
@@ -158,14 +158,14 @@
 
         </div>
       </div>
-      <!-- ===============레시피 검색결과================ -->
+      <!-- ===============レシピ 検索결과================ -->
       <div th:if="${NoRcpList}">
-        <h4>연관 레시피가 없습니다.</h4>
+        <h4>연관 レシピ가 없습니다.</h4>
       </div>
       <div class="recipe-popular bg-white" th:if="${rcpList}">
         <div class="d-flex title">
-          <p>총 <h5 class="rcpSize" th:text="${rcpListSize}"> 00 </h5>개의 맛있는 레시피가 있습니다</p>
-          <!-- 스크랩 순으로 정렬된 레시피 페이지로 이동 -->
+          <p>총 <h5 class="rcpSize" th:text="${rcpListSize}"> 00 </h5>개의 맛있는 レシピ가 있습니다</p>
+          <!-- 保存 순으로 정렬된 レシピ 페이지로 이동 -->
           <h6 class="ms-auto" th:if="${rcpListSize > 8}"><a th:href="@{|/moreRecipe?keyword=${keyword}|}">> 더보기</a></h6>
         </div>
         <div class="row">
@@ -186,18 +186,18 @@
                 class="rounded float"
               />
               <p th:text="${rcp.rcp_name}" class="text-start fw-bold">
-                레시피 제목
+                レシピ タイトル
               </p>
             </a>
             <p class="d-flex justify-content-between">
-              <span th:text="${rcp.user_id}" class="left">닉네임</span
+              <span th:text="${rcp.user_id}" class="left">ニックネーム</span
               ><span th:text="'♥'+${rcp.scrap}" class="right mx-2"
-                >스크랩수</span
+                >保存수</span
               >
             </p>
             <p class="d-flex justify-content-between">
-              <span th:text="${rcp.time}" class="left">시간</span><span th:text="${rcp.difficulty}">난이도 하</span
-              ><span th:text="${rcp.amount}" class="right">3인분</span>
+              <span th:text="${rcp.time}" class="left">時間</span><span th:text="${rcp.difficulty}">難易度 하</span
+              ><span th:text="${rcp.amount}" class="right">3人分</span>
             </p>
           </div>
          

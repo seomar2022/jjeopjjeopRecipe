@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>커뮤니티 게시판</title>
+    <title>コミュニティ 掲示板</title>
     <th:block th:replace="fragments/head :: links">
     </th:block>
     <link
@@ -30,7 +30,7 @@
         <div class="d-flex bd-highlight detail">
           <p
             class="me-auto bd-highlight category"
-            th:text="${community.category=='0'}? '자유게시판 >':'레시피후기 >'"
+            th:text="${community.category=='0'}? '자유掲示板 >':'レシピ후기 >'"
           >
             카테고리>
           </p>
@@ -47,7 +47,7 @@
             >
           </div>
         </div>
-        <h1 th:text="${community.title}">글제목</h1>
+        <h1 th:text="${community.title}">글タイトル</h1>
         <div class="d-flex bd-highlight detail">
     
           <p
@@ -55,21 +55,21 @@
             th:text="${community.user_id}"
             id="userId"
           >
-            글 작성자
+            글 作成者
           </p>
           <p
             class="bd-highlight px-2"
-            th:text="|글 작성일자 : ${community.formatted_created_at}|"
+            th:text="|글 作成日 : ${community.formatted_created_at}|"
           >
-            글 작성일자
+            글 作成日
           </p>
-          <p class="bd-highlight" th:text="|조회 : ${community.read_count}|">
-            조회
+          <p class="bd-highlight" th:text="|閲覧 : ${community.read_count}|">
+            閲覧
           </p>
         </div>
         <hr class="my-2 line border border-dark" />
         <div th:if="${deletedRecipe}">
-          <h3>레시피가 삭제되었습니다.</h3>
+          <h3>レシピ가 삭제되었습니다.</h3>
         </div>
         <div
           th:if="${recipe}"
@@ -89,21 +89,21 @@
                 th:href="@{/recipe/view/{rcp_seq}(rcp_seq=${recipe.rcp_seq})}"
                 target="_blank"
               >
-                <span th:text="|레시피 이름 : ${recipe.rcp_name}|">
-                  레시피 이름 : gkdl
+                <span th:text="|レシピ 이름 : ${recipe.rcp_name}|">
+                  レシピ 이름 : gkdl
                 </span>
               </a>
-              <span th:text="'♥'+${recipe.scrap}" class="right">스크랩수</span>
+              <span th:text="'♥'+${recipe.scrap}" class="right">保存수</span>
             </p>
             <p class="d-flex justify-content-between">
-              <span th:text="|작성자: ${recipe.user_id}|" class="left"
-                >닉네임</span
+              <span th:text="|作成者: ${recipe.user_id}|" class="left"
+                >ニックネーム</span
               >
             </p>
             <p class="d-flex justify-content-between">
-              <span th:text="${recipe.time}" class="left">시간</span
-              ><span th:text="${recipe.difficulty}">난이도 하</span
-              ><span th:text="${recipe.amount}" class="right">3인분</span>
+              <span th:text="${recipe.time}" class="left">時間</span
+              ><span th:text="${recipe.difficulty}">難易度 하</span
+              ><span th:text="${recipe.amount}" class="right">3人分</span>
             </p>
           </div>
           <div class="mt-5 mx-3">
@@ -144,20 +144,20 @@
           >
         </div>
         <hr class="my-2 line border border-dark" />
-        <!-- ====================댓글 ㅅㅣ작 =========================-->
+        <!-- ====================コメント ㅅㅣ작 =========================-->
         <section class="comment">
           <div class="d-flex bd-highlight detail">
-            <h4 class="me-auto bd-highlight px-2">댓글</h4>
+            <h4 class="me-auto bd-highlight px-2">コメント</h4>
             <p
               class="bd-highlight px-2"
-              th:text="|댓글 수: ${#lists.size(comments)}|"
+              th:text="|コメント 수: ${#lists.size(comments)}|"
             >
-              댓글 수: 0
+              コメント 수: 0
             </p>
           </div>
           <div class="comment-content-box">
             <div th:each="comment : ${comments}" class="comment-content">
-              <h6 th:text="${comment.user_id}">작성자</h6>
+              <h6 th:text="${comment.user_id}">作成者</h6>
               <input type="hidden" th:value="${comment.id}" />
               <input
                 class="comment-content"
@@ -166,7 +166,7 @@
                 th:value="${comment.content}"
                 disabled
               />
-              <p th:text="${comment.formatted_created_at}">작성일자</p>
+              <p th:text="${comment.formatted_created_at}">作成日</p>
               <div th:if="${session.user_id}==${comment.user_id}">
                 <button type="button" class="btn btn-secondary btn-sm edit-btn">
                   수정
@@ -188,10 +188,10 @@
               </div>
             </div>
 
-          <!-- 댓글 남기기 -->
+          <!-- コメント 남기기 -->
           <hr class="my-2 line border border-dark" />
           <div class="post_comment">
-            <h6 th:text="${session.user_id}">로그인한 회원 아이디</h6>
+            <h6 th:text="${session.user_id}">ログイン한 회원 아이디</h6>
             <div class="d-flex justify-content-between py-2">
               <form
                 action="/community/post/comment"

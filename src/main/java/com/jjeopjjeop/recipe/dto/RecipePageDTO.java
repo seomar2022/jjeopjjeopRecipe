@@ -33,11 +33,11 @@ public class RecipePageDTO {
     private int number;
     private int rcp_sort; // 정렬 기준
 
-    // 레시피 덧글용
+    // レシピ 덧글용
     private int rcp_seq;
     private List<RecipeCommentDTO> recipeCommentDTOList;
 
-    // 레시피 검색용
+    // レシピ 検索용
     private String searchKey;
     private String searchWord;
     private int cate_seq;

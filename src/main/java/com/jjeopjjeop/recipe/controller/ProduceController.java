@@ -103,7 +103,7 @@ public class ProduceController {
     }
     //////////////////////////////////////////////////////////////////////////////////////////
 
-    //판매글 조회(필터링)
+    //판매글 閲覧(필터링)
     @GetMapping("/produce/list/{type}")
     public ModelAndView produceList(@PathVariable("type") int type, @RequestParam(value = "page", required = false, defaultValue = "0") Integer page, ModelAndView mav) {
         int totalRecord = produceService.produceFilterCount(type);// 전체 레코드 수
@@ -133,7 +133,7 @@ public class ProduceController {
         return mav;
     }
 
-    //판매글 조회(정렬)
+    //판매글 閲覧(정렬)
     @GetMapping("/produce/list/sort/{sort}")
     public ModelAndView produceListSort(@PathVariable("sort") int sort, @RequestParam(value = "page", required = false, defaultValue = "0") Integer page, ModelAndView mav) {
 
@@ -209,7 +209,7 @@ public class ProduceController {
     public ModelAndView produceUpdateForm(@PathVariable("produceNum") int produce_num, ModelAndView mav) {
         ProduceDTO produceDTO = produceService.produceViewProcess(produce_num);
         if(produceDTO.getProduce_image() != null) {
-            produceDTO.setProduce_image(produceDTO.getProduce_image().substring(produceDTO.getProduce_image().lastIndexOf('_') + 1)); //기존의 파일이미지 가지고 오기.
+            produceDTO.setProduce_image(produceDTO.getProduce_image().substring(produceDTO.getProduce_image().lastIndexOf('_') + 1)); //기존의 파일イメージ 가지고 오기.
         }
         mav.addObject("produceDTO", produceDTO);
         mav.setViewName("produce/produceUpdate");

@@ -81,14 +81,14 @@ public class UserController {
       return result;
    }
 
-   //로그인 페이지
+   //ログイン 페이지
    @GetMapping("/login")
    public String login(UserDTO userDTO){
       logger.info("get login");
       return "users/login";
    }
 
-   //로그인
+   //ログイン
    @PostMapping("/login")
    public String login(@Validated @ModelAttribute("user") UserDTO userDTO, BindingResult bindingResult,
                              RedirectAttributes rAttr, HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -104,21 +104,21 @@ public class UserController {
          //login 페이지의 action 가져오기
          String action = (String) session.getAttribute("action");
          session.removeAttribute("action");
-         //로그인 실패하면 현재 페이지(로그인)
+         //ログイン 실패하면 현재 페이지(ログイン)
          if(action != null){
             session.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
             logger.info("Login Fail: ID or Password Doest Not Match");
             return "redirect:/login";
-         //로그인 성공 ==> 마이페이지로 이동(임시)
+         //ログイン 성공 ==> 마이페이지로 이동(임시)
          }else {
-            rAttr.addFlashAttribute("message", "로그인 되었습니다.");
+            rAttr.addFlashAttribute("message", "ログイン 되었습니다.");
             logger.info("Login Success");
             return "redirect:/";
          }
          //회원이 아니라면
       }else {
          rAttr.addFlashAttribute("message", "등록된 아이디가 없습니다.");
-         bindingResult.reject("loginFail", "로그인 실패");
+         bindingResult.reject("loginFail", "ログイン 실패");
          logger.info("Login Fail: ID or Password Does Not Exist");
          return "redirect:/login";
       }
@@ -131,7 +131,7 @@ public class UserController {
    public ModelAndView logout(HttpServletRequest request){
       ModelAndView mav = new ModelAndView("redirect:/login");
       HttpSession session = request.getSession();
-      //로그인 중인 세션을 모두 사라지게 만들기==>로그아웃
+      //ログイン 중인 세션을 모두 사라지게 만들기==>로그아웃
       session.invalidate();
       logger.info("Logout Success");
       return mav;
@@ -296,7 +296,7 @@ public class UserController {
       return "users/myCommunity";
    }
 
-   //내 레시피 후기 보기
+   //내 レシピ 후기 보기
    @MySecured
    @GetMapping("/mypage/review")
    public String showMyReview(@RequestParam(value = "user_id", required = false, defaultValue = "") String user_id,
@@ -315,7 +315,7 @@ public class UserController {
       return "users/myReview";
    }
 
-   //내 레시피 보기
+   //내 レシピ 보기
    @MySecured
    @GetMapping("/mypage/recipe")
    public String showMyRecipe(String user_id, RecipePageDTO recipePageDTO, @RequestParam(value="page", required = false, defaultValue = "0") int page,
@@ -338,7 +338,7 @@ public class UserController {
       return "users/myRecipe";
    }
 
-   //내가 스크랩한 레시피 보기
+   //내가 保存한 レシピ 보기
    @MySecured
    @GetMapping("/mypage/scrap")
    public String showMyScrap(String user_id, RecipePageDTO recipePageDTO, @RequestParam(value="page", required = false, defaultValue = "0") int page,

@@ -21,7 +21,7 @@ public class RecipeCommentController {
     @Autowired
     private RecipeCommentService service;
 
-    // 댓글 조회
+    // コメント 閲覧
     @ResponseBody
     @GetMapping(value = "/recipe/comment/list", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map> listMethod(String rcp_seq, String commentCurrentPage){
@@ -35,7 +35,7 @@ public class RecipeCommentController {
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
 
-    // 댓글 작성
+    // コメント 작성
     @ResponseBody
     @PostMapping("/recipe/comment/write")
     public void writeMethod(String rcp_seq, String comment_txt, HttpSession session, RecipeCommentDTO recipeCommentDTO){
@@ -45,7 +45,7 @@ public class RecipeCommentController {
         service.writeProcess(recipeCommentDTO);
     }
 
-    // 댓글 수정
+    // コメント 수정
     @ResponseBody
     @PostMapping("/recipe/comment/update")
     public void updateMethod(String co_rcp_seq, String comment_txt, RecipeCommentDTO recipeCommentDTO){
@@ -54,7 +54,7 @@ public class RecipeCommentController {
         service.updateProcess(recipeCommentDTO);
     }
 
-    // 댓글 삭제
+    // コメント 삭제
     @ResponseBody
     @PostMapping("/recipe/comment/delete")
     public void deleteMethod(String co_rcp_seq){

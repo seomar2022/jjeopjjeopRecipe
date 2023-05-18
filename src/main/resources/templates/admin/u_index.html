@@ -23,11 +23,11 @@
         <!--        <a class="user">회원관리</a>-->
 
     </div>
-    <!-- 검색기능 -->
+    <!-- 検索기능 -->
     <form action="/admin/u_index" class="search_wrap" name="search_key">
         <div class="search_wrap">
-            <input class='keyword' type="text" name="keyword" placeholder="아이디를 검색하세요" th:value="${page.keyword}">
-            <button class='s_btn'>검색</button>
+            <input class='keyword' type="text" name="keyword" placeholder="아이디를 検索하세요" th:value="${page.keyword}">
+            <button class='s_btn'>検索</button>
         </div>
     </form>
 
@@ -42,18 +42,18 @@
                         <a href="/admin/u_index" class="nav-link category">회원관리</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/admin/r_index" class="nav-link category">레시피관리</a>
+                        <a href="/admin/r_index" class="nav-link category">レシピ관리</a>
                     </li>
                     <li class="list-group-item">
                         <a href="/admin/s_index" class="nav-link category">판매자관리</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/admin/c_index" class="nav-link category">게시판관리</a>
+                        <a href="/admin/c_index" class="nav-link category">掲示板관리</a>
                     </li>
                 </ul>
             </div>
 
-            <!-- 게시판 부분? -->
+            <!-- 掲示板 부분? -->
             <div class="col-10">
                 <table class="table caption-top">
                     <thead class="bg-secondary bg-gradient">
@@ -63,7 +63,7 @@
                         <th scope="col">비밀번호</th>
                         <th scope="col">유저타입</th>
                         <th scope="col">이름</th>
-                        <th scope="col">닉네임</th>
+                        <th scope="col">ニックネーム</th>
                         <th scope="col">주소</th>
                         <th scope="col">탈퇴</th>
                     </tr>
@@ -73,7 +73,7 @@
                         <td><a th:href="@{|/admin/detailU?user_id=${au.user_id}|}" th:text="${au.user_id}"></a></td>
                         <td th:text="${au.password}"></td>
                         <td th:switch="${au.usertype}">
-                            <span th:case="3">관리자</span>
+                            <span th:case="3">管理者</span>
                             <span th:case="2">판매자</span>
                             <span th:case="1">회원</span>
                         </td>

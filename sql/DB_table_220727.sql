@@ -116,17 +116,17 @@ COMMENT ON COLUMN Produce_board.produce_num IS '게시글 일련번호';
 
 COMMENT ON COLUMN Produce_board.user_id IS '아이디';
 
-COMMENT ON COLUMN Produce_board.produce_type IS '상품종류(1은 채소, 2는 과일, 3은 곡물, 4는 기타)';
+COMMENT ON COLUMN Produce_board.produce_type IS '商品종류(1은 채소, 2는 과일, 3은 곡물, 4는 기타)';
 
-COMMENT ON COLUMN Produce_board.produce_name IS '상품명(판매단위 같이 쓰기)';
+COMMENT ON COLUMN Produce_board.produce_name IS '商品명(판매단위 같이 쓰기)';
 
 COMMENT ON COLUMN Produce_board.price IS '금액';
 
-COMMENT ON COLUMN Produce_board.produce_image IS '상품이미지';
+COMMENT ON COLUMN Produce_board.produce_image IS '商品イメージ';
 
-COMMENT ON COLUMN Produce_board.produce_image_path IS '상품이미지저장된 경로';
+COMMENT ON COLUMN Produce_board.produce_image_path IS '商品イメージ저장된 경로';
 
-COMMENT ON COLUMN Produce_board.produce_description IS '상품 상세설명';
+COMMENT ON COLUMN Produce_board.produce_description IS '商品 상세설명';
 
 DROP TABLE User_rcp;
 
@@ -170,13 +170,13 @@ CREATE TABLE Produce_review (
 
 COMMENT ON COLUMN Produce_review.pay_num IS '구매 일련번호';
 
-COMMENT ON COLUMN Produce_review.produce_name IS '상품명(판매단위 같이 쓰기)';
+COMMENT ON COLUMN Produce_review.produce_name IS '商品명(판매단위 같이 쓰기)';
 
 COMMENT ON COLUMN Produce_review.rating IS '0점이상, 5점이하로 0.5점단위로 평가';
 
 COMMENT ON COLUMN Produce_review.content IS '리뷰내용';
 
-COMMENT ON COLUMN Produce_review.created_date IS '리뷰작성일';
+COMMENT ON COLUMN Produce_review.created_date IS '리뷰作成日';
 
 DROP TABLE Manual;
 
@@ -229,7 +229,7 @@ CREATE TABLE CommunityBoard (
 
 COMMENT ON COLUMN CommunityBoard.user_id IS '아이디';
 
-COMMENT ON COLUMN CommunityBoard.category IS '0 자유글 1 레시피후기';
+COMMENT ON COLUMN CommunityBoard.category IS '0 자유글 1 レシピ후기';
 
 DROP TABLE Image;
 
@@ -486,22 +486,22 @@ CREATE SEQUENCE pay_num_seq
 
 --20220804 테이블 업데이트---------------------------------------------------
 ALTER TABLE produce_review DROP COLUMN produce_name;
---레시피 테이블 시간 컬럼 사이즈 변경
+--レシピ 테이블 時間 컬럼 사이즈 변경
 ALTER TABLE recipe MODIFY (time VARCHAR2(20)) ;
 
---카테고리 테이블 카테고리 분류 컬럼 추가
+--카테고리 테이블 카테고리 カテゴリー 컬럼 추가
 ALTER TABLE category ADD cate_cate NUMBER;
 
---레시피 테이블 조회수 컬럼 추가
+--レシピ 테이블 閲覧数 컬럼 추가
 ALTER TABLE recipe ADD rcp_viewcnt NUMBER DEFAULT 0;
 
---레시피 테이블 재료 컬럼 추가
+--レシピ 테이블 材料 컬럼 추가
 ALTER TABLE recipe ADD rcp_parts_dtls VARCHAR2(3000);
 
---레시피 덧글 테이블 내용 컬럼 추가
+--レシピ 덧글 테이블 내용 컬럼 추가
 ALTER TABLE comment_rcp ADD comment_txt VARCHAR2(3000);
 
---레시피 덧글 테이블 참조덧글번호 컬럼 변경
+--レシピ 덧글 테이블 참조덧글번호 컬럼 변경
 ALTER TABLE comment_rcp MODIFY re_co_seq null;
 
 --유저 신고수 테이블 추가

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>레시피 본문</title>
+    <title>レシピ本文</title>
     <th:block th:replace="fragments/head :: links">
     </th:block>
     <link
@@ -36,15 +36,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">레시피 삭제</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">レシピ削除</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p th:text="${rcp.rcp_name}+' 레시피를 삭제하시겠습니까?'"></p>
+                    <p th:text="${rcp.rcp_name}+' レシピを削除しますか?'"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                    <a th:href="@{/recipe/delete(rcp_seq=${rcp.rcp_seq}, rcp_sort=${rcp_sort}, page=${page})}" class="btn btn-danger">삭제</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取り消し</button>
+                    <a th:href="@{/recipe/delete(rcp_seq=${rcp.rcp_seq}, rcp_sort=${rcp_sort}, page=${page})}" class="btn btn-danger">削除</a>
                 </div>
             </div>
         </div>
@@ -53,15 +53,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="reportModalLabel">레시피 신고</h5>
+                    <h5 class="modal-title" id="reportModalLabel">レシピ報告</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p th:text="'레시피 신고는 취소할 수 없습니다. [' + ${rcp.rcp_name} + '] 레시피를 신고하시겠습니까?'"></p>
+                    <p th:text="'レシピ報告는 취소할 수 없습니다. [' + ${rcp.rcp_name} + '] レシピ를報告하시겠습니까?'"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">취소</button>
-                    <a href="#" id="reportBtn" data-bs-dismiss="modal" class="btn btn-danger">신고</a>
+                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">取り消し</button>
+                    <a href="#" id="reportBtn" data-bs-dismiss="modal" class="btn btn-danger">報告</a>
                 </div>
             </div>
         </div>
@@ -70,14 +70,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="shareLabel">레시피 링크 공유</h5>
+                    <h5 class="modal-title" id="shareLabel">レシピのリンクを共有</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p th:text="'클립보드에 레시피 링크가 복사되었습니다. 친구들과 레시피를 공유해 보세요!'"></p>
+                    <p th:text="'レシピのリンクがコピーされました。'"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">확인</button>
+                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">確認</button>
                 </div>
             </div>
         </div>
@@ -86,24 +86,24 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="needLoginLabel">비회원 접근 불가</h5>
+                    <h5 class="modal-title" id="needLoginLabel">ユーザー登録が必要です</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p th:text="'로그인이 필요한 기능입니다.'"></p>
+                    <p th:text="'ユーザー登録が必要です'"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">확인</button>
+                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">確認</button>
                 </div>
             </div>
         </div>
     </div>
-    <button type="button" id="needLoginBtn" style="display: none;" data-bs-toggle="modal" data-bs-target="#needLoginModal">로그인 안내</button>
+    <button type="button" id="needLoginBtn" style="display: none;" data-bs-toggle="modal" data-bs-target="#needLoginModal">ログイン 안내</button>
     <!-- Modal// -->
     <span class="fw-bold fs-2 text-start" th:text="${rcp.rcp_name}"></span>
     <span th:if="${user_id} == ${rcp.user_id}" class="upsideBtn text-end">
-        <a th:href="@{/recipe/update(rcp_seq=${rcp_seq})}" class="btn btn-primary">글수정</a>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">글삭제</button>
+        <a th:href="@{/recipe/update(rcp_seq=${rcp_seq})}" class="btn btn-primary">修正</a>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">削除</button>
     </span>
     <hr/>
     <div class="row" style="margin-bottom:15px;">
@@ -113,42 +113,42 @@
         </div>
         <div class="col-6">
             <p class="d-flex justify-content-between">
-                <span th:text="'글쓴이 | '+${rcp.user_id}" class="left"></span>
-                <span th:text="${rcp.rcp_date} + ' 작성'" class="right" style="color: gray;"></span>
+                <span th:text="'作成者 | '+${rcp.user_id}" class="left"></span>
+                <span th:text="${rcp.rcp_date} + ' 作成'" class="right" style="color: gray;"></span>
             </p>
             <p class="d-flex justify-content-between">
-                <span th:text="'시간 | '+${rcp.time}" class="left">시간</span>
-                <span th:text="'난이도 | '+${rcp.difficulty}">난이도</span>
-                <span th:text="'양 | '+${rcp.amount}" class="right">양</span>
+                <span th:text="'時間 | '+${rcp.time}" class="left">時間</span>
+                <span th:text="'難易度 | '+${rcp.difficulty}">難易度</span>
+                <span th:text="'量 | '+${rcp.amount}" class="right">量</span>
             </p>
-            <p th:text="'분류 | '" style="display: inline;">
+            <p th:text="'カテゴリー | '" style="display: inline;">
                 <p th:each="cates, i: ${cate_list}" style="display: inline;">
                     <span th:if="${i.index} != 0">, </span>
                 <a class="viewBtn" th:href="@{/recipe/list(cate_seq=${cates.cate_seq})}" th:text="${cates.cate_name}"></a>
                 </p>
             </p>
-            <p th:text="'소개 | '+${rcp.summary}"></p>
+            <p th:text="'紹介 | '+${rcp.summary}"></p>
             <br/>
             <p class="d-flex justify-content-between">
-                <span th:text="'조회수 '+${rcp.rcp_viewcnt}" class="left">조회수</span>
+                <span th:text="'閲覧数 '+${rcp.rcp_viewcnt}" class="left">閲覧数</span>
                 <span id="scrapBtn" class="viewBtn">
-                    <span>♥ 스크랩 </span>
+                    <span>♥ 保存 </span>
                     <span th:text="${rcp.scrap}" id="scraps2"></span>
                 </span>
                 <span id="shareBtn" class="viewBtn" data-bs-toggle="modal" data-bs-target="#shareModal">
-                <span th:text="'★ 공유하기'">공유</span>
+                <span th:text="'★ 共有'">共有</span>
                 </span>
                 <span th:if="${reportOrNot} == 0" class="viewBtn" data-bs-toggle="modal" data-bs-target="#reportModal">
-                <span th:text="'신고하기'" id="report1" class="right" style="color: red;">신고</span></span>
+                <span th:text="'報告'" id="report1" class="right" style="color: red;">報告</span></span>
             </p>
         </div>
     </div>
     <hr/>
-<!--    <h1 th:text="${rcp.rcp_seq}+'번 레시피 본문입니다. 이부분 나중에 삭제'"></h1>-->
-    <h2 th:text="'재료'"></h2>
+<!--    <h1 th:text="${rcp.rcp_seq}+'번 レシピ 본문입니다. 이부분 나중에 削除'"></h1>-->
+    <h2 th:text="'材料'"></h2>
     <p th:text="${rcp.rcp_parts_dtls}"></p>
     <hr/>
-    <h2 th:text="'요리 순서'"></h2>
+    <h2 th:text="'作り方'"></h2>
     <p th:each="manual: ${manualList}" class="manual_step">
         <span class="h3" th:text="${manual.manual_no}"></span>
         <img th:if="${not #strings.isEmpty(manual.filename)}" th:src="@{${manual.filepath}+${manual.filename}}" alt="sub image"/>
@@ -160,24 +160,24 @@
     <p th:text="${rcp.hash_tag}"></p>
     <div class="d-grid d-md-block gap-3 viewBtn" style="text-align: center;">
         <a th:if="${searchKey != null}" th:href="@{/recipe/search(rcp_sort=${rcp_sort}, cate_seq=${cate_seq}, page=${page}, searchKey=${searchKey})}" class="btn btn-secondary me-md-5">
-            레시피 검색 목록으로 돌아가기
+            レシピ検索リストに戻る
         </a>
         <a th:if="${searchKey == null}" th:href="@{/recipe/list(rcp_sort=${rcp_sort}, cate_seq=${cate_seq}, page=${page})}" class="btn btn-secondary me-md-5">
-            레시피 목록으로 돌아가기
+            レシピリストに戻る
         </a>
         <a th:href="@{/community/form}" class="btn btn-dark">
-            이 레시피 후기 작성하기
+            このレシピのレビュー作成
         </a>
     </div>
     <hr/>
-    <h2 id="coCount" th:text="'댓글 '+${pagenation.count}"></h2>
+    <h2 id="coCount" th:text="'コメント '+${pagenation.count}"></h2>
     <form>
         <div class="row" style="margin-bottom: 20px;">
             <div class="col-10">
-                <textarea class="form-control" name="comment_txt" id="comment_txt" style="height: 100%;" placeholder="내용을 입력해주세요."></textarea>
+                <textarea class="form-control" name="comment_txt" id="comment_txt" style="height: 100%;" placeholder="コメントを入力してください"></textarea>
             </div>
             <div class="col-2">
-                <span class="btn btn-warning" id="coWriteBtn" style="width: 100%; height: 100%; color: #fff; line-height: 70px;">댓글쓰기</span>
+                <span class="btn btn-warning" id="coWriteBtn" style="width: 100%; height: 100%; color: #fff; line-height: 70px;">コメント入力</span>
             </div>
         </div>
     </form>

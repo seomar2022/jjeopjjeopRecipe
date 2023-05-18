@@ -20,7 +20,7 @@ public class UserDTO {
    @NotBlank(message = "필수 입력 항목입니다.")
 //   @Pattern(regexp = "(?=.*[A-Za-z])(?=.*[0-9])(?=.*\\d)(?=.*[$@$!%*#?&]).{5,8}",
    @Pattern(regexp = "(?=.*[A-Za-z])([0-9A-Za-z$@$!%*#?&]){3,8}",
-           message = "비밀번호는 영문 대소문자, 숫자, 특수문자를 1개 이상 포함한 3~8자리여야 합니다.")
+           message = "비밀번호는 영문 대소문자, 숫자, 특수문자를 1개以上 포함한 3~8자리여야 합니다.")
    private String password;
    private int usertype;
 

@@ -19,10 +19,10 @@ public class ProduceDTO {
     @NotNull(message = "종류를 선택해주세요")
     private Integer produce_type;
 
-    @Size(min = 1, max = 30, message = "상품 이름은 필수 입력값입니다.(최대: 한글 15자/영어 30자)")
+    @Size(min = 1, max = 30, message = "商品 이름은 필수 입력값입니다.(최대: 한글 15자/영어 30자)")
     private String produce_name;
 
-    @NotNull(message = "가격은 필수 입력값입니다.")
+    @NotNull(message = "価格은 필수 입력값입니다.")
     @Positive(message = "1이상의 숫자를 입력해주세요.")
     private Integer price;
 
@@ -30,7 +30,7 @@ public class ProduceDTO {
 
     private String produce_image_path;
 
-    @Size(min = 1, max = 200, message = "상품 설명은 필수 입력값입니다.(최대: 한글 113자/영어 200자)")
+    @Size(min = 1, max = 200, message = "商品 설명은 필수 입력값입니다.(최대: 한글 113자/영어 200자)")
     private String produce_description;
 
     private Integer end_of_sale;

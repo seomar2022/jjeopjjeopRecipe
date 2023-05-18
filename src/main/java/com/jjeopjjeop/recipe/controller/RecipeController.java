@@ -32,7 +32,7 @@ public class RecipeController {
     @Autowired
     private RecipeCommentService commentService;
 
-    // 레시피 목록 조회 메소드
+    // レシピ 목록 閲覧 메소드
     @GetMapping("/recipe/list")
     public ModelAndView rcpListMethod(@RequestParam(value="rcp_sort", required=false, defaultValue = "0") Integer rcp_sort,
                                       @RequestParam(value="cate_seq", required=false, defaultValue = "0") int cate_seq,
@@ -41,13 +41,13 @@ public class RecipeController {
         // 전체 레코드 수
         Pagenation pagenation = new Pagenation(page, service.countProcess(cate_seq), true);
 
-        // 오늘의 인기 레시피 목록
+        // 오늘의 人気 レシピ 목록
         List<RecipeDTO> favoriteRcpList = service.favoriteListProcess();
 
-        // 레시피 분류 목록
+        // レシピ カテゴリー 목록
         List<CategoryDTO> cateList = service.cateListProcess();
 
-        // 전체 레시피 목록
+        // 전체 レシピ 목록
         List<RecipeDTO> rcpList = service.listProcess(pagenation, rcp_sort, cate_seq);
 
         mav.addObject("rcp_sort", rcp_sort);
@@ -60,7 +60,7 @@ public class RecipeController {
         return mav;
     }
 
-    // 레시피 목록 검색 메소드
+    // レシピ 목록 検索 메소드
     @GetMapping("/recipe/search")
     public ModelAndView rcpSearchMethod(@RequestParam(value="rcp_sort", required=false, defaultValue = "0") Integer rcp_sort,
                                         @RequestParam(value="cate_seq", required=false, defaultValue = "0") int cate_seq,
@@ -70,10 +70,10 @@ public class RecipeController {
         // 전체 페이지 수
         Pagenation pagenation = new Pagenation(page, service.searchCountProcess(searchKey, cate_seq), true);
 
-        // 레시피 분류 목록
+        // レシピ カテゴリー 목록
         List<CategoryDTO> cateList = service.cateListProcess();
 
-        // 검색 레시피 목록
+        // 検索 レシピ 목록
         List<RecipeDTO> rcpList = service.searchListProcess(pagenation, rcp_sort, cate_seq, searchKey);
 
         mav.addObject("rcp_sort", rcp_sort);
@@ -86,7 +86,7 @@ public class RecipeController {
         return mav;
     }
 
-    // 레시피 본문 조회 메소드
+    // レシピ 본문 閲覧 메소드
     @GetMapping("/recipe/view/{rcp_seq}")
     public ModelAndView rcpViewMethod(@PathVariable("rcp_seq") Integer rcp_seq,
                                       @RequestParam(value="page", required=false, defaultValue = "1") int page,
@@ -94,19 +94,19 @@ public class RecipeController {
                                       @RequestParam(value="rcp_sort", required=false, defaultValue = "0") Integer rcp_sort,
                                       @RequestParam(value="searchKey", required=false) String searchKey,
                                       HttpSession session, ModelAndView mav){
-        // 검색글일시 검색어 추가
+        // 検索글일시 検索어 추가
         if(searchKey != null){
             mav.addObject("searchKey", searchKey);
         }
 
-        // 레시피 본문 내용
+        // レシピ 본문 내용
         mav.addObject("rcp", service.contentProcess(rcp_seq));
         mav.addObject("page", page);
         mav.addObject("rcp_sort", rcp_sort);
         mav.addObject("user_id", String.valueOf(session.getAttribute("user_id")));
 
 
-        // 레시피 카테고리 정보
+        // レシピ 카테고리 정보
         List<CategoryDTO> list = service.getRcpCateProcess(rcp_seq);
         List<String> cate_list = new ArrayList<>();
 
@@ -117,7 +117,7 @@ public class RecipeController {
 
         mav.addObject("cate_list", service.getRcpCateProcess(rcp_seq));
 
-        // 스크랩 체크
+        // 保存 체크
         UserScrapDTO userScrapDTO = new UserScrapDTO();
         userScrapDTO.setUser_id(String.valueOf(session.getAttribute("user_id")));
         userScrapDTO.setRcp_seq(rcp_seq);
@@ -129,7 +129,7 @@ public class RecipeController {
         reportRecipeDTO.setRcp_seq(rcp_seq);
         mav.addObject("reportOrNot", service.chkReportProcess(reportRecipeDTO));
 
-        // 레시피별 요리 단계 내용
+        // レシピ별 요리 단계 내용
         mav.addObject("manualList", service.contentMnlProcess(rcp_seq));
 
         // 덧글 처리
@@ -144,7 +144,7 @@ public class RecipeController {
         return mav;
     }
 
-    // 레시피 스크랩 메소드
+    // レシピ 保存 메소드
     @ResponseBody
     @PostMapping("/recipe/scrap")
     public void rcpScrapMethod(@RequestParam String rcp_seq,
@@ -155,7 +155,7 @@ public class RecipeController {
         service.scrapProcess(userScrapDTO);
     }
 
-    // 레시피 신고 메소드
+    // レシピ 신고 메소드
     @ResponseBody
     @PostMapping("/recipe/report")
     public void rcpReportMethod(@RequestParam String rcp_seq,
@@ -166,13 +166,13 @@ public class RecipeController {
         service.reportProcess(reportRecipeDTO);
     }
 
-    // 레시피 작성 페이지 요청 메소드
+    // レシピ 작성 페이지 요청 메소드
     @MySecured(role = MySecured.Role.USER)
     @GetMapping("/recipe/write")
     public String rcpWriteMethod(Model model, HttpSession session){
         RecipeDTO recipeDTO = new RecipeDTO();
 
-        // 레시피 분류 목록
+        // レシピ カテゴリー 목록
         List<CategoryDTO> cateList = service.cateListProcess();
 
         model.addAttribute("recipeDTO", recipeDTO);
@@ -180,7 +180,7 @@ public class RecipeController {
         return "/recipe/rcpWrite";
     }
 
-    // 레시피 작성 메소드
+    // レシピ 작성 메소드
     @PostMapping("/recipe/write")
     public String rcpWriteProMethod(@Validated @ModelAttribute("recipeDTO") RecipeDTO recipeDTO, BindingResult bindingResult, String[] manual_txt,
                                     @RequestParam(value="cateArr", required=false) List<String> cateArr, Model model,
@@ -190,7 +190,7 @@ public class RecipeController {
 
         // 유효성 검사
         if(bindingResult.hasErrors()){
-            // 레시피 분류 목록
+            // レシピ カテゴリー 목록
             List<CategoryDTO> cateList = service.cateListProcess();
             model.addAttribute("cateList", cateList);
             return "recipe/rcpWrite";
@@ -228,7 +228,7 @@ public class RecipeController {
         return "redirect:/recipe/list";
     }
 
-    // 레시피 수정 페이지 요청 메소드
+    // レシピ 수정 페이지 요청 메소드
     @GetMapping("/recipe/update")
     public String rcpUpdateMethod(@RequestParam int rcp_seq, Model model, HttpSession session){
         RecipeDTO recipeDTO = service.contentProcess(rcp_seq);
@@ -238,9 +238,9 @@ public class RecipeController {
 
         model.addAttribute("recipeDTO", recipeDTO);
 
-        // 레시피 분류 목록
-        List<CategoryDTO> cateList = service.cateListProcess(); //전체 분류 목록
-        List<CategoryDTO> cate = service.getRcpCateProcess(rcp_seq); //레시피에 등록된 분류 목록
+        // レシピ カテゴリー 목록
+        List<CategoryDTO> cateList = service.cateListProcess(); //전체 カテゴリー 목록
+        List<CategoryDTO> cate = service.getRcpCateProcess(rcp_seq); //レシピ에 등록된 カテゴリー 목록
 
         for(int i=0; i<cate.size(); i++){
             for(int j=0; j<cateList.size(); j++){
@@ -249,18 +249,18 @@ public class RecipeController {
             }
         }
 
-        model.addAttribute("cateList", cateList); // 전체 분류 목록
+        model.addAttribute("cateList", cateList); // 전체 カテゴリー 목록
         model.addAttribute("manualList", service.contentMnlProcess(rcp_seq));
         return "/recipe/rcpUpdate";
     }
 
-    // 레시피 수정 메소드
+    // レシピ 수정 메소드
     @PostMapping("/recipe/update")
     public String rcpUpdateMethod(@ModelAttribute("recipeDTO") RecipeDTO recipeDTO, String[] manual_txt,
                                   @RequestParam(value="cateArr", required=false) List<String> cateArr, Model model,
                                   MultipartFile[] upload_manual, HttpServletRequest request, HttpSession session){
 
-        // 레시피 분류 목록
+        // レシピ カテゴリー 목록
         List<CategoryDTO> cateList = service.cateListProcess();
         model.addAttribute("cateList", cateList);
 
@@ -303,7 +303,7 @@ public class RecipeController {
         return "redirect:/recipe/view/"+recipeDTO.getRcp_seq();
     }
 
-    // 레시피 삭제 메소드
+    // レシピ 삭제 메소드
     @GetMapping("/recipe/delete")
     public String rcpDeleteMethod(@RequestParam int rcp_seq, HttpServletRequest request, HttpSession session){
         RecipeDTO recipeDTO = service.contentProcess(rcp_seq);

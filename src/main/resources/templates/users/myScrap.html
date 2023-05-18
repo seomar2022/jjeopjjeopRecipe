@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head('내 레시피')">
+<head th:replace="fragments/head('내 レシピ')">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -18,16 +18,16 @@
     <div class="sidenav" th:replace="fragments/userSidebar :: userSidebar"></div>
     <div id="content" class="main pt-5">
         <div class="container py-5 h-100">
-            <h4 class="row d-flex justify-content-center align-items-center mb-3">스크랩한 레시피</h4>
+            <h4 class="row d-flex justify-content-center align-items-center mb-3">保存한 レシピ</h4>
             <table class="table table-hover">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">제목</th>
-                    <th scope="col">작성자</th>
-                    <th scope="col">작성일</th>
-                    <th scope="col">조회</th>
-                    <th scope="col">스크랩 수</th>
+                    <th scope="col">タイトル</th>
+                    <th scope="col">作成者</th>
+                    <th scope="col">作成日</th>
+                    <th scope="col">閲覧</th>
+                    <th scope="col">保存 수</th>
                 </tr>
                 </thead>
                 <tbody>

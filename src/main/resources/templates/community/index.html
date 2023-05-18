@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>커뮤니티 게시판</title>
+    <title>コミュニティ 掲示板</title>
     <th:block th:replace="fragments/head :: links"> </th:block>
     <link
       rel="stylesheet"
@@ -17,9 +17,9 @@
     <main class="container">
       <div class="bg-white p-5 rounded d-flex flex-column align-items-center">
         <a th:href="@{/community/search}" class="btn btn btn-success ms-auto"
-          >상세검색</a
+          >상세検索</a
         >
-        <h1>커뮤니티 게시판</h1>
+        <h1>コミュニティ 掲示板</h1>
         <h3>전체글</h3>
 
         <div class="caption">
@@ -45,12 +45,12 @@
                 </li>
                 <li class="list-group-item">
                   <a href="/board/recipeReview" class="nav-link category"
-                    >레시피후기</a
+                    >レシピ후기</a
                   >
                 </li>
                 <li class="list-group-item">
                   <a href="/board/freeForum" class="nav-link category"
-                    >자유게시판</a
+                    >자유掲示板</a
                   >
                 </li>
               </ul>
@@ -61,11 +61,11 @@
                 <thead class="bg-secondary bg-gradient">
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">제목</th>
-                    <th scope="col">작성자</th>
-                    <th scope="col">작성일</th>
-                    <th scope="col">조회</th>
-                    <th scope="col">좋아요</th>
+                    <th scope="col">タイトル</th>
+                    <th scope="col">作成者</th>
+                    <th scope="col">作成日</th>
+                    <th scope="col">閲覧</th>
+                    <th scope="col">いいね！</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -80,7 +80,7 @@
                       <a
                         th:href="@{|/community/post?id=${el.id}|}"
                         th:text="${el.title}"
-                        >제목</a
+                        >タイトル</a
                       >
                       <img
                         th:if="${el.image_exists}==1"
