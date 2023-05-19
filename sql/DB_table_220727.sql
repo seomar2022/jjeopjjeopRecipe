@@ -229,7 +229,7 @@ CREATE TABLE CommunityBoard (
 
 COMMENT ON COLUMN CommunityBoard.user_id IS '아이디';
 
-COMMENT ON COLUMN CommunityBoard.category IS '0 자유글 1 レシピ후기';
+COMMENT ON COLUMN CommunityBoard.category IS '0 フリー글 1 レシピレビュー';
 
 DROP TABLE Image;
 

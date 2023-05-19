@@ -41,7 +41,7 @@ public class CommunityService {
 
     public void save(CommunityDTO dto, List<MultipartFile> image){
 
-        //자유글이면 レシピ가 선택됐더라도 선택X
+        //フリー글이면 レシピ가 선택됐더라도 선택X
         if(dto.getCategory().equals("0")){
             dto.setRcp_seq(null);
         }

@@ -12,7 +12,7 @@ public class CommunityForm {
     @ApiModelProperty(example = "유저아이디")
     private String user_id;
 
-    @ApiModelProperty(example = "0 - 자유글 , 1 - レシピ후기")
+    @ApiModelProperty(example = "0 - フリー글 , 1 - レシピレビュー")
     private String category;
 
     @ApiModelProperty(example = "レシピ 후기글일경우 0보다 큰 숫자(レシピ 일련번호)입력")

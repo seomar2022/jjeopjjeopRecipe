@@ -21,7 +21,7 @@ public class CommunityDTO {
 
     private Integer id;
     private String user_id;
-    private Integer rcp_seq;//レシピ후기일경우 번호
+    private Integer rcp_seq;//レシピレビュー일경우 번호
     private String category;
 
     @Size(min=1,max=30)

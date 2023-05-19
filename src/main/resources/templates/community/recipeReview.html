@@ -20,7 +20,7 @@
           >상세検索</a
         >
         <h1>コミュニティ 掲示板</h1>
-        <h3>レシピ 후기</h3>
+        <h3>レシピ レビュー</h3>
 
         <div class="caption">
           <p class="p-2 bd-highlight" th:text="|글 수 : ${page.count}|">
@@ -37,7 +37,7 @@
           <div class="row">
             <div
               class="col-2"
-              th:replace="/fragments/communityCategory::category('レシピ후기')"
+              th:replace="/fragments/communityCategory::category('レシピレビュー')"
             >
               <ul class="list-group">
                 <li class="list-group-item">
@@ -45,12 +45,12 @@
                 </li>
                 <li class="list-group-item">
                   <a href="/board/recipeReview" class="nav-link category"
-                    >レシピ후기</a
+                    >レシピレビュー</a
                   >
                 </li>
                 <li class="list-group-item">
                   <a href="/board/freeForum" class="nav-link category"
-                    >자유掲示板</a
+                    >フリー掲示板</a
                   >
                 </li>
               </ul>

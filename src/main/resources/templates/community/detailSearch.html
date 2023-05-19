@@ -42,8 +42,8 @@
 
             <select class="form-select" name="option" th:field="*{category}">
               <option value="all">全体</option>
-              <option value="free">자유글</option>
-              <option value="recipe">レシピ후기</option>
+              <option value="free">フリー글</option>
+              <option value="recipe">レシピレビュー</option>
             </select>
 
             <select class="form-select" name="option" th:field="*{option}">
@@ -81,9 +81,9 @@
           <p
             class="p-2 bd-highlight"
             th:if="${page}"
-            th:text="|글 수 : ${page.count}|"
+            th:text="|投稿数 : ${page.count}|"
           >
-            글 수:
+            投稿数:
           </p>
         </div>
 
