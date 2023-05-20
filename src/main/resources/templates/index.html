@@ -82,20 +82,20 @@
               class="form-control"
               id="inputPassword2"
               name="keyword"
-              placeholder="재료로 레시피를 검색해보세요."
+              placeholder="材料로 レシピ를 検索해보세요."
             />
           </div>
           <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3">검색</button>
+            <button type="submit" class="btn btn-primary mb-3">検索</button>
           </div>
         </form>
       </div>
     </div>
 
     <main class="container-fluid">
-      <!-- ==============레시피 분류=============== -->
+      <!-- ==============レシピ カテゴリー=============== -->
       <div class="recipe-cat-box bg-white mt-4">
-        <h5 class="title">레시피 분류</h5>
+        <h5 class="title">レシピ カテゴリー</h5>
         <div>
           <!-- 밥, 반찬, 국, 디저트, 음료 -->
           <ul class="d-flex justify-content-around">
@@ -107,7 +107,7 @@
                     width="50px"
                   />
                 </div>
-                <p>메인요리</p>
+                <p>メイン料理</p>
               </li>
             </a>
             <a th:href="@{/recipe/list?cate_seq=2}">
@@ -119,7 +119,7 @@
                   />
                 </div>
 
-                <p>밑반찬</p>
+                <p>おかず</p>
               </li>
             </a>
             <a th:href="@{/recipe/list?cate_seq=3}">
@@ -131,7 +131,7 @@
                   />
                 </div>
 
-                <p>국/탕/찌개</p>
+                <p>鍋料理</p>
               </li>
             </a>
             <a th:href="@{/recipe/list?cate_seq=11}">
@@ -142,7 +142,7 @@
                     width="50px"
                   />
                 </div>
-                <p>면</p>
+                <p>麺類</p>
               </li>
             </a>
             <a th:href="@{/recipe/list?cate_seq=10}">
@@ -153,7 +153,7 @@
                     width="50px"
                   />
                 </div>
-                <p>디저트</p>
+                <p>デザート</p>
               </li>
             </a>
             <a th:href="@{/recipe/list?cate_seq=14}">
@@ -164,19 +164,19 @@
                     width="50px"
                   />
                 </div>
-                <p>차/음료/술</p>
+                <p>飲み物</p>
               </li>
             </a>
           </ul>
         </div>
       </div>
-      <!-- ===============안기레시피================ -->
+      <!-- ===============안기レシピ================ -->
       <div class="recipe-popular bg-white">
         <div class="d-flex title">
-          <h5 class="me-auto">인기레시피</h5>
-          <!-- 스크랩 순으로 정렬된 레시피 페이지로 이동 -->
+          <h5 class="me-auto">人気レシピ</h5>
+          <!-- 保存 순으로 정렬된 レシピ 페이지로 이동 -->
           <h6>
-            <a th:href="@{/recipe/list?rcp_sort=2&cate_seq=0}">> 더보기 </a>
+            <a th:href="@{/recipe/list?rcp_sort=2&cate_seq=0}">> more </a>
           </h6>
         </div>
         <div class="row">
@@ -197,29 +197,29 @@
                 class="rounded float"
               />
               <p th:text="${rcp.rcp_name}" class="text-start fw-bold">
-                레시피 제목
+                レシピ タイトル
               </p>
             </a>
             <p class="d-flex justify-content-between">
-              <span th:text="${rcp.user_id}" class="left">닉네임</span
+              <span th:text="${rcp.user_id}" class="left">ニックネーム</span
               ><span th:text="'♥'+${rcp.scrap}" class="right mx-2"
-                >스크랩수</span
+                >保存数</span
               >
             </p>
             <p class="d-flex justify-content-between">
-              <span th:text="${rcp.time}" class="left">시간</span
-              ><span th:text="${rcp.difficulty}">난이도 하</span
-              ><span th:text="${rcp.amount}" class="right">3인분</span>
+              <span th:text="${rcp.time}" class="left">時間</span
+              ><span th:text="${rcp.difficulty}">難易度 下</span
+              ><span th:text="${rcp.amount}" class="right">3人分</span>
             </p>
           </div>
         </div>
       </div>
-      <!-- ================인기상품==================== -->
+      <!-- ================人気商品==================== -->
       <div class="shopping-popular bg-white mb-5">
         <div class="d-flex title">
-          <h5 class="me-auto">인기 상품</h5>
-          <!-- 품절임박한 상품 순으로 정렬된 레시피 페이지로 이동 -->
-          <h6><a th:href="@{/produce/list/sort/1}">> 더보기</a></h6>
+          <h5 class="me-auto">人気商品</h5>
+          <!-- 품절임박한 商品 순으로 정렬된 レシピ 페이지로 이동 -->
+          <h6><a th:href="@{/produce/list/sort/1}">> more</a></h6>
         </div>
         <div class="row">
           <div
@@ -233,14 +233,14 @@
               style="cursor: pointer"
             >
               <figure class="block-4-image">
-                <!--                                    이미지 클릭해도 상세페이지로 가게 설정함. 아님 아예 a태그 이벤트 막는게 나은가?-->
+                <!--                                    イメージ 클릭해도 상세페이지로 가게 설정함. 아님 아예 a태그 이벤트 막는게 나은가?-->
                 <a
                   th:href="@{/produce/view/{produce_num}(produce_num=${produce.produce_num})}"
                 >
                   <img
                     class="img-fluid"
                     th:src="${produce.produce_image_path}"
-                    alt="상품이미지"
+                    alt="商品イメージ"
                   />
                 </a>
               </figure>
@@ -249,16 +249,16 @@
                   class="text-dark font-weight-bold"
                   th:text="${produce.produce_name}"
                 >
-                  상품명
+                  商品名
                 </h3>
                 <p class="mb-0 text-secondary" th:text="${produce.user_id}">
-                  판매자
+                  販売者
                 </p>
                 <p
                   class="font-weight-bold"
-                  data-th-text="${#numbers.formatInteger(produce.price, 3, 'COMMA') + '원'}"
+                  data-th-text="${#numbers.formatInteger(produce.price, 3, 'COMMA') + '円'}"
                 >
-                  상품가격
+                  商品価格
                 </p>
               </div>
             </div>
@@ -274,11 +274,11 @@
             <a href="https://getbootstrap.com/">Bootstrap</a> by
             <a href="https://twitter.com/mdo">@mdo</a>.
             <br />
-            레시피분류 아이콘 저작권 :
+            レシピカテゴリーアイコン著作権 :
             <a
               href="https://www.flaticon.com/kr/authors/eucalyp"
-              title="수프 아이콘"
-              >Restaurant 아이콘팩 제작자: Eucalyp - Flaticon</a
+              title="수프 アイコン"
+              >Restaurantアイコン制作者: Eucalyp - Flaticon</a
             >
           </p>
           <p>
@@ -286,7 +286,7 @@
           </p>
         </div>
         <a th:href="@{/admin/main}" class="ms-auto"
-          ><i class="fa fa-cog mx-3" title="관리자 페이지로 이동"></i
+          ><i class="fa fa-cog mx-3" title="管理者ページ"></i
         ></a>
       </div>
     </footer>

@@ -1,4 +1,4 @@
-//좋아요 구현
+//いいね！ 구현
 const likeBtn = document.querySelector('#like-btn');
 likeBtn.addEventListener('click', dataSend);
 
@@ -27,7 +27,7 @@ function dataSend() {
 }
 
 /**
- * 댓글 수정 구현
+ * コメント 수정 구현
  */
 const editBtns = document.querySelectorAll('.edit-btn');
 const commentBox = document.querySelectorAll('input.comment-content');

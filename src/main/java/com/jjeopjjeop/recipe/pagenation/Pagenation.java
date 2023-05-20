@@ -25,7 +25,7 @@ public class Pagenation {
     //heeyeon
     private String keyword;
 
-    // ↓레시피용으로 추가↓
+    // ↓レシピ용으로 추가↓
     private Integer blockPageCnt;//한 블록에 보여줄 페이지수
 
 
@@ -51,9 +51,9 @@ public class Pagenation {
 
     }
 
-    // ↓레시피, 레시피 댓글용↓
+    // ↓レシピ, レシピ コメント용↓
     public Pagenation(int page, int count, boolean rcpOrCo){
-        // rcpOrCo가 true일 시 레시피, false일 시 레시피 댓글
+        // rcpOrCo가 true일 시 レシピ, false일 시 レシピ コメント
         this.page = page;
         this.count = count;
         this.perPage = rcpOrCo ? 9 : 5;

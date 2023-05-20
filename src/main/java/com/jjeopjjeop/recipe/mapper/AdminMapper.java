@@ -59,16 +59,16 @@ public interface AdminMapper {
     void delComm(Integer id);
 
 
-    //레시피 카운드
+    //レシピ 카운드
     @Select("select count(*) from Recipe")
     int countrcp(int cate_seq);
 
 
-    //레시피글 누르면 상세내용 페이지
+    //レシピ글 누르면 상세내용 페이지
     @Select("select * from Recipe where rcp_name=#{rcp_name}")
     RecipeDTO rcpDetail(@Param("rcp_name") String rcp_name);
 
-    //레시피 삭제
+    //レシピ 삭제
     @Delete("delete from Recipe where rcp_seq=#{num}")
     void delRcp(int rcp_seq);
 

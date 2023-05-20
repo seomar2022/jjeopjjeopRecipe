@@ -44,7 +44,7 @@ class ProduceServiceImp implements ProduceService {
         return produceDAO.produceListSort(map);
     }
 
-    //판매글 작성과 판매글 수정을 위한 이미지 저장 메소드
+    //판매글 작성과 판매글 수정을 위한 イメージ 저장 메소드
     public String imageStore(MultipartFile file) throws Exception{
         String fileName;
         if(!file.isEmpty()) {//업로드한 파일이 있으면
@@ -71,16 +71,16 @@ class ProduceServiceImp implements ProduceService {
 
         if(file.isEmpty()){
             //파일이 안바뀌어서 비어있다면
-            //원래이미지를 바꾸지말고 그대로 둔다.
+            //원래イメージ를 바꾸지말고 그대로 둔다.
             String originalProduceImage = produceViewProcess(produceDTO.getProduce_num()).getProduce_image();
             String originalProduceImagePath = produceViewProcess(produceDTO.getProduce_num()).getProduce_image_path();
             produceDTO.setProduce_image(originalProduceImage);
             produceDTO.setProduce_image_path(originalProduceImagePath);
         }else {
             //파일이 바뀌어서 비어있지 않다면
-            ////media폴더에 있는 이미지파일도 같이 삭제
+            ////media폴더에 있는 イメージ파일도 같이 삭제
             String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\media\\produce\\"
-                    + produceDAO.produceView(produceDTO.getProduce_num()).getProduce_image(); //이미지 파일 경로
+                    + produceDAO.produceView(produceDTO.getProduce_num()).getProduce_image(); //イメージ 파일 경로
             File deleteFile = new File(filePath);
             if(deleteFile.exists()) {
                 deleteFile.delete(); //삭제
@@ -122,7 +122,7 @@ class ProduceServiceImp implements ProduceService {
         return produceDAO.searchSellerBusinessName(user_id);
     }
 
-    //하영 통합검색에 필요.
+    //하영 통합検索에 필요.
     @Override
     public List<ProduceDTO> findProduceByKeyword(String keyword) {
         return produceDAO.findProduceByKeyword(keyword);

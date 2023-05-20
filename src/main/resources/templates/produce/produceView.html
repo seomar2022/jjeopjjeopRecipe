@@ -29,20 +29,20 @@
 
     <div class="site-section">
         <div class="container">
-            <!-- ===========================상품소개 시작=======================================-->
+            <!-- ===========================商品소개 시작=======================================-->
              <div class="row">
-                <div class="col-md-6"><!--왼쪽 6칸은 상품이미지-->
+                <div class="col-md-6"><!--왼쪽 6칸은 商品イメージ-->
                     <th:block th:if="${#strings.isEmpty(produceDTO.produce_image)}">
-                        <img class="img-fluid" src="\media\images\rcp_mainimg.png" alt="대체이미지" />
+                        <img class="img-fluid" src="\media\images\rcp_mainimg.png" alt="대체イメージ" />
                     </th:block>
                     <th:block th:unless="${#strings.isEmpty(produceDTO.produce_image)}">
                         <img class="img-fluid" th:src="${produceDTO.produce_image_path}" alt="商品イメージ" />
                     </th:block>
                 </div>
-                <div class="col-md-6"><!--오른쪽 6칸은 기타 상품설명 등-->
+                <div class="col-md-6"><!--오른쪽 6칸은 기타 商品설명 등-->
                     <div>
-<!--                        <input th:value="${session.user_id}">&lt;!&ndash;누가 로그인했는지 알수있게. 나중에 지우기.&ndash;&gt;-->
-                        <!--로그인한 사람이 글 쓴 사람일 때만 삭제, 수정링크 보이게-->
+<!--                        <input th:value="${session.user_id}">&lt;!&ndash;누가 ログイン했는지 알수있게. 나중에 지우기.&ndash;&gt;-->
+                        <!--ログイン한 사람이 글 쓴 사람일 때만 삭제, 수정링크 보이게-->
                         <th:block th:if="${session.user_id == produceDTO.user_id}">
                             <a th:href="@{/produce/update/{produce_num}(produce_num=${produceNum})}">修正  </a>
                             <a th:href="@{/produce/update/endOfSale/{produce_num}(produce_num=${produceNum})}">販売終了</a>
@@ -53,8 +53,8 @@
                          &nbsp&nbsp<span class="text-dark h5" th:text="'レビュー: '+ ${#numbers.formatDecimal(#aggregates.sum(list.![rating])*1.0 / #lists.size(list), 1, 1)} + '点'"> </span>
                     </th:block>
                     <p th:text="'['+${businessName}+']'">seller_name</p>
-                    <span><strong class="text-dark h4" data-th-text="${#numbers.formatInteger(produceDTO.price, 3, 'COMMA') + '円'}">상품가격</strong></span>
-                    <p th:text="${produceDTO.produce_description}" class="mt-2">상품설명</p>
+                    <span><strong class="text-dark h4" data-th-text="${#numbers.formatInteger(produceDTO.price, 3, 'COMMA') + '円'}">商品価格</strong></span>
+                    <p th:text="${produceDTO.produce_description}" class="mt-2">商品설명</p>
 
                     <form name="cartWrite" id="cartWrite" method="post">
                         <div class="input-group mb-3" style="max-width: 120px;">
@@ -80,7 +80,7 @@
                     </form>
                 </div>
             </div>
-            <!-- ===========================상품소개 끝=======================================-->
+            <!-- ===========================商品소개 끝=======================================-->
             <!-- ===========================리뷰 시작=======================================-->
             <div class="mb-5 mt-3">
                 <h2 class="mt-3 mb-3">カスタマーレビュー</h2>

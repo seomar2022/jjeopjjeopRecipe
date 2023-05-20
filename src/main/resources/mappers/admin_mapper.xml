@@ -56,7 +56,7 @@
         WHERE seqnum BETWEEN #{startRow} AND #{endRow}
     </select>
 
-    <!-- 레시피 신고순 -->
+    <!-- レシピ 신고순 -->
     <select id="rcpList" parameterType="Map" resultType="RecipeDTO">
         SELECT rcp_li.* FROM
         (SELECT rcp.*, rownum rm FROM
@@ -74,7 +74,7 @@
         ]]>
     </select>
 
-    <!--커뮤니티 신고순 리스트-->
+    <!--コミュニティ 신고순 리스트-->
     <select id="reportCom" parameterType="com.jjeopjjeop.recipe.pagenation.Pagenation" resultType="CommunityDTO">
         SELECT * FROM (select t1.*,row_number() OVER (order by report desc) AS seqnum
         FROM CommunityBoard t1) t1

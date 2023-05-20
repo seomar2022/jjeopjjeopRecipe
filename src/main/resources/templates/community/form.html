@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>커뮤니티 게시판</title>
+    <title>コミュニティ 掲示板</title>
     <th:block th:replace="fragments/head :: links">
     </th:block>
     <link
@@ -17,7 +17,7 @@
     <nav th:replace="fragments/nav :: front-nav('community')"></nav>
     <main class="container">
       <div class="bg-white p-5 rounded d-flex flex-column align-items-center">
-        <h1>게시판 글쓰기</h1>
+        <h1>掲示板 글쓰기</h1>
         <hr class="my-2 line border border-dark" />
 
         <form
@@ -28,20 +28,20 @@
           th:object="${community}"
         >
           <select th:field="*{category}" class="form-select mb-3 category">
-            <option value="0">자유글</option>
-            <option value="1" selected>레시피후기</option>
+            <option value="0">フリー글</option>
+            <option value="1" selected>レシピレビュー</option>
           </select>
           <div class="recipeSearch mb-3">
             <hr />
-            <p class="title">레시피 선택</p>
+            <p class="title">レシピ 선택</p>
             <div>
               <div class="recipeSearch-box">
                 <input type="text" class="form-control mx-3 searchInput" />
                 <button type="button" class="btn btn-primary mx-3 searchBtn">
-                  레시피 조회
+                  レシピ 閲覧
                 </button>
               </div>
-              <!-- ==========레시피 조회 결과 박스========= -->
+              <!-- ==========レシピ 閲覧 결과 박스========= -->
               <div
                 class="recipeSearh-results m-3 border border-secondary rounded recipe-box"
               >
@@ -61,20 +61,20 @@
                     <p class="d-flex justify-content-between">
                       <a th:href="@{/recipe/view/{rcp_seq}(rcp_seq=${recipe.rcp_seq})}" target="_blank">
                         <span
-                          th:text="|레시피 이름 : ${recipe.rcp_name}|"
+                          th:text="|レシピ 이름 : ${recipe.rcp_name}|"
                         >
-                          레시피 이름 : gkdl
+                          レシピ 이름 : gkdl
                         </span>
                       </a>
-                      <span th:text="'♥'+${recipe.scrap}" class="right">스크랩수</span>
+                      <span th:text="'♥'+${recipe.scrap}" class="right">保存수</span>
                     </p>
                 <p class="d-flex justify-content-between">
-                  <span th:text="|작성자: ${recipe.user_id}|" class="left">닉네임</span
+                  <span th:text="|作成者: ${recipe.user_id}|" class="left">ニックネーム</span
                   >
                 </p>
                 <p class="d-flex justify-content-between">
-                  <span th:text="${recipe.time}" class="left">시간</span><span th:text="${recipe.difficulty}">난이도 하</span
-                  ><span th:text="${recipe.amount}" class="right">3인분</span>
+                  <span th:text="${recipe.time}" class="left">時間</span><span th:text="${recipe.difficulty}">難易度 하</span
+                  ><span th:text="${recipe.amount}" class="right">3人分</span>
                 </p>
               </div>
                   <div class="mt-5 mx-3">
@@ -84,7 +84,7 @@
                 </div>
               </div>
             </div>
-            <label for="" class="form-label">선택 레시피 :</label>
+            <label for="" class="form-label">선택 レシピ :</label>
             <input type="text" class="mt-4 select-value" th:field="*{rcp_seq}" readonly></input>
             <hr />
           </div>
@@ -94,11 +94,11 @@
               type="text"
               class="form-control"
               th:errorclass="is-invalid"
-              placeholder="제목을 입력해주세요."
+              placeholder="タイトル을 입력해주세요."
               th:field="*{title}"
               maxlength="30"
             />
-            <div class="invalid-feedback" th:errors="*{title}">제목오류</div>
+            <div class="invalid-feedback" th:errors="*{title}">タイトル오류</div>
           </div>
           <div class="mb-3">
             <label for="formFileSm" class="form-label">사진첨부</label>

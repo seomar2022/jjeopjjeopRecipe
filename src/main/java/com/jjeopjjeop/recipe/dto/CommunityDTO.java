@@ -21,7 +21,7 @@ public class CommunityDTO {
 
     private Integer id;
     private String user_id;
-    private Integer rcp_seq;//레시피후기일경우 번호
+    private Integer rcp_seq;//レシピレビュー일경우 번호
     private String category;
 
     @Size(min=1,max=30)
@@ -59,7 +59,7 @@ public class CommunityDTO {
     }
 
     public String getFormatted_created_at() {
-        //오늘이면 시간만 넣고 아니면 날짜만 넣기
+        //오늘이면 時間만 넣고 아니면 날짜만 넣기
         SimpleDateFormat simpleDateFormatForPast = new SimpleDateFormat("yyyy.MM.dd");
         SimpleDateFormat simpleDateFormatForToday = new SimpleDateFormat("HH:mm");
 

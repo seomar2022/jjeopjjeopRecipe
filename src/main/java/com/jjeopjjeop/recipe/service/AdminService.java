@@ -85,23 +85,23 @@ public class AdminService {
     }
 
 
-    //레시피 리스트(신고순)
+    //レシピ 리스트(신고순)
     public List<RecipeDTO> rcpList(Pagenation pagenation, int rcp_sort, int cate_seq){
         return adminDAO.rcpList(Map.of("page",pagenation,"rcp_sort",rcp_sort,"cate_seq",cate_seq));
     }
 
-    //레시피 카운트
+    //レシピ 카운트
     public int countrcp(int cate_seq){
         return adminMapper.countrcp(cate_seq);
     }
 
 
-    //레시피 삭제
+    //レシピ 삭제
     public void delRcp(int rcp_seq){
         adminMapper.delRcp(rcp_seq);
     }
 
-    //게시판 목록 조회(신고순)
+    //게시판 목록 閲覧(신고순)
     public List<CommunityDTO> reportCom(Pagenation pagenation){
         return adminDAO.reportCom(pagenation);
     }

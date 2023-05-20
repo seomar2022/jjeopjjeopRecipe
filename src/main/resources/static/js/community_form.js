@@ -30,7 +30,7 @@ function showRecipeSearchBtn() {
 
 showRecipeSearchBtn();
 
-//레시피 조회
+//レシピ 閲覧
 const searchBtn = document.querySelector('.searchBtn');
 const searchInput = document.querySelector('.searchInput');
 
@@ -50,7 +50,7 @@ function searchRecipe() {
   });
 }
 
-//레시피 선택
+//レシピ 선택
 function selectRecipeProcess() {
   const selectBtns = document.querySelectorAll('.recipe-select');
   const selectValueInput = document.querySelector('.select-value');

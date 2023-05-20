@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head('게시판')">
+<head th:replace="fragments/head('掲示板')">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +35,7 @@
 <nav th:replace="fragments/nav :: front-nav('')"></nav>
 <main class="container">
   <div class="bg-white p-5 rounded d-flex flex-column align-items-center">
-    <h1>커뮤니티 게시판</h1>
+    <h1>コミュニティ 掲示板</h1>
     <h3>전체글</h3>
     <div class="container-fluid">
       <div class="row">
@@ -48,13 +48,13 @@
               <a href="/board" class="nav-link category">회원관리</a>
             </li>
             <li class="list-group-item">
-              <a href="/board" class="nav-link category">레시피관리</a>
+              <a href="/board" class="nav-link category">レシピ관리</a>
             </li>
             <li class="list-group-item">
               <a href="/board" class="nav-link category">쇼핑관리</a>
             </li>
             <li class="list-group-item">
-              <a href="/board" class="nav-link category">게시판 관리</a>
+              <a href="/board" class="nav-link category">掲示板 관리</a>
             </li>
           </ul>
         </div>
@@ -64,10 +64,10 @@
             <a th:href="@{/recipe/view/{rcp_seq}(rcp_seq=${rcp.rcp_seq}, currentPage=${pDto.currentPage})}">
               <img th:if="${not #strings.isEmpty(rcp.filename)}" th:src="@{${rcp.filepath}+${rcp.filename}}" width="250px" height="180px" class="rounded float" />
               <img th:if="${#strings.isEmpty(rcp.filename)}" src="/media/images/rcp_mainimg.png" width="250px" height="180px" class="rounded float" />
-              <p th:text="${rcp.rcp_name}" class="text-start fw-bold">레시피 제목</p>
+              <p th:text="${rcp.rcp_name}" class="text-start fw-bold">レシピ タイトル</p>
             </a>
             <p class="d-flex justify-content-between">
-              <span th:text="${rcp.user_id}" class="left">닉네임</span
+              <span th:text="${rcp.user_id}" class="left">ニックネーム</span
               ><span th:text="'♥'+${rcp.report}" class="right">신고수</span>
             </p>
           </div>

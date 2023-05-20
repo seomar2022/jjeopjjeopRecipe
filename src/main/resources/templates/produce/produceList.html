@@ -48,18 +48,18 @@
                     </div>
                     <!--================드롭다운 끝=================-->
                     <div class="row mb-5" >
-                        <!--  ====================상품 카드 시작======================-->
+                        <!--  ====================商品 카드 시작======================-->
                         <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up" th:each="produce : ${list}">
                             <div class="block-4 text-center border" th:onclick="|location.href='@{/produce/view/{produce_num}(produce_num=${produce.produce_num})}'|"
                                  style="cursor:pointer;">
                                 <figure class="block-4-image">
-                                    <!--이미지 클릭해도 상세페이지로 가게 설정함. 아님 아예 a태그 이벤트 막는게 나은가?-->
+                                    <!--イメージ 클릭해도 상세페이지로 가게 설정함. 아님 아예 a태그 이벤트 막는게 나은가?-->
                                     <a th:href="@{/produce/view/{produce_num}(produce_num=${produce.produce_num})}">
                                         <th:block th:if="${#strings.isEmpty(produce.produce_image)}">
-                                            <img class="img-fluid" src="\media\images\rcp_mainimg.png" alt="대체이미지" />
+                                            <img class="img-fluid" src="\media\images\rcp_mainimg.png" alt="대체イメージ" />
                                         </th:block>
                                         <th:block th:unless="${#strings.isEmpty(produce.produce_image)}">
-                                            <img class="img-fluid" th:src="${produce.produce_image_path}" alt="상품이미지" />
+                                            <img class="img-fluid" th:src="${produce.produce_image_path}" alt="商品イメージ" />
                                         </th:block>
                                     </a>
                                 </figure>
@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--  ====================상품 카드 끝======================-->
+                        <!--  ====================商品 카드 끝======================-->
 
                     <!--  ====================페이지네이션 시작======================-->
                         <nav class="mt-3" th:if="${page.count>page.perPage}">

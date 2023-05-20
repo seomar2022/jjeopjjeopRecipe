@@ -32,7 +32,7 @@ public class AdminController {
     private final RecipeService service;
 
 
-    //관리자 페이지 실행
+    //管理者 페이지 실행
     @MySecured(role = MySecured.Role.ADMIN)
     @GetMapping("/main")
     public String admin(){
@@ -122,7 +122,7 @@ public class AdminController {
     }
 
 
-    //레시피 목록
+    //レシピ 목록
     @MySecured(role = MySecured.Role.ADMIN)
     @GetMapping("/r_index")
     //다현님꺼
@@ -134,7 +134,7 @@ public class AdminController {
         Pagenation pagenation = new Pagenation(page, adminService.countrcp(cate_seq) , true);
 
 
-        // 전체 레시피 목록
+        // 전체 レシピ 목록
         List<RecipeDTO> rcpList = service.listProcess(pagenation, rcp_sort, cate_seq);
 
         mav.addObject("rcp_sort", rcp_sort);
@@ -145,13 +145,13 @@ public class AdminController {
         return mav;
     }
 
-    //레시피글 누르면 상세내용 페이지 ->???????
+    //レシピ글 누르면 상세내용 페이지 ->???????
     @GetMapping("/recipe/view/{rcp_seq}")
     public String rcpdetail(String rcp_name, Model model){
         return "redirect:/recipe/rcpView";
     }
 
-    //레시피 삭제
+    //レシピ 삭제
     @MySecured(role = MySecured.Role.ADMIN)
     @GetMapping("delrcp/{rcp_seq}")
     public  String delRcp(@PathVariable("rcp_seq") int rcp_seq){

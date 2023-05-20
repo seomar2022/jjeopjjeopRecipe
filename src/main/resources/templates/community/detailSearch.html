@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>커뮤니티 게시판 상세검색</title>
+    <title>コミュニティ掲示板 상세検索</title>
     <th:block th:replace="fragments/head :: links"> </th:block>
     <link
       rel="stylesheet"
@@ -17,9 +17,9 @@
     <main class="container">
       <div class="bg-white p-5 rounded d-flex flex-column align-items-center">
         <a th:href="@{/community}" class="btn btn btn-secondary me-auto"
-          >게시판</a
+          >掲示板</a
         >
-        <h1>상세검색</h1>
+        <h1>상세検索</h1>
         <form
           role="search"
           method="post"
@@ -34,23 +34,23 @@
               th:field="*{period}"
               onchange="OnChange();"
             >
-              <option value="all">전체기간</option>
-              <option value="day">1일</option>
-              <option value="week">1주</option>
-              <option value="Enter Date">기간입력</option>
+              <option value="all">全期間</option>
+              <option value="day">1日</option>
+              <option value="week">1週</option>
+              <option value="Enter Date">入力</option>
             </select>
 
             <select class="form-select" name="option" th:field="*{category}">
-              <option value="all">전체</option>
-              <option value="free">자유글</option>
-              <option value="recipe">레시피후기</option>
+              <option value="all">全体</option>
+              <option value="free">フリー글</option>
+              <option value="recipe">レシピレビュー</option>
             </select>
 
             <select class="form-select" name="option" th:field="*{option}">
-              <option value="title">제목만</option>
-              <option value="writer">글작성자</option>
-              <option value="content">글내용</option>
-              <option value="writerAndContent">글+제목</option>
+              <option value="title">タイトルのみ</option>
+              <option value="writer">作成者</option>
+              <option value="content">本文</option>
+              <option value="writerAndContent">本文+タイトル</option>
             </select>
 
             <input
@@ -81,9 +81,9 @@
           <p
             class="p-2 bd-highlight"
             th:if="${page}"
-            th:text="|글 수 : ${page.count}|"
+            th:text="|投稿数 : ${page.count}|"
           >
-            글 수:
+            投稿数:
           </p>
         </div>
 
@@ -93,11 +93,11 @@
               <thead class="bg-secondary bg-gradient">
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">제목</th>
-                  <th scope="col">작성자</th>
-                  <th scope="col">작성일</th>
-                  <th scope="col">조회</th>
-                  <th scope="col">좋아요</th>
+                  <th scope="col">タイトル</th>
+                  <th scope="col">作成者</th>
+                  <th scope="col">作成日</th>
+                  <th scope="col">閲覧</th>
+                  <th scope="col">いいね！</th>
                 </tr>
               </thead>
               <tbody>
@@ -112,7 +112,7 @@
                     <a
                       th:href="@{|/community/post?id=${el.id}|}"
                       th:text="${el.title}"
-                      >제목</a
+                      >タイトル</a
                     >
                     <img
                       th:if="${el.image_exists}==1"

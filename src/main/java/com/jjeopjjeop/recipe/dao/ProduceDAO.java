@@ -26,9 +26,9 @@ public interface ProduceDAO {
     
     int produceSortCount(int sort); //페이지처리를 위한 판매글(정렬) 개수세기
 
-    String searchSellerBusinessName(String user_id); //판매자id로 상호명 검색.
+    String searchSellerBusinessName(String user_id); //판매자id로 상호명 検索.
 
-    //하영 통합검색
+    //하영 통합検索
     List<ProduceDTO> findProduceByKeyword(String keyword);
 
     List<ProduceDTO> findProduceByKeywordWithPaging(Map<String, Object> map);

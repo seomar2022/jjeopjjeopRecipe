@@ -27,7 +27,7 @@ public class CommunityCommentDTO {
     private String formatted_created_at;
 
     public String getFormatted_created_at() {
-        //오늘이면 시간만 넣고 아니면 날짜만 넣기
+        //오늘이면 時間만 넣고 아니면 날짜만 넣기
         SimpleDateFormat simpleDateFormatForPast = new SimpleDateFormat("yyyy.MM.dd");
         SimpleDateFormat simpleDateFormatForToday = new SimpleDateFormat("HH:mm");
 

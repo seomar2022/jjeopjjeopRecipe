@@ -17,7 +17,7 @@ public interface RecipeDAO {
     public List<RecipeDTO> favoriteList();
     public List<CategoryDTO> cateList();
 
-    // 검색 리스트
+    // 検索 리스트
     public int searchCount(Map<String, Object> map);
     public List<RecipeDTO> searchList(Map<String, Object> map);
 
@@ -29,16 +29,16 @@ public interface RecipeDAO {
 
     // scrap 처리
     public int checkScrap(UserScrapDTO userScrapDTO); //중복인가?
-    public void scrapP(UserScrapDTO userScrapDTO); //스크랩 등록
-    public void updateScrapP(int num); //레시피 스크랩수 증가
-    public void scrapM(UserScrapDTO userScrapDTO); //스크랩 해제
-    public void updateScrapM(int num); //레시피 스크랩수 감소
-    public List<RecipeDTO> getScraps(String user_id); //스크랩한 레시피 조회
+    public void scrapP(UserScrapDTO userScrapDTO); //保存 등록
+    public void updateScrapP(int num); //レシピ 保存수 증가
+    public void scrapM(UserScrapDTO userScrapDTO); //保存 해제
+    public void updateScrapM(int num); //レシピ 保存수 감소
+    public List<RecipeDTO> getScraps(String user_id); //保存한 レシピ 閲覧
 
     // report 처리
     public int checkReport(ReportRecipeDTO reportRecipeDTO); //중복인가?
     public void report(ReportRecipeDTO reportRecipeDTO); //신고
-    public void updateReport(int num); //레시피 신고수 증가
+    public void updateReport(int num); //レシピ 신고수 증가
 
     // write 처리
     public void write(RecipeDTO recipeDTO);
@@ -57,7 +57,7 @@ public interface RecipeDAO {
     public void changeDeletedRcp(int rcp_seq);
 
     // 첨부파일 처리
-    public String getFile(int rcp_seq); // 레시피 대표 첨부파일
+    public String getFile(int rcp_seq); // レシピ 대표 첨부파일
     public List<String> getFileM(int rcp_seq); // 요리과정 첨부파일
 
     //hayeong

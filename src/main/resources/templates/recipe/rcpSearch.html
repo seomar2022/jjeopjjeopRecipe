@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>레시피 검색</title>
+    <title>レシピ検索</title>
     <th:block th:replace="fragments/head :: links">
     </th:block>
     <link
@@ -21,7 +21,7 @@
             <input
                     type="text"
                     class="form-control rounded"
-                    placeholder="검색어를 입력하세요."
+                    placeholder="検索"
                     name="searchKey"
                     th:value="${searchKey}"
                     aria-label="searchKey"
@@ -34,61 +34,61 @@
                         id="button-addon2"
                         style="margin-left: 10px; color: #fff;"
                 >
-                    레시피 검색
+                    レシピ検索
                 </button>
             </a>
         </div>
     </form>
-    <p class="fw-bold fs-3 text-start" th:text="'《 ' + ${searchKey} + ' 》 검색 결과'"></p>
+    <p class="fw-bold fs-3 text-start" th:text="'《 ' + ${searchKey} + ' 》 検索結果'"></p>
     <div class="rcp_list">
-        * 분류를 선택하여 상세검색을 해보세요!
+        * さまざまな条件から探す
         <div class="cate_box rounded">
             <p>
-                <span>종류별</span>
+                <span>カテゴリー別</span>
                 <span th:each="cate1 : ${cateList}" th:if="${cate1.cate_cate} == 1">
                     &nbsp&nbsp
                     <a th:if="${cate1.cate_seq} == ${cate_seq}" th:href="@{/recipe/search(searchKey=${searchKey})}" class="category" th:value="${cate1.cate_seq}">
-                    <span class="selected" th:text="${cate1.cate_name}">종류별</span>
+                    <span class="selected" th:text="${cate1.cate_name}">カテゴリー別</span>
                     </a>
                     <a th:if="${cate1.cate_seq} != ${cate_seq}" th:href="@{/recipe/search(searchKey=${searchKey}, cate_seq=${cate1.cate_seq})}" class="category" th:value="${cate1.cate_seq}">
-                    <span th:text="${cate1.cate_name}">종류별</span>
+                    <span th:text="${cate1.cate_name}">カテゴリー別</span>
                     </a>
                 </span>
             </p>
             <p>
-                <span>상황별</span>
+                <span>状況別</span>
                 <span th:each="cate2 : ${cateList}" th:if="${cate2.cate_cate} == 2">
                     &nbsp&nbsp
                     <a th:if="${cate2.cate_seq} == ${cate_seq}" th:href="@{/recipe/search(searchKey=${searchKey})}" class="category">
-                    <span class="selected" th:text="${cate2.cate_name}">상황별</span>
+                    <span class="selected" th:text="${cate2.cate_name}">状況別</span>
                     </a>
                     <a th:if="${cate2.cate_seq} != ${cate_seq}" th:href="@{/recipe/search(searchKey=${searchKey}, cate_seq=${cate2.cate_seq})}" class="category" th:value="${cate2.cate_seq}">
-                    <span th:text="${cate2.cate_name}">상황별</span>
+                    <span th:text="${cate2.cate_name}">状況別</span>
                     </a>
                 </span>
             </p>
             <p>
-                <span>재료별</span>
+                <span>材料別</span>
                 <span th:each="cate3 : ${cateList}" th:if="${cate3.cate_cate} == 3">
                     &nbsp&nbsp
                     <a th:if="${cate3.cate_seq} == ${cate_seq}" th:href="@{/recipe/search(searchKey=${searchKey})}" class="category">
-                    <span class="selected" th:text="${cate3.cate_name}">재료별</span>
+                    <span class="selected" th:text="${cate3.cate_name}">材料別</span>
                     </a>
                     <a th:if="${cate3.cate_seq} != ${cate_seq}" th:href="@{/recipe/search(searchKey=${searchKey}, cate_seq=${cate3.cate_seq})}" class="category" th:value="${cate3.cate_seq}">
-                    <span th:text="${cate3.cate_name}">재료별</span>
+                    <span th:text="${cate3.cate_name}">材料別</span>
                     </a>
                 </span>
             </p>
         </div>
-        <p class="fs-5 fw-bold" style="margin-bottom: 0;" th:text="'레시피 조회 결과: '+${pagenation.count}+'건의 레시피'"></p>
+        <p class="fs-5 fw-bold" style="margin-bottom: 0;" th:text="'検索結果: '+${pagenation.count}+'件のレシピ'"></p>
         <hr />
         <div style="text-align: right; margin-bottom: 20px">
             <form role="form" id="rcp_sort_form" th:action="@{/recipe/search(rcp_sort=${rcp_sort})}">
                 <select th:name="rcp_sort" id="rcp_sort" style="margin-right: 0%">
-                    <option th:value="0" th:attr="selected = ${rcp_sort == 0 ? 'true' : 'false'}">최신순</option>
-                    <option th:value="1" th:attr="selected = ${rcp_sort == 1 ? 'true' : 'false'}">오래된순</option>
-                    <option th:value="2" th:attr="selected = ${rcp_sort == 2 ? 'true' : 'false'}">스크랩 많은 순</option>
-                    <option th:value="3" th:attr="selected = ${rcp_sort == 3 ? 'true' : 'false'}">조회수 많은 순</option>
+                    <option th:value="0" th:attr="selected = ${rcp_sort == 0 ? 'true' : 'false'}">新着順</option>
+                    <option th:value="1" th:attr="selected = ${rcp_sort == 1 ? 'true' : 'false'}">古い順</option>
+                    <option th:value="2" th:attr="selected = ${rcp_sort == 2 ? 'true' : 'false'}">保存数順</option>
+                    <option th:value="3" th:attr="selected = ${rcp_sort == 3 ? 'true' : 'false'}">閲覧順</option>
                 </select>
                 <input type="hidden" name="cate_seq" th:value="${cate_seq}">
                 <input type="hidden" name="searchKey" th:value="${searchKey}">
@@ -99,15 +99,15 @@
                 <a th:href="@{/recipe/view/{rcp_seq}(rcp_seq=${rcp.rcp_seq}, rcp_sort=${rcp_sort}, cate_seq=${cate_seq}, page=${pagenation.page}, searchKey=${searchKey})}">
                     <img th:if="${not #strings.isEmpty(rcp.filename)}" th:src="@{${rcp.filepath}+${rcp.filename}}" width="250px" height="180px" class="rounded float" />
                     <img th:if="${#strings.isEmpty(rcp.filename)}" src="/media/images/rcp_mainimg.png" width="250px" height="180px" class="rounded float" />
-                    <p th:text="${rcp.rcp_name}" class="text-start fw-bold">레시피 제목</p>
+                    <p th:text="${rcp.rcp_name}" class="text-start fw-bold">レシピタイトル</p>
                 </a>
                 <p class="d-flex justify-content-between">
-              <span th:text="${rcp.user_id}" class="left">닉네임</span
-              ><span th:text="'♥'+${rcp.scrap}" class="right">스크랩수</span>
+              <span th:text="${rcp.user_id}" class="left">ニックネーム</span
+              ><span th:text="'♥'+${rcp.scrap}" class="right">保存数</span>
                 </p>
                 <p class="d-flex justify-content-between">
-                    <span th:text="${rcp.time}" class="left">시간</span><span th:text="${rcp.difficulty}">난이도 하</span
-                ><span th:text="${rcp.amount}" class="right">3인분</span>
+                    <span th:text="${rcp.time}" class="left">時間</span><span th:text="${rcp.difficulty}">難易度　下</span
+                ><span th:text="${rcp.amount}" class="right">3人分</span>
                 </p>
             </div>
         </div>
@@ -141,7 +141,7 @@
         </nav>
         <div class="d-grid col-4 mx-auto">
             <a th:href="@{/recipe/write}" class="btn btn-warning" style="color:#fff;">
-                새 레시피 등록하기
+                レシピ投稿
             </a>
         </div>
     </div>

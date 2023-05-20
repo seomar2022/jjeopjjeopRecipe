@@ -18,9 +18,9 @@
             <li class="nav-item">
                 <a
                     class="nav-link"
-                    th:classappend="${title}=='내 레시피' ? 'active'"
+                    th:classappend="${title}=='내 レシピ' ? 'active'"
                     th:href="@{/mypage/recipe}"
-                    th:aria-current="${title}=='내 레시피' ? 'page' : false"
+                    th:aria-current="${title}=='내 レシピ' ? 'page' : false"
                     >
                     <i class="fa fa-cutlery"></i>
                     My Recipe
@@ -29,9 +29,9 @@
             <li class="nav-item">
                 <a
                         class="nav-link"
-                        th:classappend="${title}=='내 스크랩' ? 'active'"
+                        th:classappend="${title}=='내 保存' ? 'active'"
                         th:href="@{/mypage/scrap}"
-                        th:aria-current="${title}=='내 스크랩' ? 'page' : false"
+                        th:aria-current="${title}=='내 保存' ? 'page' : false"
                 >
                     <i class="fa fa-bookmark"></i>
                     My Scrap
@@ -51,9 +51,9 @@
             <li class="nav-item">
                 <a
                         class="nav-link"
-                        th:classappend="${title}=='내 후기'? 'active'"
+                        th:classappend="${title}=='내 レビュー'? 'active'"
                         th:href="@{/mypage/review}"
-                        th:aria-current="${title}=='내 후기' ? 'page' : false"
+                        th:aria-current="${title}=='내 レビュー' ? 'page' : false"
                 >
                     <i class="fa fa-book"></i>
                     My Review

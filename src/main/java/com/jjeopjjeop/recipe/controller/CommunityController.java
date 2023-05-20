@@ -114,13 +114,13 @@ public class CommunityController {
 
         String userId = getUserId(session);
 
-        //로그인한 유저가 해당 포스트 좋아요 했는지도 확인함.
+        //ログイン한 유저가 해당 포스트 いいね！ 했는지도 확인함.
         CommunityDTO post = communityService.findPostWithLikeInfo(id,userId);
 
-        //댓글
+        //コメント
         List<CommunityCommentDTO> comments = communityService.findComments(id);
 
-        //글이 레시피 후기글이면 레시피 정보도 넘기기.
+        //글이 レシピ 후기글이면 レシピ 정보도 넘기기.
         String category = post.getCategory();
         if(category.equals("1")){
             if(post.getRcp_seq()==null){
@@ -134,7 +134,7 @@ public class CommunityController {
 
         //포스트
         model.addAttribute("community",post);
-        //댓글
+        //コメント
         model.addAttribute("comments",comments);
 
         return "community/post";
@@ -161,7 +161,7 @@ public class CommunityController {
     @PostMapping("/edit/{postId}")
     public String editPostByIdSubmit(@PathVariable Integer postId, CommunityDTO community, @RequestPart(value = "image",required=false) List<MultipartFile> image,HttpSession session){
         String user_id = getUser(session).getUser_id();
-        //글을 쓴 회원이거나 관리자이면 가능
+        //글을 쓴 회원이거나 管理者이면 가능
         if (user_id.equals(communityService.findPostById(postId).getUser_id()) || user_id.equals("admin")) {
             community.setId(postId);
             communityService.editPost(community, image);
@@ -173,7 +173,7 @@ public class CommunityController {
     @GetMapping("/delete/{postId}")
     public String deletePostById(@PathVariable Integer postId, HttpSession session){
         String user_id = getUser(session).getUser_id();
-        //글을 쓴 회원이거나 관리자이면 가능
+        //글을 쓴 회원이거나 管理者이면 가능
         if (user_id.equals(communityService.findPostById(postId).getUser_id()) || user_id.equals("admin")){
             communityService.deletePost(postId);
         }
@@ -187,7 +187,7 @@ public class CommunityController {
         return "redirect:/community/post?id="+postId;
     }
 
-    //좋아요
+    //いいね！
     //ajax
     @MySecured
     @ResponseBody
@@ -209,7 +209,7 @@ public class CommunityController {
         return post.getLike_count();
     }
 
-    //댓글
+    //コメント
     @MySecured
     @PostMapping("/post/comment")
     public String submitComment(CommunityCommentDTO communityCommentDTO,HttpSession session, HttpServletRequest request){
@@ -223,7 +223,7 @@ public class CommunityController {
         return "redirect:"+refererLink;
     }
 
-    //댓글수정
+    //コメント수정
     //ajax
     @MySecured
     @ResponseBody
@@ -257,7 +257,7 @@ public class CommunityController {
     }
 
 
-    //상세검색
+    //상세検索
     int totalCnt;
     CommunitySearchForm form;
     @GetMapping("/search")
@@ -265,7 +265,7 @@ public class CommunityController {
                                @RequestParam(value = "page", required = false, defaultValue = "0") Integer page,
                                Model model, HttpServletRequest request){
 
-        //검색을 통해서 들어온거면 검색 값 넘기기. 아니면 안넘김.
+        //検索을 통해서 들어온거면 検索 값 넘기기. 아니면 안넘김.
         if(isFromSearch(request)){
             Pagenation pagenation = new Pagenation(page,10,totalCnt);
             List<CommunityDTO> communityBySearch = communityService.findCommunityBySearch(form, pagenation);
@@ -299,7 +299,7 @@ public class CommunityController {
 //                               @RequestParam(value = "page", required = false, defaultValue = "0") Integer page,
 //                               Model model){
 //
-//        //검색을 통해 form이 생성되면 정보 넘기기
+//        //検索을 통해 form이 생성되면 정보 넘기기
 //        if(form!=null){
 //            Pagenation pagenation = new Pagenation(page,10,totalCnt);
 //            List<CommunityDTO> communityBySearch = communityService.findCommunityBySearch(form, pagenation);

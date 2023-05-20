@@ -41,12 +41,12 @@ public class CommunityService {
 
     public void save(CommunityDTO dto, List<MultipartFile> image){
 
-        //자유글이면 레시피가 선택됐더라도 선택X
+        //フリー글이면 レシピ가 선택됐더라도 선택X
         if(dto.getCategory().equals("0")){
             dto.setRcp_seq(null);
         }
 
-        //해당 포스트의 이미지 여부 표시
+        //해당 포스트의 イメージ 여부 표시
         if(hasUploadedImage(image)){
             dto.setImage_exists(1);
         }else{
@@ -54,7 +54,7 @@ public class CommunityService {
         }
         communityDAO.insert(dto);
 
-        //해당 포스트가 저장된 후 이미지테이블에 포스트가 저장된 후 생성된 포스트 아이디와 함께 이미지정보 저장.
+        //해당 포스트가 저장된 후 イメージ테이블에 포스트가 저장된 후 생성된 포스트 아이디와 함께 イメージ정보 저장.
         if(dto.getImage_exists()==1){
             saveImagesToDBAndLocal(image,dto.getId());
         }
@@ -86,11 +86,11 @@ public class CommunityService {
     }
 
     public CommunityDTO findPostWithLikeInfo(Integer id, String userId){
-        //조회수 올리기
+        //閲覧数 올리기
         communityDAO.addReadCnt(id);
         //포스트 찾기
         CommunityDTO post = communityDAO.findPostById(id);
-        //포스트에 해당하는 이미지들 db에서 불러와서 set하기
+        //포스트에 해당하는 イメージ들 db에서 불러와서 set하기
         List<ImageDTO> image = communityDAO.findImageByPostId(id);
         if(hasImage(image)){
             post.setImages(image);
@@ -114,7 +114,7 @@ public class CommunityService {
     public int recipeReviewCount(){ return communityDAO.recipeReviewCount();}
     public int freeForumCount(){ return communityDAO.freeForumCount();}
     public void deletePost(int id){
-        //이미지 삭제 로직
+        //イメージ 삭제 로직
         List<ImageDTO> images = communityDAO.findImageByPostId(id);
         fileStore.deleteImages(images,COMMUNITY);
 
@@ -177,7 +177,7 @@ public class CommunityService {
 
 
     public void deleteCurrentImages(Integer postId) {
-        //이미지 삭제 로직
+        //イメージ 삭제 로직
         List<ImageDTO> images = communityDAO.findImageByPostId(postId);
         fileStore.deleteImages(images,COMMUNITY);
         communityDAO.deleteImageByPostId(postId);
