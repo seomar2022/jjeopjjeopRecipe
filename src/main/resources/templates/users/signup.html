@@ -68,7 +68,7 @@
         function checkUserIdExist(user_id){
             var user_id = $('#user_id').val();
             if(user_id.length == 0){
-                alert('아이디를 입력해주세요');
+                alert('아이디를 入力해주세요');
             } else{
                 requestAjax(user_id);
             }
@@ -108,10 +108,10 @@
                                 name="user_id"
                                 th:field="*{user_id}"
                                 th:errorclass="is-invalid"
-                                placeholder="아이디를 입력하세요"
+                                placeholder="아이디를 入力하세요"
                                 maxlength="30"
                         />
-                        <input type="button" class="btn btn-outline-warning" value="중복확인" onclick="checkUserIdExist()" />
+                        <input type="button" class="btn btn-outline-warning" value="중복OK" onclick="checkUserIdExist()" />
                         <div class="invalid-feedback" th:errors="*{user_id}">아이디 오류</div>
                     </div>
                 </div>
@@ -123,17 +123,17 @@
                             id="password"
                             th:field="*{password}"
                             th:errorclass="is-invalid"
-                            placeholder="비밀번호를 입력하세요"
+                            placeholder="비밀번호를 入力하세요"
                     />
                     <div class="invalid-feedback" th:errors="*{password}">비밀번호 오류</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="password2" class="form-label">비밀번호 재입력</label>
+                    <label for="password2" class="form-label">비밀번호 재入力</label>
                     <input
                             type="password"
                             class="form-control"
                             id="password2"
-                            placeholder="비밀번호를 다시 한번 입력하세요"
+                            placeholder="비밀번호를 다시 한번 入力하세요"
                             th:onkeyup="check_password([[${user.password}]])"
                     />
                         <div id="check"></div>
@@ -141,17 +141,17 @@
 
 
                 <div class="mb-3 py-1 px-5">
-                    <label for="username" class="form-label">이름</label>
+                    <label for="username" class="form-label">名前</label>
                     <input
                             type="text"
                             class="form-control"
                             id="username"
                             th:field="*{username}"
                             th:errorclass="is-invalid"
-                            placeholder="이름을 입력하세요"
+                            placeholder="名前을 入力하세요"
                             maxlength="30"
                     />
-                    <div class="invalid-feedback" th:errors="*{username}">이름오류</div>
+                    <div class="invalid-feedback" th:errors="*{username}">名前오류</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
                     <label for="nickname" class="form-label">별명</label>
@@ -161,7 +161,7 @@
                             id="nickname"
                             th:field="*{nickname}"
                             th:errorclass="is-invalid"
-                            placeholder="별명을 입력하세요"
+                            placeholder="별명을 入力하세요"
                     />
                     <div class="invalid-feedback" th:errors="*{nickname}">별명 오류</div>
                 </div>
@@ -232,7 +232,7 @@
                     <input
                             type="button"
                             class="btn btn-secondary mt-3 ms-3"
-                            value="취소"
+                            value="キャンセル"
                             th:onclick="|location.href='@{/login}'|"
                     />
                 </div>

@@ -26,7 +26,7 @@ function check_password(password){
                     document.getElementById('check').style.color='red';
                 }
             } else if(password2 == ''){
-                document.getElementById('check').innerHTML='비밀번호 재입력 항목이 누락되었습니다.';
+                document.getElementById('check').innerHTML='비밀번호 재入力 항목이 누락되었습니다.';
                 document.getElementById('check').style.color='red';
             }
         }

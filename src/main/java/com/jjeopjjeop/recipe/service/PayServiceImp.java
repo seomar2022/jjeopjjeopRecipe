@@ -41,7 +41,7 @@ public class PayServiceImp implements PayService{
         return payDAO.payView(map);
     }
 
-    //장바구니 항목 삭제
+    //장바구니 항목 削除
     @Override
     public void cartDelete(int pay_num) {
         payDAO.cartDelete(pay_num);

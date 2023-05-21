@@ -62,7 +62,7 @@ public class AdminController {
         return "admin/detailU";
     }
 
-    //회원 삭제하기(키가 연결되어서 안 됨)
+    //회원 削除하기(키가 연결되어서 안 됨)
     @MySecured(role = MySecured.Role.ADMIN)
     @GetMapping("delU/{user_id}")
     public String delUser(@PathVariable String user_id){
@@ -151,7 +151,7 @@ public class AdminController {
         return "redirect:/recipe/rcpView";
     }
 
-    //レシピ 삭제
+    //レシピ 削除
     @MySecured(role = MySecured.Role.ADMIN)
     @GetMapping("delrcp/{rcp_seq}")
     public  String delRcp(@PathVariable("rcp_seq") int rcp_seq){
@@ -170,7 +170,7 @@ public class AdminController {
         return "admin/c_index";
     }
 
-    //게시판 삭제(완)
+    //게시판 削除(완)
     @MySecured(role = MySecured.Role.ADMIN)
     @GetMapping("/delcom/{id}")
     public String delcomm(@PathVariable Integer id){

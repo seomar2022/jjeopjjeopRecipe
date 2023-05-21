@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>コミュニティ 掲示板</title>
+    <title>コミュニティ掲示板</title>
     <th:block th:replace="fragments/head :: links">
     </th:block>
     <link
@@ -61,9 +61,9 @@
                     <p class="d-flex justify-content-between">
                       <a th:href="@{/recipe/view/{rcp_seq}(rcp_seq=${recipe.rcp_seq})}" target="_blank">
                         <span
-                          th:text="|レシピ 이름 : ${recipe.rcp_name}|"
+                          th:text="|レシピ タイトル : ${recipe.rcp_name}|"
                         >
-                          レシピ 이름 : gkdl
+                          レシピ タイトル : gkdl
                         </span>
                       </a>
                       <span th:text="'♥'+${recipe.scrap}" class="right">保存수</span>
@@ -94,7 +94,7 @@
               type="text"
               class="form-control"
               th:errorclass="is-invalid"
-              placeholder="タイトル을 입력해주세요."
+              placeholder="タイトル을 入力해주세요."
               th:field="*{title}"
               maxlength="30"
             />
@@ -130,7 +130,7 @@
               th:errorclass="is-invalid"
               rows="3"
               id="content"
-              placeholder="내용을 입력해주세요."
+              placeholder="내용을 入力해주세요."
               th:field="*{content}"
             ></textarea>
             <div class="invalid-feedback" th:errors="*{content}">내용오류</div>
@@ -142,7 +142,7 @@
               onclick="location.href='/community'"
               class="btn btn-outline-secondary mx-1"
             >
-              취소
+              キャンセル
             </button>
           </div>
         </form>

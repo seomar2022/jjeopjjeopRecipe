@@ -62,7 +62,7 @@
               <th scope="col">사업자 등록 번호</th>
               <th scope="col">사업장 전화번호</th>
               <th scope="col">사업장 주소</th>
-              <th scope="col">승인 취소</th>
+              <th scope="col">승인 キャンセル</th>
 
             </tr>
 
@@ -75,7 +75,7 @@
               <td th:text="${sellerDTO.registration_number}"></td>
               <td th:text="${sellerDTO.seller_phone}"></td>
               <td th:text="${sellerDTO.seller_address}"></td>
-              <td><a th:href="@{|/admin/cancelSel/${sellerDTO.user_id}|}" class="btn btn-sm" onclick="alert('승인이 취소되었습니다.')">승인 취소</a></td>
+              <td><a th:href="@{|/admin/cancelSel/${sellerDTO.user_id}|}" class="btn btn-sm" onclick="alert('승인이 キャンセル되었습니다.')">승인 キャンセル</a></td>
             </tr>
             </tbody>
           </table>

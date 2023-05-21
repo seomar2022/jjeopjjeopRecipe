@@ -21,7 +21,7 @@
   position: relative;
 }
 
-/* 입력폼의 각각의 입력칸에 스타일 지정. */
+/* 入力폼의 각각의 入力칸에 스타일 지정. */
 .form_section .form_container .form-control {
   width: 100%;
   border: none;
@@ -38,15 +38,15 @@
           box-shadow: none;
 }
 
-/* 입력칸중 textarea만 크게 보이게.
+/* 入力칸중 textarea만 크게 보이게.
 .form_section textarea<- 이렇게 지정하면 틀림.
-위에서 입력칸들 css정해서 textarea rows가 안통하는 거임.*/
+위에서 入力칸들 css정해서 textarea rows가 안통하는 거임.*/
 .form_section .form_container textarea.form-control {
   height: 150px;
   resize: none;
 }
 
-/* 입력폼의 버튼에 스타일 */
+/* 入力폼의 버튼에 스타일 */
 .form_section .form_container button {
   margin-top: 15px;
   border: none;

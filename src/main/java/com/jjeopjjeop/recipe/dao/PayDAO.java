@@ -20,7 +20,7 @@ public interface PayDAO {
 
    List<ProduceDTO> payView(Map<String, Object> map);  //마이페이지 들어가서 구매내역 보기
 
-   void cartDelete(int pay_num); //장바구니 삭제
+   void cartDelete(int pay_num); //장바구니 削除
 
    ProduceDTO payInfo(int pay_num); //결제에 필요한 정보 담기.
 

@@ -28,7 +28,7 @@ public class ReviewServiceImp implements ReviewService{
         return reviewDAO.reviewCount(produce_num);
     }
 
-    //리뷰삭제
+    //리뷰削除
     @Override
     public void reviewDelete(int produce_num) {
         reviewDAO.reviewDelete(produce_num);

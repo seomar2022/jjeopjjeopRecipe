@@ -29,7 +29,7 @@
         AND pay_history.produce_num = #{produce_num}
     </select>
 
-<!--리뷰 삭제-->
+<!--리뷰 削除-->
     <delete id="reviewDelete" parameterType="int">
         DELETE FROM produce_review WHERE pay_num = #{pay_num}
     </delete>

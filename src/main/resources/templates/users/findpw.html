@@ -23,18 +23,18 @@
 <nav th:replace="fragments/nav :: front-nav(title)"></nav>
 <div class="container position-absolute top-50 end-0 translate-middle-y">
     <h4>비밀번호 찾기</h4>
-    <h6 class="text-muted">이름과 아이디, 이메일 주소를 입력하세요.</h6>
+    <h6 class="text-muted">名前과 아이디, 이메일 주소를 入力하세요.</h6>
     <form action="/findpw" method="post">
         <div class="form-group p-2 w-25">
             <div class="row mb-3 align-items-center">
-                <label for="username" class="form-label"><small>이름</small></label>
+                <label for="username" class="form-label"><small>名前</small></label>
                 <input
                         type="text"
                         class="form-control"
                         id="username"
                         name="username"
                         required
-                        placeholder="이름을 입력하세요"
+                        placeholder="名前을 入力하세요"
                 />
             </div>
             <div class="row mt-2 mb-3 align-items-center">
@@ -45,7 +45,7 @@
                         id="user_id"
                         name="user_id"
                         required
-                        placeholder="아이디를 입력하세요"
+                        placeholder="아이디를 入力하세요"
                 />
             </div>
             <div class="row mt-2 mb-3 align-items-center">
@@ -61,8 +61,8 @@
             </div>
         </div>
         <div class="justify-content-center pt-4">
-            <input type="submit" class="btn btn-warning ms-3" value="확인" />
-            <button type="button" class="btn btn-secondary mx-2 my-3" th:onclick="|location.href='@{/login}'|">취소</button>
+            <input type="submit" class="btn btn-warning ms-3" value="OK" />
+            <button type="button" class="btn btn-secondary mx-2 my-3" th:onclick="|location.href='@{/login}'|">キャンセル</button>
         </div>
     </form>
 </div>

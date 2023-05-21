@@ -108,7 +108,7 @@ public class RecipeServiceImp implements RecipeService{
 
     @Override
     public void updateProcess(RecipeDTO recipeDTO, String url, boolean isChange){
-        // イメージ 변경되었으면 이전 イメージ 파일 삭제
+        // イメージ 변경되었으면 이전 イメージ 파일 削除
         if(isChange){
             String path = dao.getFile(recipeDTO.getRcp_seq());
             if(path != null){
@@ -122,7 +122,7 @@ public class RecipeServiceImp implements RecipeService{
 
     @Override
     public void updateMProcess(ManualDTO manualDTO, String url){
-        // 서버에 저장된 요리과정 イメージ 삭제
+        // 서버에 저장된 요리과정 イメージ 削除
         if(manualDTO.getManual_no() == 1){
             List<String> list = dao.getFileM(manualDTO.getRcp_seq());
             for(int i=0; i<list.size(); i++){
@@ -134,7 +134,7 @@ public class RecipeServiceImp implements RecipeService{
             }
         }
 
-        // 요리과정 전체 삭제 후 재등록
+        // 요리과정 전체 削除 후 재등록
         if(manualDTO.getManual_no() == 1)
             dao.deleteManual(manualDTO.getRcp_seq());
         dao.updateManual(manualDTO);
@@ -151,14 +151,14 @@ public class RecipeServiceImp implements RecipeService{
 
     @Override
     public void deleteProcess(int rcp_seq, String url1, String url2) {
-        // 대표 イメージ 있으면 삭제
+        // 대표 イメージ 있으면 削除
         String path = dao.getFile(rcp_seq);
         if(path != null){
             File fe = new File(url1, path);
             fe.delete();
         }
 
-        // 요리과정 イメージ 있으면 삭제
+        // 요리과정 イメージ 있으면 削除
         List<String> list = dao.getFileM(rcp_seq);
         for(int i=0; i<list.size(); i++){
             String pathM = list.get(i);
@@ -171,7 +171,7 @@ public class RecipeServiceImp implements RecipeService{
         // 후기글 있으면 후기글 カテゴリー 변경
         dao.changeDeletedRcp(rcp_seq);
 
-        // レシピ 삭제
+        // レシピ 削除
         dao.delete(rcp_seq);
     }
 

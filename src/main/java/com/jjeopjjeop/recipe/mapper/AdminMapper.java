@@ -21,7 +21,7 @@ public interface AdminMapper {
     UserDTO detailUser(@Param("user_id") String user_id);
 
 
-    //회원삭제 (ing)
+    //회원削除 (ing)
     @Delete("delete from User_j where user_id = #{user_id}")
     void delUser(String user_id);
 
@@ -54,7 +54,7 @@ public interface AdminMapper {
     void cancelUsertype(String user_id);
 
 
-    //게시판 삭제구현
+    //게시판 削除구현
     @Delete("delete from CommunityBoard where id=#{id}")
     void delComm(Integer id);
 
@@ -68,7 +68,7 @@ public interface AdminMapper {
     @Select("select * from Recipe where rcp_name=#{rcp_name}")
     RecipeDTO rcpDetail(@Param("rcp_name") String rcp_name);
 
-    //レシピ 삭제
+    //レシピ 削除
     @Delete("delete from Recipe where rcp_seq=#{num}")
     void delRcp(int rcp_seq);
 

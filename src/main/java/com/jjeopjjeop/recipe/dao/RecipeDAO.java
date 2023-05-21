@@ -50,7 +50,7 @@ public interface RecipeDAO {
     public void updateManual(ManualDTO manualDTO);
     public void updateCate(@Param("cate_seq") int cate_seq, @Param("rcp_seq") int rcp_seq);
 
-    // 삭제
+    // 削除
     public void delete(int num);
     public void deleteManual(int num);
     public void deleteCate(int rcp_seq);

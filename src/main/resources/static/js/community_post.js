@@ -87,10 +87,10 @@ function editmode() {
 //   action = !action;
 // }
 
-// 삭제 확인
+// 削除 확인
 $(function () {
   $('a.confirmDeletion').click(function () {
-    if (!confirm('삭제하시겠습니까?')) return false;
+    if (!confirm('削除하시겠습니까?')) return false;
   });
 });
 

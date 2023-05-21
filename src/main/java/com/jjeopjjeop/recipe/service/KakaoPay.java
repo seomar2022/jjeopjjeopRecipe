@@ -84,8 +84,8 @@ INFO 10804 --- [nio-8081-exec-5] com.jjeopjjeop.recipe.service.KakaoPay   : Kaka
  */
 
             return kakaoPayReadyVO.getNext_redirect_pc_url(); //마지막 return 값으로 redirect url을 불러와 결제가 완료되면 해당 주소로 가게끔 설정해 놓는다.
-//getNext_redirect_pc_url: 요청한 클라이언트가 PC 웹일 경우 카카오톡으로 결제 요청 메시지(TMS)를 보내기 위한 사용자 정보 입력 화면 Redirect URL
- //QR코드나 폰번호 입력화면 나옴.
+//getNext_redirect_pc_url: 요청한 클라이언트가 PC 웹일 경우 카카오톡으로 결제 요청 메시지(TMS)를 보내기 위한 사용자 정보 入力 화면 Redirect URL
+ //QR코드나 폰번호 入力화면 나옴.
         } catch (RestClientException e) {
             e.printStackTrace();
         } catch (URISyntaxException e) {
@@ -96,7 +96,7 @@ INFO 10804 --- [nio-8081-exec-5] com.jjeopjjeop.recipe.service.KakaoPay   : Kaka
 
     }
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/////////결제 승인: 사용자가 결제 수단을 선택하고 비밀번호를 입력해 결제 인증을 완료한 뒤, 최종적으로 결제 완료 처리를 하는 단계. 결제 승인 API를 호출하면 결제 준비 단계에서 시작된 결제건이 승인으로 완료 처리
+/////////결제 승인: 사용자가 결제 수단을 선택하고 비밀번호를 入力해 결제 인증을 완료한 뒤, 최종적으로 결제 완료 처리를 하는 단계. 결제 승인 API를 호출하면 결제 준비 단계에서 시작된 결제건이 승인으로 완료 처리
     //https://developers.kakao.com/docs/latest/ko/kakaopay/single-payment#approve
 
     public KakaoPayApprovalVO kakaoPayInfo(String pg_token, ProduceDTO produceDTO) {  //^&     public KakaoPayApprovalVO kakaoPayInfo(String pg_token)

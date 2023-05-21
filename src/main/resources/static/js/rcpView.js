@@ -27,7 +27,7 @@
                 comment_list += '<span style="color: gray;">' + obj.co_date + '</span>&nbsp&nbsp&nbsp';
                 if(user_id == obj.user_id){
                     comment_list += '<span class="coUpdateBtn viewBtn" style="color: blue;">수정</span>&nbsp&nbsp&nbsp';
-                    comment_list += '<span class="coDeleteBtn viewBtn">삭제</span>&nbsp&nbsp&nbsp';
+                    comment_list += '<span class="coDeleteBtn viewBtn">削除</span>&nbsp&nbsp&nbsp';
                 }
                 comment_list += '<br/>';
                 comment_list += '<span>' + obj.comment_txt + '</span>';
@@ -135,10 +135,10 @@
         });
     });
 
-    // コメント 삭제 관리
+    // コメント 削除 관리
     $(document).on("click", ".coDeleteBtn", function(){
         $(this).css("display", "none");
-        var coDeleteConfirmBtn = '<span id="coDeleteConfirmBtn" class="viewBtn">삭제 확인</span>';
+        var coDeleteConfirmBtn = '<span id="coDeleteConfirmBtn" class="viewBtn">削除 OK</span>';
         $(this).after(coDeleteConfirmBtn);
     });
 
@@ -154,7 +154,7 @@
 			success : function(data) {
 			    getCommentList();
 			    $("#coDeleteConfirmBtn").css("display", "none");
-                var coDeleteBtn = '<span class="coUpdateConfirmBtn viewBtn">삭제</span>';
+                var coDeleteBtn = '<span class="coUpdateConfirmBtn viewBtn">削除</span>';
                 $("#coDeleteConfirmBtn").after(coDeleteBtn);
 
                 count = count - 1;
@@ -220,10 +220,10 @@
       var copyText = "http://localhost:8081/recipe/view/" + $('#rcp_seq').val();
       var textArea = document.createElement("textarea");//textarea 생성
 
-      textArea.value = copyText;//textarea에 텍스트 입력
+      textArea.value = copyText;//textarea에 텍스트 入力
       document.body.appendChild(textArea);//body에 textarea 추가
 
       textArea.select();//선택
       document.execCommand("Copy");//복사
-      textArea.remove();//생성한 textarea 삭제
+      textArea.remove();//생성한 textarea 削除
     };

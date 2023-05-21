@@ -41,7 +41,7 @@ COMMENT ON COLUMN User_j.password IS '비밀번호';
 COMMENT ON COLUMN User_j.usertype IS '개인/판매자여부
 1:개인|2:판매자';
 
-COMMENT ON COLUMN User_j.username IS '이름';
+COMMENT ON COLUMN User_j.username IS '名前';
 
 COMMENT ON COLUMN User_j.nickname IS '별명';
 
@@ -116,7 +116,7 @@ COMMENT ON COLUMN Produce_board.produce_num IS '게시글 일련번호';
 
 COMMENT ON COLUMN Produce_board.user_id IS '아이디';
 
-COMMENT ON COLUMN Produce_board.produce_type IS '商品종류(1은 채소, 2는 과일, 3은 곡물, 4는 기타)';
+COMMENT ON COLUMN Produce_board.produce_type IS '商品カテゴリー(1은 채소, 2는 과일, 3은 곡물, 4는 기타)';
 
 COMMENT ON COLUMN Produce_board.produce_name IS '商品명(판매단위 같이 쓰기)';
 

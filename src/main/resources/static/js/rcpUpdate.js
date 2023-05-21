@@ -63,27 +63,27 @@
     $("#submitBtn").on("click", function(e){
         e.preventDefault();
         if($("#rcp_name").val() == ""){
-            alertMsg = "<p>レシピ 이름을 입력하세요.</p>";
+            alertMsg = "<p>レシピ タイトル을 入力하세요.</p>";
             $(".modal-body p").html(alertMsg);
             $("#alertBtn").click();
         }else if($("select[name=time] option:selected").val() == ""){
-            alertMsg = "<p>소요時間을 입력하세요.</p>";
+            alertMsg = "<p>소요時間을 入力하세요.</p>";
             $(".modal-body p").html(alertMsg);
             $("#alertBtn").click();
         }else if($("select[name=difficulty] option:selected").val() == ""){
-            alertMsg = "<p>難易度를 입력하세요.</p>";
+            alertMsg = "<p>難易度를 入力하세요.</p>";
             $(".modal-body p").html(alertMsg);
             $("#alertBtn").click();
         }else if($("select[name=amount] option:selected").val() == ""){
-            alertMsg = "<p>양을 입력하세요.</p>";
+            alertMsg = "<p>量을 入力하세요.</p>";
             $(".modal-body p").html(alertMsg);
             $("#alertBtn").click();
         }else if($("textarea[name=summary]").val() == ""){
-            alertMsg = "<p>レシピ 소개글을 입력하세요.</p>";
+            alertMsg = "<p>レシピ 소개글을 入力하세요.</p>";
             $(".modal-body p").html(alertMsg);
             $("#alertBtn").click();
         }else if($("textarea[name=rcp_parts_dtls]").val() == ""){
-            alertMsg = "<p>レシピ 材料를 입력하세요.</p>";
+            alertMsg = "<p>レシピ 材料를 入力하세요.</p>";
             $(".modal-body p").html(alertMsg);
             $("#alertBtn").click();
         }else{

@@ -53,7 +53,7 @@
             <th scope="col">閲覧</th>
             <th scope="col">いいね！</th>
             <th scope="col">신고</th>
-            <th scope="col">삭제</th>
+            <th scope="col">削除</th>
           </tr>
           </thead>
           <tbody>
@@ -70,7 +70,7 @@
             <td th:text="${cu.read_count}"></td>
             <td th:text="${cu.like_count}"></td>
             <td th:text="${cu.report}"></td>
-            <td><a th:href="@{|/admin/delcom/${cu.id}|}"  class="btn btn btn-secondary">삭제</a></td>
+            <td><a th:href="@{|/admin/delcom/${cu.id}|}"  class="btn btn btn-secondary">削除</a></td>
           </tr>
           </tbody>
         </table>

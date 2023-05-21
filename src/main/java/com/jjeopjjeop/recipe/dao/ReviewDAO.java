@@ -14,7 +14,7 @@ public interface ReviewDAO {
 
     int reviewCount(int produce_num); //페이지 처리를 위한 각 판매글에 대한 리뷰 개수
 
-    void reviewDelete(int produce_num); //리뷰 삭제
+    void reviewDelete(int produce_num); //리뷰 削除
     
     void reviewWrite(ReviewDTO reviewDTO); //리뷰 작성
 

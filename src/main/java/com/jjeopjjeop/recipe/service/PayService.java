@@ -13,7 +13,7 @@ public interface PayService {
 
     public List<ProduceDTO> payView(Map<String, Object> map);//마이페이지 들어가서 구매내역 보기
 
-    public void cartDelete(int pay_num); //장바구니 삭제
+    public void cartDelete(int pay_num); //장바구니 削除
 
     public ProduceDTO payInfo(int pay_num); //결제에 필요한 정보 담기.
 

@@ -45,7 +45,7 @@ public class UserController {
    //회원가입 페이지
    @GetMapping("/signup")
    public String register(@ModelAttribute("user") UserDTO userDTO){
-      //view로 뿌려주려면 @ModelAttribute 설정 필수!
+      //view로 뿌려주려면 @ModelAttribute 설정 必須!
       logger.info("get register");
       return "users/signup";
    }
@@ -59,7 +59,7 @@ public class UserController {
          //회원가입 실패 시 기존 데이터 유지
          //model.addAttribute("userDTO", userDTO);
 //         logger.info("errors={}", bindingResult);
-//         model.addAttribute("message", "형식에 맞지 않는 값이 입력되었습니다.");
+//         model.addAttribute("message", "형식에 맞지 않는 값이 入力되었습니다.");
          return "users/signup";
       }else {
          int result = 0;
@@ -156,10 +156,10 @@ public class UserController {
       userDTO = userServiceImp.findId(userDTO);
 //      logger.info("user_id: "+userDTO.getUser_id());
       if(bindingResult.hasErrors()){
-         model.addAttribute("message", "이름이 누락되었습니다.");
+         model.addAttribute("message", "名前이 누락되었습니다.");
          return "/users/findid";
       } else if(userDTO == null){
-         rAttr.addFlashAttribute("message", "이름 또는 이메일이 일치하지 않습니다.");
+         rAttr.addFlashAttribute("message", "名前 또는 이메일이 일치하지 않습니다.");
          return "redirect:/findid";
       } else{
          model.addAttribute("user", userServiceImp.findId(userDTO));
@@ -228,7 +228,7 @@ public class UserController {
                               RedirectAttributes rAttr, Model model){
       if(bindingResult.hasErrors()){
 //         logger.info("errors={}", bindingResult);
-         model.addAttribute("message", "형식에 맞지 않는 값이 입력되었습니다.");
+         model.addAttribute("message", "형식에 맞지 않는 값이 入力되었습니다.");
          return "users/mypageEdit";
       }else{
          userServiceImp.updateMypage(userDTO);

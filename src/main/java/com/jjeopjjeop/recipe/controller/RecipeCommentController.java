@@ -54,7 +54,7 @@ public class RecipeCommentController {
         service.updateProcess(recipeCommentDTO);
     }
 
-    // コメント 삭제
+    // コメント 削除
     @ResponseBody
     @PostMapping("/recipe/comment/delete")
     public void deleteMethod(String co_rcp_seq){

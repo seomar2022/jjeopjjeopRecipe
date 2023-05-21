@@ -40,7 +40,7 @@ public class AdminService {
         return adminMapper.detailUser(user_id);
     }
 
-    //회원삭제
+    //회원削除
     public void delUser(String user_id){
         adminMapper.delUser(user_id);
     }
@@ -96,7 +96,7 @@ public class AdminService {
     }
 
 
-    //レシピ 삭제
+    //レシピ 削除
     public void delRcp(int rcp_seq){
         adminMapper.delRcp(rcp_seq);
     }
@@ -106,7 +106,7 @@ public class AdminService {
         return adminDAO.reportCom(pagenation);
     }
 
-    //게시판 삭제
+    //게시판 削除
     public void delcomm(Integer id){
         adminMapper.delComm(id);
     }

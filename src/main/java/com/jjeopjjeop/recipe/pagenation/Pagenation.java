@@ -32,7 +32,7 @@ public class Pagenation {
     //파라미터 : 현재페이지, 한 페이지에 보여질 데이터 수, 전체개수.
     public Pagenation(Integer page, Integer perPage, Integer recordCount) {
 
-        int startRow = (page != null) ? page : 0; // page가 입력되지 않았으면 자동으로 1페이지로(0이 1)
+        int startRow = (page != null) ? page : 0; // page가 入力되지 않았으면 자동으로 1페이지로(0이 1)
         int count = recordCount;// 전체 글 개수
 
         int totalPageCnt = (int) Math.ceil((double) count/(double) perPage); // 전체글 / 페이지에 보여질 개수 = 페이지 수

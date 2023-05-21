@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>レシピ 작성 폼</title>
+    <title>レシピ作成フォーム</title>
     <th:block th:replace="fragments/head :: links">
     </th:block>
     <link
@@ -21,21 +21,21 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">필수 항목 입력</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">必須項目入力</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p>.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">확인</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">OK</button>
                 </div>
             </div>
         </div>
     </div>
     <button type="button" id="alertBtn" style="display: none;" data-bs-toggle="modal" data-bs-target="#alertModal">レシピ 수정</button>
     <!-- 모달 end -->
-<p class="fw-bold fs-2 text-start">새 レシピ 등록하기</p>
+<p class="fw-bold fs-2 text-start">レシピ投稿</p>
     <form action="" th:object="${recipeDTO}" method="post" enctype="multipart/form-data">
         <input type="hidden" th:field="*{user_id}" th:value="${recipeDTO.user_id}">
     <div class="row" style="margin-bottom:15px;">
@@ -45,29 +45,29 @@
             </label>
             <input type="file" id="rcp_file" th:field="*{upload}" style="display: none;">
             <button type="button" class="btn btn-dark" style="width: 100%;">
-            <label for="rcp_file" style="width: 100%; height:100%; cursor:pointer;">대표 イメージ 첨부</label>
+            <label for="rcp_file" style="width: 100%; height:100%; cursor:pointer;">代表イメージ添付</label>
             </button>
         </div>
         <div class="col-8">
-            <p><input type="text" class="form-control" th:field="*{rcp_name}" width="90%" placeholder="レシピ 이름"></p>
+            <p><input type="text" class="form-control" th:field="*{rcp_name}" width="90%" placeholder="レシピ タイトル"></p>
             <div class="validationError" th:if="${#fields.hasErrors('rcp_name')}" th:errors="*{rcp_name}"></div>
             <select class="form-select" th:field="*{time}" id="rcp_time">
                 <option value="">소요時間</option>
-                <option value="10분以内">10분以内</option>
-                <option value="20분以内">20분以内</option>
-                <option value="30분以内">30분以内</option>
+                <option value="10分以内">10分以内</option>
+                <option value="20分以内">20分以内</option>
+                <option value="30分以内">30分以内</option>
                 <option value="1時間以内">1時間以内</option>
                 <option value="2時間以内">2時間以内</option>
                 <option value="2時間以上">2時間以上</option>
             </select>
             <select class="form-select" th:field="*{difficulty}" id="difficulty">
                 <option value="">難易度</option>
-                <option value="쉬움">쉬움</option>
-                <option value="보통">보통</option>
-                <option value="어려움">어려움</option>
+                <option value="易">易</option>
+                <option value="普通">普通</option>
+                <option value="難">難</option>
             </select>
             <select class="form-select" th:field="*{amount}" id="amount">
-                <option value="">양</option>
+                <option value="">量</option>
                 <option value="1人分">1人分</option>
                 <option value="2人分">2人分</option>
                 <option value="3人分">3人分</option>
@@ -77,68 +77,68 @@
             <div class="validationError" th:if="${#fields.hasErrors('time')}" th:errors="*{time}"></div>
             <div class="validationError" th:if="${#fields.hasErrors('difficulty')}" th:errors="*{difficulty}"></div>
             <div class="validationError" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></div>
-            <textarea class="form-control" th:field="*{summary}" placeholder="レシピ를 간단히 소개해 주세요."></textarea>
+            <textarea class="form-control" th:field="*{summary}" placeholder="レシピの紹介"></textarea>
             <div class="validationError" th:if="${#fields.hasErrors('summary')}" th:errors="*{summary}"></div>
         </div>
     </div>
-        <p>*レシピ에 어울리는 カテゴリー를 선택해 주세요.</p>
+        <p>*カテゴリー選択</p>
         <div class="cate_box rounded">
             <input type="hidden" name="cateArr" id="cateArr" value="">
             <p>
-                <span>종류별</span>
+                <span>カテゴリー</span>
                 <span th:each="cate1 : ${cateList}" th:if="${cate1.cate_cate} == 1">
                     &nbsp&nbsp
                     <a href="#" th:value="${cate1.cate_seq}" style="color: #fff;">
-                        <span th:text="${cate1.cate_name}">종류별</span>
+                        <span th:text="${cate1.cate_name}">カテゴリー</span>
                     </a>
                 </span>
             </p>
             <p>
-                <span>상황별</span>
+                <span>状況別</span>
                 <span th:each="cate2 : ${cateList}" th:if="${cate2.cate_cate} == 2">
                     &nbsp&nbsp
                     <a href="#" th:value="${cate2.cate_seq}" style="color: #fff;">
-                        <span th:text="${cate2.cate_name}">상황별</span>
+                        <span th:text="${cate2.cate_name}">状況別</span>
                     </a>
                 </span>
             </p>
             <p>
-                <span>材料별</span>
+                <span>材料別</span>
                 <span th:each="cate3 : ${cateList}" th:if="${cate3.cate_cate} == 3">
                     &nbsp&nbsp
                     <a href="#" th:value="${cate3.cate_seq}" style="color: #fff;">
-                        <span th:text="${cate3.cate_name}">材料별</span>
+                        <span th:text="${cate3.cate_name}">材料別</span>
                     </a>
                 </span>
             </p>
         </div>
         <hr/>
         <p class="fw-bold fs-2 text-start">材料</p>
-        <textarea th:field="*{rcp_parts_dtls}" placeholder="양파 반 쪽, 굴소스 한 숟갈, 베이컨 100g..."></textarea>
+        <textarea th:field="*{rcp_parts_dtls}" placeholder=""></textarea>
         <div class="validationError" th:if="${#fields.hasErrors('rcp_parts_dtls')}" th:errors="*{rcp_parts_dtls}"></div>
         <hr/>
-        <p class="fw-bold fs-2 text-start">요리 순서</p>
+        <p class="fw-bold fs-2 text-start">作り方</p>
         <div class="manual_container">
         <div class="rcp_manual">
             <p class="fw-bold fs-4 text-start manual_step">1</p>
             <textarea name="manual_txt"></textarea>
             <p class="d-flex justify-content-between">
             <input type="file" id="upload_manual" name="upload_manual" >
-            <a class="btn btn-danger removeManual">순서 삭제</a>
+            <a class="btn btn-danger removeManual">手順削除</a>
             </p>
         </div>
         </div>
-        <button type="button" id="addManual" class="btn btn-secondary" style="width: 100%; margin-bottom: 15px;">요리 순서 추가</button>
+        <button type="button" id="addManual" class="btn btn-secondary" style="width: 100%; margin-bottom: 15px;">追加</button>
         <hr/>
         <p class="fw-bold fs-2 text-start">ハッシュタグ</p>
-        <p>*レシピ에 어울리는 ハッシュタグ를 입력해 주세요.</p>
-        <textarea th:field="*{hash_tag}" placeholder="귀찮을 때, 자취요리, 야채듬뿍..."></textarea>
+        <p>*ハッシュタグ入力</p>
+        <textarea th:field="*{hash_tag}" placeholder="ダイエット、一人暮らし…"></textarea>
         <hr/>
         <p class="d-flex justify-content-between">
             <a th:href="@{/recipe/list}" class="btn btn-danger">
-                &nbsp&nbsp취소&nbsp&nbsp
+                &nbsp&nbspキャンセル&nbsp&nbsp
             </a>
-            <a id="submitBtn" class="btn btn-primary">&nbsp&nbsp작성&nbsp&nbsp</a>
+            <a id="submitBtn" class="btn btn-primary">&nbsp&nbsp作成&nbsp&nbsp</a>
         </p>
 </form>
 </main>

@@ -84,7 +84,7 @@ public class ReviewController {
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-    //리뷰 삭제하기.
+    //리뷰 削除하기.
     //@PostMapping("/review/delete/{payNum}")  <-이걸로 하면 오류남(There was an unexpected error (type=Method Not Allowed, status=405).
     //Request method 'GET' not supported)
     @MySecured

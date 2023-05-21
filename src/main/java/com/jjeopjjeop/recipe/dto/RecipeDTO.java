@@ -17,24 +17,24 @@ public class RecipeDTO {
     private int scrap;
     private int report;
     private int rcp_viewcnt;
-    @NotBlank(message = "* レシピ 이름은 필수 입력 항목입니다.")
-    @Size(max=16, message = "* 최대 16자까지 입력할 수 있습니다.")
+    @NotBlank(message = "* レシピ タイトル은 必須 入力 항목입니다.")
+    @Size(max=16, message = "* 최대 16자까지 入力할 수 있습니다.")
     private String rcp_name;
     private String user_id = "abc";
     private String filename;
     private String filepath;
-    @NotBlank(message = "* 소요時間은 필수 입력 항목입니다.")
+    @NotBlank(message = "* 소요時間은 必須 入力 항목입니다.")
     private String time;
-    @NotBlank(message = "* 難易度는 필수 입력 항목입니다.")
+    @NotBlank(message = "* 難易度는 必須 入力 항목입니다.")
     private String difficulty;
-    @NotBlank(message = "* 양은 필수 입력 항목입니다.")
+    @NotBlank(message = "* 量은 必須 入力 항목입니다.")
     private String amount;
-    @NotBlank(message = "* レシピ 소개글은 필수 입력 항목입니다.")
-    @Size(max=1000, message = "* 최대 1000자까지 작성할 수 있습니다.")
+    @NotBlank(message = "* レシピ 소개글은 必須 入力 항목입니다.")
+    @Size(max=1000, message = "* 최대 1000자까지 作成할 수 있습니다.")
     private String summary;
     private String hash_tag;
-    @NotBlank(message = "* 材料는 필수 입력 항목입니다.")
-    @Size(max=1000, message = "* 최대 1000자까지 작성할 수 있습니다.")
+    @NotBlank(message = "* 材料는 必須 入力 항목입니다.")
+    @Size(max=1000, message = "* 최대 1000자까지 作成할 수 있습니다.")
     private String rcp_parts_dtls;
     private String rcp_date;
 

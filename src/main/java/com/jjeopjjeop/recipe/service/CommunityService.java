@@ -114,7 +114,7 @@ public class CommunityService {
     public int recipeReviewCount(){ return communityDAO.recipeReviewCount();}
     public int freeForumCount(){ return communityDAO.freeForumCount();}
     public void deletePost(int id){
-        //イメージ 삭제 로직
+        //イメージ 削除 로직
         List<ImageDTO> images = communityDAO.findImageByPostId(id);
         fileStore.deleteImages(images,COMMUNITY);
 
@@ -133,7 +133,7 @@ public class CommunityService {
 
     }
 
-        //라이크 취소 라이크테이블에 유저아이디, 포스프아이디로된 데이터 삭제/ 해당 포스트 like --
+        //라이크 취소 라이크테이블에 유저아이디, 포스프아이디로된 데이터 削除/ 해당 포스트 like --
     public void subtractLikeCnt(Integer postId, String userId) {
         communityDAO.deleteLikeInfo(Map.of("postId",postId,"userId",userId));
         communityDAO.subtractLikeCntByPostId(postId);
@@ -177,7 +177,7 @@ public class CommunityService {
 
 
     public void deleteCurrentImages(Integer postId) {
-        //イメージ 삭제 로직
+        //イメージ 削除 로직
         List<ImageDTO> images = communityDAO.findImageByPostId(postId);
         fileStore.deleteImages(images,COMMUNITY);
         communityDAO.deleteImageByPostId(postId);

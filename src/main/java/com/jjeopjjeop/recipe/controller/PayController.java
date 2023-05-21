@@ -109,7 +109,7 @@ public class PayController {
     }
 
 
-    //본인 마이페이지 들어가서 장바구니 항목 삭제
+    //본인 마이페이지 들어가서 장바구니 항목 削除
     @MySecured
     @GetMapping("/mypage/cart/delete/{pay_num}")
     public String cartDelete(@PathVariable("pay_num") int pay_num){

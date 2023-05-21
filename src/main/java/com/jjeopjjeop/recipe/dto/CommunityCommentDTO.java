@@ -17,7 +17,7 @@ public class CommunityCommentDTO {
     private Integer id;
     private Integer board_id;
     private String user_id;
-    @NotNull(message = "내용을 입력해주세요")
+    @NotNull(message = "내용을 入力해주세요")
     private String content;
     private Date created_at;
     private Date updated_at;

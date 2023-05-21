@@ -62,7 +62,7 @@ class ProduceServiceImp implements ProduceService {
     }
 
     ////판매글 수정
-    //사진파일을 변경했을때: 기존의 사진파일경로에 가서 사진파일 자체 삭제하고, 새로운 거 넣기.
+    //사진파일을 변경했을때: 기존의 사진파일경로에 가서 사진파일 자체 削除하고, 새로운 거 넣기.
     //사진파일을 변경하지 않았을때: 기존의 파일이 들어가도록
     //사진을 변경하든 말든 여기서는 produce_image=null, produce_image_path=null이다. 파일을 넣어
     @Override
@@ -78,12 +78,12 @@ class ProduceServiceImp implements ProduceService {
             produceDTO.setProduce_image_path(originalProduceImagePath);
         }else {
             //파일이 바뀌어서 비어있지 않다면
-            ////media폴더에 있는 イメージ파일도 같이 삭제
+            ////media폴더에 있는 イメージ파일도 같이 削除
             String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\media\\produce\\"
                     + produceDAO.produceView(produceDTO.getProduce_num()).getProduce_image(); //イメージ 파일 경로
             File deleteFile = new File(filePath);
             if(deleteFile.exists()) {
-                deleteFile.delete(); //삭제
+                deleteFile.delete(); //削除
             }
 
             //새로운 사진 저장.

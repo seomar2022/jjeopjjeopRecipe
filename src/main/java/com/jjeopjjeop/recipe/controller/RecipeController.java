@@ -276,7 +276,7 @@ public class RecipeController {
 
         service.updateProcess(recipeDTO, urlPath(request, 0), isChange);
 
-        // 요리과정 수정 (전체 삭제 후 재등록)
+        // 요리과정 수정 (전체 削除 후 재등록)
         for(int i=0; i<manual_txt.length; i++){
             ManualDTO manualDTO = new ManualDTO();
             manualDTO.setManual_no(i+1);
@@ -293,7 +293,7 @@ public class RecipeController {
             service.updateMProcess(manualDTO, urlPath(request, 1));
         }
 
-        // 카테고리 수정 (전체 삭제 후 재등록)
+        // 카테고리 수정 (전체 削除 후 재등록)
         service.deleteCProcess(recipeDTO.getRcp_seq());
         for(String data : cateArr){
             int num = Integer.parseInt(data);
@@ -303,7 +303,7 @@ public class RecipeController {
         return "redirect:/recipe/view/"+recipeDTO.getRcp_seq();
     }
 
-    // レシピ 삭제 메소드
+    // レシピ 削除 메소드
     @GetMapping("/recipe/delete")
     public String rcpDeleteMethod(@RequestParam int rcp_seq, HttpServletRequest request, HttpSession session){
         RecipeDTO recipeDTO = service.contentProcess(rcp_seq);
