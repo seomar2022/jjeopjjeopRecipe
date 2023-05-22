@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>판매글 수정</title>
+    <title>販売フォーム修正</title>
     <th:block th:replace="fragments/head :: links"> </th:block>
     <link href="/static/css/produce.css" th:href="@{/css/produce.css}" rel="stylesheet"/>
 </head>
@@ -22,7 +22,7 @@
                         <form name="update" id="update" method="post" enctype="multipart/form-data"
                               th:action="@{/produce/update/{produceNum}(produceNum=${produceDTO.produce_num})}"
                               th:object="${produceDTO}">
-                            <input type="hidden" name="produce_num" placeholder="게시글번호" th:value="${produceDTO.produce_num}"/>
+                            <input type="hidden" name="produce_num" placeholder="連番" th:value="${produceDTO.produce_num}"/>
                                 <!--이게 있어야 produce_num이 mapper로 넘어갈 수있다. -->
                             <div>
                                 <input type="hidden" class="form-control" name="user_id" id="user_id" placeholder="아이디" th:value="${produceDTO.user_id}"/>

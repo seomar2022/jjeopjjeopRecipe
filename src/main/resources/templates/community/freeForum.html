@@ -23,8 +23,8 @@
         <h3>フリー掲示板</h3>
 
         <div class="caption">
-          <p class="p-2 bd-highlight" th:text="|글 수 : ${page.count}|">
-            글 수:
+          <p class="p-2 bd-highlight" th:text="|投稿数 : ${page.count}|">
+            投稿数:
           </p>
           <div>
             <a th:href="@{/community/form}" class="btn btn btn-secondary"
@@ -41,7 +41,7 @@
             >
               <ul class="list-group">
                 <li class="list-group-item">
-                  <a href="/board" class="nav-link category">전체글</a>
+                  <a href="/board" class="nav-link category">all</a>
                 </li>
                 <li class="list-group-item">
                   <a href="/board/recipeReview" class="nav-link category"

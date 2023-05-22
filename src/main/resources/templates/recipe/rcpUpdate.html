@@ -93,20 +93,20 @@
                 </span>
             </p>
             <p>
-                <span>状況別</span>
+                <span>材料</span>
                 <span th:each="cate2 : ${cateList}" th:if="${cate2.cate_cate} == 2">
                     &nbsp&nbsp
                     <a href="#" th:value="${cate2.cate_seq}" th:attr="style = ${cate2.rcp_chk == true ? 'color: black; font-weight: bold;' : 'color: #fff;'}">
-                        <span th:text="${cate2.cate_name}">状況別</span>
+                        <span th:text="${cate2.cate_name}">材料</span>
                     </a>
                 </span>
             </p>
             <p>
-                <span>材料別</span>
+                <span>状況</span>
                 <span th:each="cate3 : ${cateList}" th:if="${cate3.cate_cate} == 3">
                     &nbsp&nbsp
                     <a href="#" th:value="${cate3.cate_seq}" th:attr="style = ${cate3.rcp_chk == true ? 'color: black; font-weight: bold;' : 'color: #fff;'}">
-                        <span th:text="${cate3.cate_name}">材料別</span>
+                        <span th:text="${cate3.cate_name}">状況</span>
                     </a>
                 </span>
             </p>

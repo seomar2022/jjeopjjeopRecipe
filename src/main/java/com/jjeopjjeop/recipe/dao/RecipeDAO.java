@@ -29,7 +29,7 @@ public interface RecipeDAO {
 
     // scrap 처리
     public int checkScrap(UserScrapDTO userScrapDTO); //중복인가?
-    public void scrapP(UserScrapDTO userScrapDTO); //保存 등록
+    public void scrapP(UserScrapDTO userScrapDTO); //保存 登録
     public void updateScrapP(int num); //レシピ 保存수 증가
     public void scrapM(UserScrapDTO userScrapDTO); //保存 해제
     public void updateScrapM(int num); //レシピ 保存수 감소

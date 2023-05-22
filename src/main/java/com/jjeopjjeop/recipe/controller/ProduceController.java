@@ -62,10 +62,10 @@ public class ProduceController {
         if(isNotSeller(user)){
             //이미 판매자 등록했는데 아직 승인이 안난경우
             if(isWaitingToBeApproved(user_id)){
-                alertAndMovePage(response,"판매자 등록 처리중입니다. 잠시만 기다려주세요!","/produce/list/0");
+                alertAndMovePage(response,"판매자 登録 처리중입니다. 잠시만 기다려주세요!","/produce/list/0");
             }else{
                 //판매자 등록 안한경우
-                alertAndMovePage(response,"판매자가 아닙니다. 우선 판매자로 등록해주세요!","/seller/write");
+                alertAndMovePage(response,"판매자가 아닙니다. 우선 판매자로 登録해주세요!","/seller/write");
             }
         }
             //성공로직

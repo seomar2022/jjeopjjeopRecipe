@@ -97,6 +97,6 @@ $(function () {
 //신고확인
 $(function () {
   $('a.confirmReport').click(function () {
-    if (!confirm('신고하시겠습니까?')) return false;
+    if (!confirm('報告하시겠습니까?')) return false;
   });
 });

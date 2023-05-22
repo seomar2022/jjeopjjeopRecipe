@@ -20,15 +20,15 @@
           >상세検索</a
         >
         <h1>コミュニティ 掲示板</h1>
-        <h3>전체글</h3>
+        <h3>all</h3>
 
         <div class="caption">
-          <p class="p-2 bd-highlight" th:text="|글 수 : ${page.count}|">
-            글 수:
+          <p class="p-2 bd-highlight" th:text="|投稿数 : ${page.count}|">
+            投稿数
           </p>
           <div>
             <a th:href="@{/community/form}" class="btn btn btn-secondary"
-              >글쓰기</a
+              >投稿</a
             >
           </div>
         </div>
@@ -37,11 +37,11 @@
           <div class="row">
             <div
               class="col-2"
-              th:replace="/fragments/communityCategory::category('전체글')"
+              th:replace="/fragments/communityCategory::category('all')"
             >
               <ul class="list-group">
                 <li class="list-group-item">
-                  <a href="/board" class="nav-link category">전체글</a>
+                  <a href="/board" class="nav-link category">all</a>
                 </li>
                 <li class="list-group-item">
                   <a href="/board/recipeReview" class="nav-link category"

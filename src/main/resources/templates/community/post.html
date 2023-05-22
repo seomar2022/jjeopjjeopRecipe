@@ -132,7 +132,7 @@
           <a
             th:href="@{|/community/report/${community.id}|}"
             class="btn btn-secondary btn-sm me-auto bd-highlight confirmReport"
-            >신고</a
+            >報告</a
           >
           <i
             class="fa fa-heart-o bd-highlight like-btn"
@@ -183,7 +183,7 @@
                   th:href="@{|/community/post/comment/report?commentId=${comment.id}|}"
                   class="btn btn-secondary btn-sm confirmReport"
                 >
-                  신고
+                  報告
                 </a>
               </div>
             </div>
@@ -204,7 +204,7 @@
                   th:value="${community.id}"
                 />
                 <input type="text" name="content" required />
-                <button type="submit" class="btn btn-dark btn-sm">등록</button>
+                <button type="submit" class="btn btn-dark btn-sm">登録</button>
               </form>
             </div>
           </div>

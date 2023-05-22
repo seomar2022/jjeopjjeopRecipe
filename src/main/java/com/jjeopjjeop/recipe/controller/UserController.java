@@ -117,7 +117,7 @@ public class UserController {
          }
          //회원이 아니라면
       }else {
-         rAttr.addFlashAttribute("message", "등록된 아이디가 없습니다.");
+         rAttr.addFlashAttribute("message", "登録된 아이디가 없습니다.");
          bindingResult.reject("loginFail", "ログイン 실패");
          logger.info("Login Fail: ID or Password Does Not Exist");
          return "redirect:/login";

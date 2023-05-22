@@ -18,7 +18,7 @@ public class SellerDTO {
     private String user_id;
     @NotBlank(message = "상호명을 入力해주세요.")
     private String business_name;
-    @NotNull(message = "사업자등록번호를 入力해주세요.")
+    @NotNull(message = "사업자登録번호를 入力해주세요.")
     private String registration_number;
     @NotBlank(message = "사업장 전화번호를 入力해주세요.")
     private String seller_phone;

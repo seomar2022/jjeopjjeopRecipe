@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
-        alert('결제 완료');
+        alert('決済完了');
         chk.click();
       });
     </script>
@@ -15,7 +15,7 @@
 <!--결제성공후 이 화면으로 넘어오면 자동으로 pay=1로 update된다.
 kakaoPaySuccess-->
 <form method="post" th:action="@{/mypage/cart/update/{pay_num}(pay_num=${info.partner_order_id})}">
-    <button id="chk">완료</button>
+    <button id="chk">完了</button>
 </form>
 카카오페이 결제가 정상적으로 완료되었습니다.<br/>
 
