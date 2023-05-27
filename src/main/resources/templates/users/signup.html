@@ -12,7 +12,7 @@
         }).open();
     }
 </script>
-<head th:replace="fragments/head('회원가입')">
+<head th:replace="fragments/head('新規会員登録')">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title</title>
@@ -68,7 +68,7 @@
         function checkUserIdExist(user_id){
             var user_id = $('#user_id').val();
             if(user_id.length == 0){
-                alert('아이디를 入力해주세요');
+                alert('ID를 入力해주세요');
             } else{
                 requestAjax(user_id);
             }
@@ -83,10 +83,10 @@
                 data: {user_id : user_id},
                 success: function(data){
                             if(data == 1){
-                                alert('사용할 수 없는 아이디입니다');
+                                alert('사용할 수 없는 ID입니다');
                                 $('#user_id').val('');
                             } else {
-                                alert('사용할 수 있는 아이디입니다');
+                                alert('사용할 수 있는 ID입니다');
                             }
                         }
             })
@@ -99,7 +99,7 @@
         <form action="/signup" method="post" th:object="${user}">
             <div class="form-group h-100" id="signup">
                 <div class="mb-3 pt-4 px-5">
-                    <label for="user_id" class="form-label">아이디</label>
+                    <label for="user_id" class="form-label">ID</label>
                     <div class="input-group">
                         <input
                                 type="text"
@@ -108,32 +108,32 @@
                                 name="user_id"
                                 th:field="*{user_id}"
                                 th:errorclass="is-invalid"
-                                placeholder="아이디를 入力하세요"
+                                placeholder="ID를 入力하세요"
                                 maxlength="30"
                         />
                         <input type="button" class="btn btn-outline-warning" value="중복OK" onclick="checkUserIdExist()" />
-                        <div class="invalid-feedback" th:errors="*{user_id}">아이디 오류</div>
+                        <div class="invalid-feedback" th:errors="*{user_id}">ID 오류</div>
                     </div>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="password" class="form-label">비밀번호</label>
+                    <label for="password" class="form-label">パスワード</label>
                     <input
                             type="password"
                             class="form-control"
                             id="password"
                             th:field="*{password}"
                             th:errorclass="is-invalid"
-                            placeholder="비밀번호를 入力하세요"
+                            placeholder="パスワード를 入力하세요"
                     />
-                    <div class="invalid-feedback" th:errors="*{password}">비밀번호 오류</div>
+                    <div class="invalid-feedback" th:errors="*{password}">パスワード 오류</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="password2" class="form-label">비밀번호 재入力</label>
+                    <label for="password2" class="form-label">パスワード 재入力</label>
                     <input
                             type="password"
                             class="form-control"
                             id="password2"
-                            placeholder="비밀번호를 다시 한번 入力하세요"
+                            placeholder="パスワード를 다시 한번 入力하세요"
                             th:onkeyup="check_password([[${user.password}]])"
                     />
                         <div id="check"></div>

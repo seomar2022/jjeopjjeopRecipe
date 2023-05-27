@@ -96,7 +96,7 @@ INFO 10804 --- [nio-8081-exec-5] com.jjeopjjeop.recipe.service.KakaoPay   : Kaka
 
     }
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/////////결제 승인: 사용자가 결제 수단을 선택하고 비밀번호를 入力해 결제 인증을 완료한 뒤, 최종적으로 결제 완료 처리를 하는 단계. 결제 승인 API를 호출하면 결제 준비 단계에서 시작된 결제건이 승인으로 완료 처리
+/////////결제 승인: 사용자가 결제 수단을 선택하고 パスワード를 入力해 결제 인증을 완료한 뒤, 최종적으로 결제 완료 처리를 하는 단계. 결제 승인 API를 호출하면 결제 준비 단계에서 시작된 결제건이 승인으로 완료 처리
     //https://developers.kakao.com/docs/latest/ko/kakaopay/single-payment#approve
 
     public KakaoPayApprovalVO kakaoPayInfo(String pg_token, ProduceDTO produceDTO) {  //^&     public KakaoPayApprovalVO kakaoPayInfo(String pg_token)

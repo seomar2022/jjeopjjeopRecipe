@@ -16,7 +16,7 @@ CREATE TABLE Recipe (
 	report	NUMBER	DEFAULT 0	NULL
 );
 
-COMMENT ON COLUMN Recipe.user_id IS '아이디';
+COMMENT ON COLUMN Recipe.user_id IS 'ID';
 
 DROP TABLE User_j;
 
@@ -34,9 +34,9 @@ CREATE TABLE User_j (
 	address	VARCHAR2(100)		NULL
 );
 
-COMMENT ON COLUMN User_j.user_id IS '아이디';
+COMMENT ON COLUMN User_j.user_id IS 'ID';
 
-COMMENT ON COLUMN User_j.password IS '비밀번호';
+COMMENT ON COLUMN User_j.password IS 'パスワード';
 
 COMMENT ON COLUMN User_j.usertype IS '개인/판매자여부
 1:개인|2:판매자';
@@ -69,7 +69,7 @@ CREATE TABLE Seller (
 	approval	NUMBER	DEFAULT 0	NOT NULL
 );
 
-COMMENT ON COLUMN Seller.user_id IS '아이디';
+COMMENT ON COLUMN Seller.user_id IS 'ID';
 
 COMMENT ON COLUMN Seller.business_name IS '상호명';
 
@@ -114,7 +114,7 @@ CREATE TABLE Produce_board (
 
 COMMENT ON COLUMN Produce_board.produce_num IS '게시글 일련번호';
 
-COMMENT ON COLUMN Produce_board.user_id IS '아이디';
+COMMENT ON COLUMN Produce_board.user_id IS 'ID';
 
 COMMENT ON COLUMN Produce_board.produce_type IS '商品カテゴリー(1은 채소, 2는 과일, 3은 곡물, 4는 기타)';
 
@@ -140,7 +140,7 @@ CREATE TABLE User_rcp (
 )
 );
 
-COMMENT ON COLUMN User_rcp.user_id IS '아이디';
+COMMENT ON COLUMN User_rcp.user_id IS 'ID';
 
 DROP TABLE Comment_rcp;
 
@@ -156,7 +156,7 @@ CREATE TABLE Comment_rcp (
 	filepath	VARCHAR2(300)		NULL
 );
 
-COMMENT ON COLUMN Comment_rcp.user_id IS '아이디';
+COMMENT ON COLUMN Comment_rcp.user_id IS 'ID';
 
 DROP TABLE Produce_review;
 
@@ -203,7 +203,7 @@ CREATE TABLE Pay_history (
 
 COMMENT ON COLUMN Pay_history.pay_num IS '구매 일련번호';
 
-COMMENT ON COLUMN Pay_history.user_id IS '아이디';
+COMMENT ON COLUMN Pay_history.user_id IS 'ID';
 
 COMMENT ON COLUMN Pay_history.produce_num IS '게시글 일련번호';
 
@@ -227,7 +227,7 @@ CREATE TABLE CommunityBoard (
 	report	NUMBER		NULL
 );
 
-COMMENT ON COLUMN CommunityBoard.user_id IS '아이디';
+COMMENT ON COLUMN CommunityBoard.user_id IS 'ID';
 
 COMMENT ON COLUMN CommunityBoard.category IS '0 フリー글 1 レシピレビュー';
 
@@ -252,7 +252,7 @@ CREATE TABLE Comment_board (
 	report	NUMBER		NULL
 );
 
-COMMENT ON COLUMN Comment_board.user_id IS '아이디';
+COMMENT ON COLUMN Comment_board.user_id IS 'ID';
 
 ALTER TABLE Recipe ADD CONSTRAINT PK_RECIPE PRIMARY KEY (
 	rcp_seq

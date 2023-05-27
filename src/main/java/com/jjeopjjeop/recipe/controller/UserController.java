@@ -42,7 +42,7 @@ public class UserController {
    @Autowired
    private UserServiceImp userServiceImp;
    
-   //회원가입 페이지
+   //新規会員登録 페이지
    @GetMapping("/signup")
    public String register(@ModelAttribute("user") UserDTO userDTO){
       //view로 뿌려주려면 @ModelAttribute 설정 必須!
@@ -50,13 +50,13 @@ public class UserController {
       return "users/signup";
    }
 
-   //계정 추가(회원가입)
+   //계정 추가(新規会員登録)
    @PostMapping("/signup")
    public String add(@Validated @ModelAttribute("user") UserDTO userDTO, BindingResult bindingResult, RedirectAttributes rAttr,
                            Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
-      //회원가입 검증
+      //新規会員登録 검증
       if (bindingResult.hasErrors()){
-         //회원가입 실패 시 기존 데이터 유지
+         //新規会員登録 실패 시 기존 데이터 유지
          //model.addAttribute("userDTO", userDTO);
 //         logger.info("errors={}", bindingResult);
 //         model.addAttribute("message", "형식에 맞지 않는 값이 入力되었습니다.");
@@ -65,12 +65,12 @@ public class UserController {
          int result = 0;
          result = userServiceImp.addUser(userDTO);
          logger.info("post register");
-         rAttr.addFlashAttribute("message", "회원가입이 완료되었습니다.");
+         rAttr.addFlashAttribute("message", "新規会員登録이 완료되었습니다.");
          return "redirect:/login";
       }
    }
 
-   //아이디 중복 확인
+   //ID 중복 확인
    @ResponseBody
    @GetMapping("/signup/idCheck")
    public int userIdExist(String user_id, Model model){
@@ -106,7 +106,7 @@ public class UserController {
          session.removeAttribute("action");
          //ログイン 실패하면 현재 페이지(ログイン)
          if(action != null){
-            session.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+            session.setAttribute("message", "ID 또는 パスワード가 일치하지 않습니다.");
             logger.info("Login Fail: ID or Password Doest Not Match");
             return "redirect:/login";
          //ログイン 성공 ==> 마이페이지로 이동(임시)
@@ -117,7 +117,7 @@ public class UserController {
          }
          //회원이 아니라면
       }else {
-         rAttr.addFlashAttribute("message", "登録된 아이디가 없습니다.");
+         rAttr.addFlashAttribute("message", "登録된 ID가 없습니다.");
          bindingResult.reject("loginFail", "ログイン 실패");
          logger.info("Login Fail: ID or Password Does Not Exist");
          return "redirect:/login";
@@ -137,14 +137,14 @@ public class UserController {
       return mav;
    }
 
-   //아이디 찾기 페이지
+   //ID 찾기 페이지
    @GetMapping("/findid")
    public String findId(@ModelAttribute UserDTO userDTO, Model model, HttpServletRequest request, HttpServletResponse response){
       model.addAttribute("user", userDTO);
       return "/users/findid";
    }
 
-   //아이디 찾기
+   //ID 찾기
    @PostMapping("/findid")
    public String findId(@ModelAttribute("user") UserDTO userDTO, BindingResult bindingResult,
                         Model model, RedirectAttributes rAttr) throws Exception{
@@ -168,20 +168,20 @@ public class UserController {
 
    }
 
-   //비밀번호 찾기 페이지
+   //パスワード 찾기 페이지
    @GetMapping("/findpw")
    public String findpw(String username, String email){
       return "/users/findpw";
    }
 
-   //인증번호 발송 ===> application.properties 노출로 보안 이슈 발생 ==> 기존 아이디 찾기와 동일한 방식으로 변경
+   //인증번호 발송 ===> application.properties 노출로 보안 이슈 발생 ==> 기존 ID 찾기와 동일한 방식으로 변경
    @PostMapping("/findpw")
    public String sendEmail(@ModelAttribute("user") UserDTO userDTO, Model model, RedirectAttributes rAttr) throws Exception{
       userDTO = userServiceImp.findPassword(userDTO);
 //      logger.info("userDTO={}", userDTO);
 
       if(userDTO == null){
-         rAttr.addFlashAttribute("message", "아이디와 이메일이 일치하지 않습니다.");
+         rAttr.addFlashAttribute("message", "ID와 이메일이 일치하지 않습니다.");
          return "redirect:/findpw";
       }else {
 
@@ -259,10 +259,10 @@ public class UserController {
 //      System.out.println("Input: "+password);
 
       if(!(sessionId.equals(user_id))){
-         rAttr.addFlashAttribute("message", "아이디가 일치하지 않습니다.");
+         rAttr.addFlashAttribute("message", "ID가 일치하지 않습니다.");
          return "redirect:/mypage/withdraw";
       } else if (!(sessionPassword.equals(password))) {
-         rAttr.addFlashAttribute("message", "비밀번호가 일치하지 않습니다.");
+         rAttr.addFlashAttribute("message", "パスワード가 일치하지 않습니다.");
          return "redirect:/mypage/withdraw";
       } else {
          logger.info("post withdraw");

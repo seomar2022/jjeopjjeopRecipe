@@ -14,13 +14,13 @@ import java.util.List;
 @Component
 public class UserDTO {
    @NotBlank(message = "必須 入力 항목입니다.")
-   @Pattern(regexp = "^[a-z]{1}([a-z0-9]){2,9}$", message = "아이디는 영어 소문자로 시작하고 영어 소문자 또는 숫자를 포함하여 총 3~10자리어야 합니다.")
+   @Pattern(regexp = "^[a-z]{1}([a-z0-9]){2,9}$", message = "ID는 영어 소문자로 시작하고 영어 소문자 또는 숫자를 포함하여 총 3~10자리어야 합니다.")
    private String user_id;
 
    @NotBlank(message = "必須 入力 항목입니다.")
 //   @Pattern(regexp = "(?=.*[A-Za-z])(?=.*[0-9])(?=.*\\d)(?=.*[$@$!%*#?&]).{5,8}",
    @Pattern(regexp = "(?=.*[A-Za-z])([0-9A-Za-z$@$!%*#?&]){3,8}",
-           message = "비밀번호는 영문 대소문자, 숫자, 특수문자를 1개以上 포함한 3~8자리여야 합니다.")
+           message = "パスワード는 영문 대소문자, 숫자, 특수문자를 1개以上 포함한 3~8자리여야 합니다.")
    private String password;
    private int usertype;
 

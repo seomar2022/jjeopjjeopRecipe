@@ -42,21 +42,21 @@
             <div class="login">
                 <img id="company-logo" src="media/images/company_logo2.png" />
                 <div class="form-outline mb-3 mx-4">
-                    <input type="text" class="form-control" name="user_id" id="user_id" required="" placeholder="아이디" />
+                    <input type="text" class="form-control" name="user_id" id="user_id" required="" placeholder="ID" />
                 </div>
                 <div class="form-outline mb-4 mx-4">
-                    <input type="password" class="form-control" name="password" id="password" required="" placeholder="비밀번호" />
+                    <input type="password" class="form-control" name="password" id="password" required="" placeholder="パスワード" />
                 </div>
             </div>
             <div class="d-flex justify-content-around align-items-center mb-4 mx-5">
-                    <a th:href="@{/findid}" class="text-muted">아이디 찾기</a>
+                    <a th:href="@{/findid}" class="text-muted">IDを忘れた方はこちら</a>
                     |
-                    <a th:href="@{/findpw}" class="text-muted">비밀번호 찾기</a>
+                    <a th:href="@{/findpw}" class="text-muted">パスワードを忘れた方はこちら</a>
             </div>
             <div class="d-grid">
                 <button class="btn btn-warning mb-3 mx-4" type="submit">ログイン</button>
                 <button class="btn btn-secondary mb-4 mx-4" type="button" th:onclick="|location.href='@{/signup}'|">
-                    회원가입
+                    新規会員登録
                 </button>
             </div>
         </div>

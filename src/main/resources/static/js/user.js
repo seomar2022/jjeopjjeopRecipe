@@ -19,14 +19,14 @@ function check_password(password){
             var password2 = document.getElementById('password2').value;
             if(password != '' && password2 != ''){
                 if(password == password2){
-                    document.getElementById('check').innerHTML='비밀번호가 일치합니다.';
+                    document.getElementById('check').innerHTML='パスワード가 일치합니다.';
                     document.getElementById('check').style.color='gray';
                 } else {
-                    document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+                    document.getElementById('check').innerHTML='パスワード가 일치하지 않습니다.';
                     document.getElementById('check').style.color='red';
                 }
             } else if(password2 == ''){
-                document.getElementById('check').innerHTML='비밀번호 재入力 항목이 누락되었습니다.';
+                document.getElementById('check').innerHTML='パスワード 재入力 항목이 누락되었습니다.';
                 document.getElementById('check').style.color='red';
             }
         }

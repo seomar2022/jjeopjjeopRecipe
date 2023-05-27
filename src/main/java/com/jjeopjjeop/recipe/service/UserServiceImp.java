@@ -96,16 +96,16 @@ public class UserServiceImp implements UserService{
       return userDAO.findPassword(userDTO);
    }
 
-   //임시비밀번호를 한 번만 불러오기 위해 멤버변수로 선언
+   //임시パスワード를 한 번만 불러오기 위해 멤버변수로 선언
 //   String str = getTempPassword();
 //   @Override
 //   public int updatePassword(UserDTO userDTO) {
-//      //임시비밀번호로 비밀번호 업데이트
+//      //임시パスワード로 パスワード 업데이트
 //      userDTO.setPassword(str);
 //      return userDAO.updatePassword(userDTO);
 //   }
 
-   //임시비밀번호 생성
+   //임시パスワード 생성
 //   @Override
 //   public String getTempPassword() {
 //      char[] charSet = new char[] {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'A', 'B',
@@ -134,8 +134,8 @@ public class UserServiceImp implements UserService{
 //      //메일 수신 테스트를 위해 보내는 이와 받는 이 주소를 동일하게 설정함
 //      message.setTo("mjkimthebest@gmail.com");
 //      message.setFrom(FROM_ADDRESS);
-//      message.setSubject("쩝쩝박사 비밀번호 찾기 안내 메일입니다.");
-//      message.setText("비밀번호는 "+ str +"입니다.");
+//      message.setSubject("쩝쩝박사 パスワード 찾기 안내 메일입니다.");
+//      message.setText("パスワード는 "+ str +"입니다.");
 //      mailSender.send(message);
 //   }
 

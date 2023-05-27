@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head('비밀번호 찾기')">
+<head th:replace="fragments/head('パスワード 찾기')">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title</title>
@@ -22,8 +22,8 @@
 </script>
 <nav th:replace="fragments/nav :: front-nav(title)"></nav>
 <div class="container position-absolute top-50 end-0 translate-middle-y">
-    <h4>비밀번호 찾기</h4>
-    <h6 class="text-muted">名前과 아이디, 이메일 주소를 入力하세요.</h6>
+    <h4>パスワード 찾기</h4>
+    <h6 class="text-muted">名前과 ID, 이메일 주소를 入力하세요.</h6>
     <form action="/findpw" method="post">
         <div class="form-group p-2 w-25">
             <div class="row mb-3 align-items-center">
@@ -38,14 +38,14 @@
                 />
             </div>
             <div class="row mt-2 mb-3 align-items-center">
-                <label for="user_id" class="form-label"><small>아이디</small></label>
+                <label for="user_id" class="form-label"><small>ID</small></label>
                 <input
                         type="text"
                         class="form-control"
                         id="user_id"
                         name="user_id"
                         required
-                        placeholder="아이디를 入力하세요"
+                        placeholder="ID를 入力하세요"
                 />
             </div>
             <div class="row mt-2 mb-3 align-items-center">
