@@ -62,7 +62,7 @@
                     />
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="email" class="form-label">이메일</label>
+                    <label for="email" class="form-label">メール</label>
                     <input
                             type="email"
                             class="form-control"
@@ -72,7 +72,7 @@
                     />
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="phone" class="form-label">전화번호</label>
+                    <label for="phone" class="form-label">電話番号</label>
                     <input
                             type="text"
                             class="form-control"
@@ -92,7 +92,7 @@
                     />
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="gender" class="form-label">성별</label>
+                    <label for="gender" class="form-label">性別</label>
                     <select name="gender" id="gender" class="form-select" th:value="${user.gender}" aria-readonly="true">
                         <option value="" th:selected="selected" th:disabled="disabled" hidden>성별</option>
                         <option value="1" th:selected="${user.gender==1}" th:disabled="disabled">남</option>
