@@ -131,7 +131,7 @@ public class UserServiceImp implements UserService{
 //   public void sendMail(String email) {
 //      SimpleMailMessage message = new SimpleMailMessage();
 //
-//      //메일 수신 테스트를 위해 보내는 이와 받는 이 주소를 동일하게 설정함
+//      //메일 수신 테스트를 위해 보내는 이와 받는 이 住所를 동일하게 설정함
 //      message.setTo("mjkimthebest@gmail.com");
 //      message.setFrom(FROM_ADDRESS);
 //      message.setSubject("쩝쩝박사 パスワード 찾기 안내 메일입니다.");

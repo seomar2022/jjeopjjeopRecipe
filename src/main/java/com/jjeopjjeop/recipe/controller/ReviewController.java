@@ -60,7 +60,7 @@ public class ReviewController {
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-    //리뷰 수정을 위한 작성된 리뷰내용 보기
+    //리뷰 修正을 위한 작성된 리뷰내용 보기
     @MySecured
     @GetMapping("/review/view/{pay_num}")
     public ModelAndView reviewView(@PathVariable("pay_num") int pay_num, ModelAndView mav){
@@ -70,7 +70,7 @@ public class ReviewController {
         return mav;
     }
 
-    //리뷰 수정 반영
+    //리뷰 修正 반영
     @MySecured
     @PostMapping("/review/update")
     public String reviewUpdate(@Validated ReviewDTO reviewDTO, BindingResult bindingResult, Model model){

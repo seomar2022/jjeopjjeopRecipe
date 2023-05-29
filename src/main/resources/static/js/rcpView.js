@@ -26,7 +26,7 @@
                 comment_list += '<b><span class="left" style="font-size: 15px;">'+ obj.user_id +'</span></b>&nbsp&nbsp&nbsp';
                 comment_list += '<span style="color: gray;">' + obj.co_date + '</span>&nbsp&nbsp&nbsp';
                 if(user_id == obj.user_id){
-                    comment_list += '<span class="coUpdateBtn viewBtn" style="color: blue;">수정</span>&nbsp&nbsp&nbsp';
+                    comment_list += '<span class="coUpdateBtn viewBtn" style="color: blue;">修正</span>&nbsp&nbsp&nbsp';
                     comment_list += '<span class="coDeleteBtn viewBtn">削除</span>&nbsp&nbsp&nbsp';
                 }
                 comment_list += '<br/>';
@@ -101,10 +101,10 @@
         });
     };
 
-    // コメント 수정 관리
+    // コメント 修正 관리
     $(document).on("click", ".coUpdateBtn", function(){
         $(this).css("display", "none");
-        var coUpdateConfirmBtn = '<span id="coUpdateConfirmBtn" class="viewBtn" style="color: blue;">수정 완료</span>';
+        var coUpdateConfirmBtn = '<span id="coUpdateConfirmBtn" class="viewBtn" style="color: blue;">修正 완료</span>';
         $(this).after(coUpdateConfirmBtn);
 
         var updateInput = '';
@@ -126,7 +126,7 @@
 			success : function(data) {
 			    getCommentList();
 			    $("#coUpdateConfirmBtn").css("display", "none");
-                var coUpdateBtn = '<span class="coUpdateBtn viewBtn" style="color: blue;">수정</span>';
+                var coUpdateBtn = '<span class="coUpdateBtn viewBtn" style="color: blue;">修正</span>';
                 $("#coUpdateConfirmBtn").after(coUpdateBtn);
 			},
 			error : function(data) {

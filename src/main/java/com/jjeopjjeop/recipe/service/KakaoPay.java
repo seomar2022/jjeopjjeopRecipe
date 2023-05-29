@@ -74,7 +74,7 @@ public class KakaoPay {
         try {
             kakaoPayReadyVO = restTemplate.postForObject(new URI(HOST + "/v1/payment/ready"), body, KakaoPayReadyVO.class);
             //postForObject: POST 요청을 보내고 객체로 결과를 반환받는다
-            //postForObject(보낼주소, 보낼것, 결과로 받을 객체)
+            //postForObject(보낼住所, 보낼것, 결과로 받을 객체)
 
             log.info("" + kakaoPayReadyVO);
 /*
@@ -83,7 +83,7 @@ INFO 10804 --- [nio-8081-exec-5] com.jjeopjjeop.recipe.service.KakaoPay   : Kaka
     created_at=Thu Aug 11 02:19:42 KST 2022)
  */
 
-            return kakaoPayReadyVO.getNext_redirect_pc_url(); //마지막 return 값으로 redirect url을 불러와 결제가 완료되면 해당 주소로 가게끔 설정해 놓는다.
+            return kakaoPayReadyVO.getNext_redirect_pc_url(); //마지막 return 값으로 redirect url을 불러와 결제가 완료되면 해당 住所로 가게끔 설정해 놓는다.
 //getNext_redirect_pc_url: 요청한 클라이언트가 PC 웹일 경우 카카오톡으로 결제 요청 메시지(TMS)를 보내기 위한 사용자 정보 入力 화면 Redirect URL
  //QR코드나 폰번호 入力화면 나옴.
         } catch (RestClientException e) {

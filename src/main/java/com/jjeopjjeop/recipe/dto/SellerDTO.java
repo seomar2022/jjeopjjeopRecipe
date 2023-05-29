@@ -22,7 +22,7 @@ public class SellerDTO {
     private String registration_number;
     @NotBlank(message = "사업장 전화번호를 入力해주세요.")
     private String seller_phone;
-    @NotBlank(message = "사업장 주소를 入力해주세요.")
+    @NotBlank(message = "사업장 住所를 入力해주세요.")
     private String seller_address;
     private Integer approval;
 

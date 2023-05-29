@@ -190,7 +190,7 @@
                     <div class="invalid-feedback" th:errors="*{phone}">전화번호 오류</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="birthday" class="form-label">생년월일</label>
+                    <label for="birthday" class="form-label">生年月日</label>
                     <input
                             type="date"
                             class="form-control"
@@ -198,30 +198,30 @@
                             th:field="*{birthday}"
                             th:errorclass="is-invalid"
                     />
-                    <div class="invalid-feedback" th:errors="*{birthday}">생년월일오류</div>
+                    <div class="invalid-feedback" th:errors="*{birthday}">生年月日오류</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="gender" class="form-label">성별</label>
+                    <label for="gender" class="form-label">性別</label>
 
                     <select name="gender" id="gender" class="form-select">
-                        <option value="" selected disabled hidden>성별</option>
+                        <option value="" selected disabled hidden>性別</option>
                         <option value="1">남</option>
                         <option value="2">여</option>
                     </select>
-                    <div class="invalid-feedback" th:errors="*{gender}">성별 오류</div>
+                    <div class="invalid-feedback" th:errors="*{gender}">性別 오류</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="postno" class="form-label">우편번호</label>
+                    <label for="postno" class="form-label">郵便番号</label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="postno" th:field="*{postno}" size="7" readonly />
-                        <input type="button" class="btn btn-outline-warning" value="우편번호찾기" onclick="kakaopost()" />
+                        <input type="button" class="btn btn-outline-warning" value="郵便番号찾기" onclick="kakaopost()" />
                     </div>
-                    <div class="invalid-feedback" th:errors="*{postno}">우편번호 오류</div>
+                    <div class="invalid-feedback" th:errors="*{postno}">郵便番号 오류</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="address" class="form-label">주소</label>
+                    <label for="address" class="form-label">住所</label>
                     <input type="text" class="form-control" id="address" th:field="*{address}" size="70" />
-                    <div class="invalid-feedback" th:errors="*{address}">주소 오류</div>
+                    <div class="invalid-feedback" th:errors="*{address}">住所 오류</div>
                 </div>
                 <div class="d-flex justify-content-center pt-5">
                     <input

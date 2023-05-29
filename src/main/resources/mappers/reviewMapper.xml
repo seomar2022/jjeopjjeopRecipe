@@ -40,12 +40,12 @@
         VALUES(#{pay_num}, #{rating}, #{content}, sysdate)
     </insert>
 
-<!--리뷰 수정을 위한 작성된 리뷰내용 보기-->
+<!--리뷰 修正을 위한 작성된 리뷰내용 보기-->
     <select id="reviewView" resultType="com.jjeopjjeop.recipe.dto.ReviewDTO" parameterType="int">
         SELECT * FROM produce_review WHERE pay_num = #{pay_num}
     </select>
 
-<!--리뷰 수정 반영-->
+<!--리뷰 修正 반영-->
     <update id="reviewUpdate" parameterType="com.jjeopjjeop.recipe.dto.ReviewDTO">
         UPDATE produce_review
         SET rating = #{rating}, content=#{content}

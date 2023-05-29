@@ -223,7 +223,7 @@ public class CommunityController {
         return "redirect:"+refererLink;
     }
 
-    //コメント수정
+    //コメント修正
     //ajax
     @MySecured
     @ResponseBody

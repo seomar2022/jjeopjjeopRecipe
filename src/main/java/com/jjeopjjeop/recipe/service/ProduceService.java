@@ -20,7 +20,7 @@ public interface ProduceService {
 
     ProduceDTO produceViewProcess(int produce_num);
 
-    void produceUpdate(ProduceDTO produceDTO, MultipartFile file) throws Exception; //판매글 수정
+    void produceUpdate(ProduceDTO produceDTO, MultipartFile file) throws Exception; //판매글 修正
 
     int produceFilterCount(int produce_type); //페이지 처리를 위해 판매글 개수 세기
     int produceSortCount(int sort); //페이지처리를 위한 판매글(정렬) 개수세기

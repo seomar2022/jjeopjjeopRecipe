@@ -45,7 +45,7 @@ public class RecipeCommentController {
         service.writeProcess(recipeCommentDTO);
     }
 
-    // コメント 수정
+    // コメント 修正
     @ResponseBody
     @PostMapping("/recipe/comment/update")
     public void updateMethod(String co_rcp_seq, String comment_txt, RecipeCommentDTO recipeCommentDTO){

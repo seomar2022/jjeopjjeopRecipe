@@ -17,7 +17,7 @@
 <div class="wrapper d-flex align-items-stretch">
     <div class="sidenav" th:replace="fragments/userSidebar :: userSidebar"></div>
     <div id="content" class="main pt-5">
-        <h4>マイ 정보 수정</h4>
+        <h4>マイ 정보 修正</h4>
             <div class="form-group h-100" id="signup">
                 <div class="mb-3 pt-4 px-5">
                     <label for="user_id" class="form-label">ID</label>
@@ -82,7 +82,7 @@
                     />
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="birthday" class="form-label">생년월일</label>
+                    <label for="birthday" class="form-label">生年月日</label>
                     <input
                             type="date"
                             class="form-control"
@@ -94,26 +94,26 @@
                 <div class="mb-3 py-1 px-5">
                     <label for="gender" class="form-label">性別</label>
                     <select name="gender" id="gender" class="form-select" th:value="${user.gender}" aria-readonly="true">
-                        <option value="" th:selected="selected" th:disabled="disabled" hidden>성별</option>
-                        <option value="1" th:selected="${user.gender==1}" th:disabled="disabled">남</option>
-                        <option value="2" th:selected="${user.gender==2}" th:disabled="disabled">여</option>
+                        <option value="" th:selected="selected" th:disabled="disabled" hidden>性別</option>
+                        <option value="1" th:selected="${user.gender==1}" th:disabled="disabled">男性</option>
+                        <option value="2" th:selected="${user.gender==2}" th:disabled="disabled">女性</option>
                     </select>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="postno" class="form-label">우편번호</label>
+                    <label for="postno" class="form-label">郵便番号</label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="postno" size="7" th:value="${user.postno == 0 ? '' : user.postno}" readonly />
                     </div>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="address" class="form-label">주소</label>
+                    <label for="address" class="form-label">住所</label>
                     <input type="text" class="form-control" id="address" size="70" th:value="${user.address}" readonly />
                 </div>
                 <div class="d-flex justify-content-center pt-5">
                     <input
                             type="button"
                             class="btn btn-warning mt-3"
-                            value="수정"
+                            value="修正"
                             th:onclick="|location.href='@{/mypage/edit}'|"
                     />
                 </div>

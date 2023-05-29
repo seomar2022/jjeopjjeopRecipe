@@ -49,14 +49,14 @@ COMMENT ON COLUMN User_j.email IS '이메일';
 
 COMMENT ON COLUMN User_j.phone IS '휴대폰번호';
 
-COMMENT ON COLUMN User_j.birthday IS '생년월일';
+COMMENT ON COLUMN User_j.birthday IS '生年月日';
 
-COMMENT ON COLUMN User_j.gender IS '성별
+COMMENT ON COLUMN User_j.gender IS '性別
 1:남|2:여';
 
-COMMENT ON COLUMN User_j.postno IS '우편번호';
+COMMENT ON COLUMN User_j.postno IS '郵便番号';
 
-COMMENT ON COLUMN User_j.address IS '주소';
+COMMENT ON COLUMN User_j.address IS '住所';
 
 DROP TABLE Seller;
 
@@ -77,7 +77,7 @@ COMMENT ON COLUMN Seller.registration_number IS '사업자 등록 번호';
 
 COMMENT ON COLUMN Seller.seller_phone IS '사업장 전화번호';
 
-COMMENT ON COLUMN Seller.seller_address IS '사업장 주소';
+COMMENT ON COLUMN Seller.seller_address IS '사업장 住所';
 
 COMMENT ON COLUMN Seller.approval IS '승인여부';
 

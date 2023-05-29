@@ -228,7 +228,7 @@ public class RecipeController {
         return "redirect:/recipe/list";
     }
 
-    // レシピ 수정 페이지 요청 메소드
+    // レシピ 修正 페이지 요청 메소드
     @GetMapping("/recipe/update")
     public String rcpUpdateMethod(@RequestParam int rcp_seq, Model model, HttpSession session){
         RecipeDTO recipeDTO = service.contentProcess(rcp_seq);
@@ -254,7 +254,7 @@ public class RecipeController {
         return "/recipe/rcpUpdate";
     }
 
-    // レシピ 수정 메소드
+    // レシピ 修正 메소드
     @PostMapping("/recipe/update")
     public String rcpUpdateMethod(@ModelAttribute("recipeDTO") RecipeDTO recipeDTO, String[] manual_txt,
                                   @RequestParam(value="cateArr", required=false) List<String> cateArr, Model model,
@@ -264,7 +264,7 @@ public class RecipeController {
         List<CategoryDTO> cateList = service.cateListProcess();
         model.addAttribute("cateList", cateList);
 
-        // 본문 수정
+        // 본문 修正
         boolean isChange = false;
         MultipartFile mainFile = recipeDTO.getUpload();
         if(!mainFile.isEmpty()){
@@ -276,7 +276,7 @@ public class RecipeController {
 
         service.updateProcess(recipeDTO, urlPath(request, 0), isChange);
 
-        // 요리과정 수정 (전체 削除 후 재등록)
+        // 요리과정 修正 (전체 削除 후 재등록)
         for(int i=0; i<manual_txt.length; i++){
             ManualDTO manualDTO = new ManualDTO();
             manualDTO.setManual_no(i+1);
@@ -293,7 +293,7 @@ public class RecipeController {
             service.updateMProcess(manualDTO, urlPath(request, 1));
         }
 
-        // 카테고리 수정 (전체 削除 후 재등록)
+        // 카테고리 修正 (전체 削除 후 재등록)
         service.deleteCProcess(recipeDTO.getRcp_seq());
         for(String data : cateArr){
             int num = Integer.parseInt(data);

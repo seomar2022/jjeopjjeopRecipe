@@ -210,7 +210,7 @@ public class UserController {
       return "users/mypage";
    }
 
-   //마이페이지 수정
+   //마이페이지 修正
    @MySecured
    @GetMapping("/mypage/edit")
    public String editMypageView(String user_id, HttpSession session, Model model){
@@ -233,7 +233,7 @@ public class UserController {
       }else{
          userServiceImp.updateMypage(userDTO);
          model.addAttribute("user", userDTO);
-         rAttr.addFlashAttribute("message", "내 정보가 수정되었습니다.");
+         rAttr.addFlashAttribute("message", "내 정보가 修正되었습니다.");
          return "redirect:/mypage";
       }
    }

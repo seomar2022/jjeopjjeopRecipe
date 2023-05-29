@@ -20,7 +20,7 @@ public interface ProduceDAO {
 
     ProduceDTO produceView(int produce_num); //판매글 상세보기
 
-    void produceUpdate(ProduceDTO produceDto); //판매글 수정하기
+    void produceUpdate(ProduceDTO produceDto); //판매글 修正하기
 
     int produceFilterCount(int produce_type); //페이지처리를 위한 판매글(필터링) 개수세기
     

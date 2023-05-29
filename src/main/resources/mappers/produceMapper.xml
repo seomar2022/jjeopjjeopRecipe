@@ -70,7 +70,7 @@
 		SELECT * FROM produce_board WHERE produce_num=#{produce_num} and end_of_sale = 0
 	</select>
 
-	<!--판매글 수정-->
+	<!--판매글 修正-->
 	<update id="produceUpdate" parameterType="com.jjeopjjeop.recipe.dto.ProduceDTO">
 		UPDATE produce_board
 		SET produce_type=#{produce_type}, produce_name=#{produce_name}, price=#{price}, produce_description=#{produce_description}, produce_image = #{produce_image}, produce_image_path = #{produce_image_path}

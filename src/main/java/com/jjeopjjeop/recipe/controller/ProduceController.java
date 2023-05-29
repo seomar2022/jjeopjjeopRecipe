@@ -203,7 +203,7 @@ public class ProduceController {
         return mav;
     }
 
-    //판매글 수정폼
+    //판매글 修正폼
     @MySecured
     @GetMapping("/produce/update/{produceNum}")
     public ModelAndView produceUpdateForm(@PathVariable("produceNum") int produce_num, ModelAndView mav) {
@@ -216,7 +216,7 @@ public class ProduceController {
         return mav;
     }
 
-    //판매글 수정 반영
+    //판매글 修正 반영
     @MySecured
     @PostMapping("/produce/update/{produceNum}")
     public String produceUpdate(@PathVariable("produceNum") int produce_num,@Validated ProduceDTO produceDTO, BindingResult bindingResult, MultipartFile file) throws Exception {

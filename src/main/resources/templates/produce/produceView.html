@@ -42,7 +42,7 @@
                 <div class="col-md-6"><!--오른쪽 6칸은 기타 商品설명 등-->
                     <div>
 <!--                        <input th:value="${session.user_id}">&lt;!&ndash;누가 ログイン했는지 알수있게. 나중에 지우기.&ndash;&gt;-->
-                        <!--ログイン한 사람이 글 쓴 사람일 때만 削除, 수정링크 보이게-->
+                        <!--ログイン한 사람이 글 쓴 사람일 때만 削除, 修正링크 보이게-->
                         <th:block th:if="${session.user_id == produceDTO.user_id}">
                             <a th:href="@{/produce/update/{produce_num}(produce_num=${produceNum})}">修正  </a>
                             <a th:href="@{/produce/update/endOfSale/{produce_num}(produce_num=${produceNum})}">販売終了</a>

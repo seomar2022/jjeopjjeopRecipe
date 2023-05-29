@@ -44,7 +44,7 @@ class ProduceServiceImp implements ProduceService {
         return produceDAO.produceListSort(map);
     }
 
-    //판매글 작성과 판매글 수정을 위한 イメージ 저장 메소드
+    //판매글 작성과 판매글 修正을 위한 イメージ 저장 메소드
     public String imageStore(MultipartFile file) throws Exception{
         String fileName;
         if(!file.isEmpty()) {//업로드한 파일이 있으면
@@ -61,7 +61,7 @@ class ProduceServiceImp implements ProduceService {
         return fileName;
     }
 
-    ////판매글 수정
+    ////판매글 修正
     //사진파일을 변경했을때: 기존의 사진파일경로에 가서 사진파일 자체 削除하고, 새로운 거 넣기.
     //사진파일을 변경하지 않았을때: 기존의 파일이 들어가도록
     //사진을 변경하든 말든 여기서는 produce_image=null, produce_image_path=null이다. 파일을 넣어

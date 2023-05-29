@@ -27,7 +27,7 @@ function dataSend() {
 }
 
 /**
- * コメント 수정 구현
+ * コメント 修正 구현
  */
 const editBtns = document.querySelectorAll('.edit-btn');
 const commentBox = document.querySelectorAll('input.comment-content');
