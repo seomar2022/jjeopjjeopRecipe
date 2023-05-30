@@ -43,7 +43,7 @@ COMMENT ON COLUMN User_j.usertype IS '개인/판매자여부
 
 COMMENT ON COLUMN User_j.username IS '名前';
 
-COMMENT ON COLUMN User_j.nickname IS '별명';
+COMMENT ON COLUMN User_j.nickname IS 'ニックネーム';
 
 COMMENT ON COLUMN User_j.email IS '이메일';
 
@@ -126,7 +126,7 @@ COMMENT ON COLUMN Produce_board.produce_image IS '商品イメージ';
 
 COMMENT ON COLUMN Produce_board.produce_image_path IS '商品イメージ저장된 경로';
 
-COMMENT ON COLUMN Produce_board.produce_description IS '商品 상세설명';
+COMMENT ON COLUMN Produce_board.produce_description IS '商品 詳細설명';
 
 DROP TABLE User_rcp;
 
@@ -489,7 +489,7 @@ ALTER TABLE produce_review DROP COLUMN produce_name;
 --レシピ 테이블 時間 컬럼 사이즈 변경
 ALTER TABLE recipe MODIFY (time VARCHAR2(20)) ;
 
---카테고리 테이블 카테고리 カテゴリー 컬럼 추가
+--カテゴリー 테이블 カテゴリー カテゴリー 컬럼 추가
 ALTER TABLE category ADD cate_cate NUMBER;
 
 --レシピ 테이블 閲覧数 컬럼 추가

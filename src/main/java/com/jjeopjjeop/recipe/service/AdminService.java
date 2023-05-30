@@ -35,7 +35,7 @@ public class AdminService {
     }
 
 
-    //회원상세
+    //회원詳細
     public UserDTO detailUser(String user_id){
         return adminMapper.detailUser(user_id);
     }

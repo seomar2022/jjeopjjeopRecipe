@@ -37,7 +37,7 @@ public class PayController {
     @Autowired
     private ProduceDTO produceDTO2;
 
-    //판매글 상세페이지에서 버튼 클릭하여 장바구니에 넣기
+    //판매글 詳細페이지에서 버튼 클릭하여 장바구니에 넣기
     @MySecured //ログイン안한상태로 클릭시 ログイン 페이지로 넘어가게
     @PostMapping("/cart/write")
     public String cartWrite(PayDTO payDTO){
@@ -122,7 +122,7 @@ public class PayController {
     @Autowired
     private KakaoPay kakaopay;
 
-    //판매글 상세페이지에서 버튼 클릭하여 장바구니에 넣고 바로 결제하기
+    //판매글 詳細페이지에서 버튼 클릭하여 장바구니에 넣고 바로 결제하기
     @MySecured
     @PostMapping("/kakaoPayDirect")
     public String kakaoPayDirect(PayDTO payDTO, HttpServletRequest request){

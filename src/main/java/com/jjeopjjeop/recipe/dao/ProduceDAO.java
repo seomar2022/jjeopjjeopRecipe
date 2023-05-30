@@ -18,7 +18,7 @@ public interface ProduceDAO {
     
     void produceUpdateSale(int produce_num); //판매중지로 변경
 
-    ProduceDTO produceView(int produce_num); //판매글 상세보기
+    ProduceDTO produceView(int produce_num); //판매글 詳細보기
 
     void produceUpdate(ProduceDTO produceDto); //판매글 修正하기
 

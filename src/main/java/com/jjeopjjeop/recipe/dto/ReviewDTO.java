@@ -15,7 +15,7 @@ public class ReviewDTO {
 
     private Integer pay_num;
 
-    @NotNull(message = "별점을 선택해주세요")
+    @NotNull(message = "별점을 選択해주세요")
     private Float rating;
 
     @NotNull

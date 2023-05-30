@@ -65,7 +65,7 @@
 		WHERE produce_num = #{produce_num}
 	</update>
 
-	<!--판매글 상세보기-->
+	<!--판매글 詳細보기-->
 	<select id="produceView" parameterType="int" resultType="com.jjeopjjeop.recipe.dto.ProduceDTO">
 		SELECT * FROM produce_board WHERE produce_num=#{produce_num} and end_of_sale = 0
 	</select>

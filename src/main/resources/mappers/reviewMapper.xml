@@ -6,7 +6,7 @@
 
 <mapper namespace="com.jjeopjjeop.recipe.dao.ReviewDAO">
 
-<!--판매글 상세보기에서 해당 판매글에 대한 리뷰 목록 보여주기-->
+<!--판매글 詳細보기에서 해당 판매글에 대한 리뷰 목록 보여주기-->
     <select id="reviewList" parameterType="Map" resultType="com.jjeopjjeop.recipe.dto.ReviewDTO">
         <![CDATA[
         	SELECT rcp_li.* FROM

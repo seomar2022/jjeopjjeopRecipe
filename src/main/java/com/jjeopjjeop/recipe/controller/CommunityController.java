@@ -257,7 +257,7 @@ public class CommunityController {
     }
 
 
-    //상세検索
+    //詳細検索
     int totalCnt;
     CommunitySearchForm form;
     @GetMapping("/search")

@@ -53,7 +53,7 @@ public class AdminController {
         return "admin/u_index";
     }
 
-    //회원상세
+    //회원詳細
     @MySecured(role = MySecured.Role.ADMIN)
     @GetMapping("/detailU")
     public String detailU(String user_id, Model model){
@@ -145,7 +145,7 @@ public class AdminController {
         return mav;
     }
 
-    //レシピ글 누르면 상세내용 페이지 ->???????
+    //レシピ글 누르면 詳細내용 페이지 ->???????
     @GetMapping("/recipe/view/{rcp_seq}")
     public String rcpdetail(String rcp_name, Model model){
         return "redirect:/recipe/rcpView";

@@ -223,7 +223,7 @@
       textArea.value = copyText;//textarea에 텍스트 入力
       document.body.appendChild(textArea);//body에 textarea 추가
 
-      textArea.select();//선택
+      textArea.select();//選択
       document.execCommand("Copy");//복사
       textArea.remove();//생성한 textarea 削除
     };

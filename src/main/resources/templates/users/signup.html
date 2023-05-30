@@ -154,16 +154,16 @@
                     <div class="invalid-feedback" th:errors="*{username}">名前오류</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="nickname" class="form-label">별명</label>
+                    <label for="nickname" class="form-label">ニックネーム</label>
                     <input
                             type="text"
                             class="form-control"
                             id="nickname"
                             th:field="*{nickname}"
                             th:errorclass="is-invalid"
-                            placeholder="별명을 入力하세요"
+                            placeholder="ニックネーム을 入力하세요"
                     />
-                    <div class="invalid-feedback" th:errors="*{nickname}">별명 오류</div>
+                    <div class="invalid-feedback" th:errors="*{nickname}">ニックネーム 오류</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
                     <label for="email" class="form-label">이메일</label>

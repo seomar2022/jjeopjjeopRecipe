@@ -16,7 +16,7 @@ $(function () {
   }
 });
 
-// form (글쓰기) 카테고리에따라 양식 다르게 보이기
+// form (投稿) カテゴリー에따라 양식 다르게 보이기
 const categorySelect = document.querySelector('select.category');
 const recipeSearchBtn = document.querySelector('.recipeSearch');
 categorySelect.addEventListener('change', showRecipeSearchBtn);
@@ -50,7 +50,7 @@ function searchRecipe() {
   });
 }
 
-//レシピ 선택
+//レシピ 選択
 function selectRecipeProcess() {
   const selectBtns = document.querySelectorAll('.recipe-select');
   const selectValueInput = document.querySelector('.select-value');

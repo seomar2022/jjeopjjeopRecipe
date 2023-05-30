@@ -16,7 +16,7 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface AdminMapper {
 
-    //회원상세
+    //회원詳細
     @Select("select user_id as user_id, password as password, usertype as usertype, username as username, nickname as nickname, email as email, phone as phone, birthday as birthday, gender as gender, postno as postno, address as address from User_j where user_id = #{user_id}")
     UserDTO detailUser(@Param("user_id") String user_id);
 
@@ -64,7 +64,7 @@ public interface AdminMapper {
     int countrcp(int cate_seq);
 
 
-    //レシピ글 누르면 상세내용 페이지
+    //レシピ글 누르면 詳細내용 페이지
     @Select("select * from Recipe where rcp_name=#{rcp_name}")
     RecipeDTO rcpDetail(@Param("rcp_name") String rcp_name);
 

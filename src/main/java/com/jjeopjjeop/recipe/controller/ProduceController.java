@@ -172,10 +172,10 @@ public class ProduceController {
         return "redirect:/produce/list/0";
     }
 
-    //판매글 상세보기
+    //판매글 詳細보기
     @GetMapping("/produce/view/{produceNum}")
     public ModelAndView produceView(@PathVariable("produceNum") int produce_num, ModelAndView mav, HttpServletRequest request, @RequestParam(value = "page", required = false, defaultValue = "0") Integer page) {
-        //판매글 상세내용
+        //판매글 詳細내용
         ProduceDTO produceDTO = produceService.produceViewProcess(produce_num); //produce_num에 해당하는 정보 가져오기
         mav.addObject("produceDTO", produceDTO);//가져온 정보 보내기
         mav.addObject("businessName", produceService.searchSellerBusinessName(produceDTO.getUser_id()));

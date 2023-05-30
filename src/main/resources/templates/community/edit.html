@@ -28,12 +28,12 @@
           th:object="${community}"
         >
           <select th:field="*{category}" class="form-select mb-3 category">
-            <option value="0">フリー글</option>
+            <option value="0">フリー掲示板</option>
             <option value="1" selected>レシピレビュー</option>
           </select>
           <div class="recipeSearch mb-3">
             <hr />
-            <p class="title">レシピ 선택</p>
+            <p class="title">レシピ選択</p>
             <div>
               <div class="recipeSearch-box">
                 <input type="text" class="form-control mx-3 searchInput" />
@@ -66,25 +66,25 @@
                           レシピ タイトル : gkdl
                         </span>
                       </a>
-                      <span th:text="'♥'+${recipe.scrap}" class="right">保存수</span>
+                      <span th:text="'♥'+${recipe.scrap}" class="right">保存数</span>
                     </p>
                 <p class="d-flex justify-content-between">
                   <span th:text="|作成者: ${recipe.user_id}|" class="left">ニックネーム</span
                   >
                 </p>
                 <p class="d-flex justify-content-between">
-                  <span th:text="${recipe.time}" class="left">時間</span><span th:text="${recipe.difficulty}">難易度 하</span
+                  <span th:text="${recipe.time}" class="left">時間</span><span th:text="${recipe.difficulty}">難易度易</span
                   ><span th:text="${recipe.amount}" class="right">3人分</span>
                 </p>
               </div>
                   <div class="mt-5 mx-3">
                     <input type="hidden" name="" th:value="${recipe.rcp_seq}" class="recipe-id">
-                  <button type="button" class="btn btn-secondary recipe-select">선택</button>
+                  <button type="button" class="btn btn-secondary recipe-select">選択</button>
                 </div>
                 </div>
               </div>
             </div>
-            <label for="" class="form-label">선택 レシピ :</label>
+            <label for="" class="form-label">選択レシピ :</label>
             <input type="text" class="mt-4 select-value" th:field="*{rcp_seq}" readonly></input>
             <hr />
           </div>
@@ -94,14 +94,14 @@
               type="text"
               class="form-control"
               th:errorclass="is-invalid"
-              placeholder="タイトル을 入力해주세요."
+              placeholder="タイトル入力"
               th:field="*{title}"
               maxlength="30"
             />
-            <div class="invalid-feedback" th:errors="*{title}">タイトル오류</div>
+            <div class="invalid-feedback" th:errors="*{title}">タイトルエラー</div>
           </div>
           <div class="mb-3">
-            <label for="formFileSm" class="form-label">사진첨부</label>
+            <label for="formFileSm" class="form-label">イメージ添付</label>
             <input
               class="form-control form-control-sm"
               id="formFileSm"
@@ -130,10 +130,10 @@
               th:errorclass="is-invalid"
               rows="3"
               id="content"
-              placeholder="내용을 入力해주세요."
+              placeholder="内容入力"
               th:field="*{content}"
             ></textarea>
-            <div class="invalid-feedback" th:errors="*{content}">내용오류</div>
+            <div class="invalid-feedback" th:errors="*{content}">内容エラー</div>
           </div>
           <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-secondary mx-1">修正</button>

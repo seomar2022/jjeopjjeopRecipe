@@ -29,7 +29,7 @@ public class UserDTO {
    private String username;
 
    @NotBlank(message = "必須 入力 항목입니다.")
-   @Pattern(regexp = "[ㄱ-ㅎ가-힣a-z0-9]{2,5}", message = "별명은 특수문자를 제외한 2~5자리여야 합니다.")
+   @Pattern(regexp = "[ㄱ-ㅎ가-힣a-z0-9]{2,5}", message = "ニックネーム은 특수문자를 제외한 2~5자리여야 합니다.")
    private String nickname;
 
    @NotBlank(message = "必須 入力 항목입니다.")

@@ -106,7 +106,7 @@ public class RecipeController {
         mav.addObject("user_id", String.valueOf(session.getAttribute("user_id")));
 
 
-        // レシピ 카테고리 정보
+        // レシピ カテゴリー 정보
         List<CategoryDTO> list = service.getRcpCateProcess(rcp_seq);
         List<String> cate_list = new ArrayList<>();
 
@@ -219,7 +219,7 @@ public class RecipeController {
             service.writeMProcess(manualDTO);
         }
 
-        // 카테고리 작성
+        // カテゴリー 작성
         for(String data : cateArr){
             int num = Integer.parseInt(data);
             service.writeCProcess(num);
@@ -293,7 +293,7 @@ public class RecipeController {
             service.updateMProcess(manualDTO, urlPath(request, 1));
         }
 
-        // 카테고리 修正 (전체 削除 후 재등록)
+        // カテゴリー 修正 (전체 削除 후 재등록)
         service.deleteCProcess(recipeDTO.getRcp_seq());
         for(String data : cateArr){
             int num = Integer.parseInt(data);

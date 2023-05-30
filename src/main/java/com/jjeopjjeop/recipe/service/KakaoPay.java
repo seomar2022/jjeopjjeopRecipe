@@ -96,11 +96,11 @@ INFO 10804 --- [nio-8081-exec-5] com.jjeopjjeop.recipe.service.KakaoPay   : Kaka
 
     }
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/////////결제 승인: 사용자가 결제 수단을 선택하고 パスワード를 入力해 결제 인증을 완료한 뒤, 최종적으로 결제 완료 처리를 하는 단계. 결제 승인 API를 호출하면 결제 준비 단계에서 시작된 결제건이 승인으로 완료 처리
+/////////결제 승인: 사용자가 결제 수단을 選択하고 パスワード를 入力해 결제 인증을 완료한 뒤, 최종적으로 결제 완료 처리를 하는 단계. 결제 승인 API를 호출하면 결제 준비 단계에서 시작된 결제건이 승인으로 완료 처리
     //https://developers.kakao.com/docs/latest/ko/kakaopay/single-payment#approve
 
     public KakaoPayApprovalVO kakaoPayInfo(String pg_token, ProduceDTO produceDTO) {  //^&     public KakaoPayApprovalVO kakaoPayInfo(String pg_token)
-        //pg_token: 결제승인 요청을 인증하는 토큰. 사용자 결제 수단 선택 완료 시, approval_url로 redirection해줄 때 pg_token을 query string으로 전달
+        //pg_token: 결제승인 요청을 인증하는 토큰. 사용자 결제 수단 選択 완료 시, approval_url로 redirection해줄 때 pg_token을 query string으로 전달
         log.info("KakaoPayInfoVO............................................");
 
         //이거넣으면 정상 작동함. 이거대신에 이 메소드로 데이터가 담긴 produceDTO에 와야하는데 그걸 모르겠음.
