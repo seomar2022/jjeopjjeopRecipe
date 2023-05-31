@@ -20,7 +20,7 @@
 <main class="container">
     <div class="bg-white p-5 rounded d-flex flex-column align-items-center">
         <img src="/media/admin/user.png" class="oneimg">
-        <!--        <a class="user">회원관리</a>-->
+        <!--        <a class="user">アカウント管理</a>-->
 
     </div>
     <!-- 検索기능 -->
@@ -39,16 +39,16 @@
                 <!-- admin은 controller에서? -->
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <a href="/admin/u_index" class="nav-link category">회원관리</a>
+                        <a href="/admin/u_index" class="nav-link category">アカウント管理</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/admin/r_index" class="nav-link category">レシピ관리</a>
+                        <a href="/admin/r_index" class="nav-link category">レシピ管理</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/admin/s_index" class="nav-link category">판매자관리</a>
+                        <a href="/admin/s_index" class="nav-link category">販売者管理</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/admin/c_index" class="nav-link category">掲示板관리</a>
+                        <a href="/admin/c_index" class="nav-link category">掲示板管理</a>
                     </li>
                 </ul>
             </div>
@@ -74,8 +74,8 @@
                         <td th:text="${au.password}"></td>
                         <td th:switch="${au.usertype}">
                             <span th:case="3">管理者</span>
-                            <span th:case="2">판매자</span>
-                            <span th:case="1">회원</span>
+                            <span th:case="2">販売者</span>
+                            <span th:case="1">アカウント</span>
                         </td>
 
                         <td th:text="${au.username}"></td>
