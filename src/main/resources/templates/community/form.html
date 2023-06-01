@@ -98,7 +98,7 @@
               th:field="*{title}"
               maxlength="30"
             />
-            <div class="invalid-feedback" th:errors="*{title}">タイトル오류</div>
+            <div class="invalid-feedback" th:errors="*{title}">タイトルを正しく入力してください。</div>
           </div>
           <div class="mb-3">
             <label for="formFileSm" class="form-label">사진첨부</label>
@@ -119,7 +119,7 @@
               placeholder="내용을 入力해주세요."
               th:field="*{content}"
             ></textarea>
-            <div class="invalid-feedback" th:errors="*{content}">내용오류</div>
+            <div class="invalid-feedback" th:errors="*{content}">내용を正しく入力してください。</div>
           </div>
           <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-secondary mx-1">登録</button>

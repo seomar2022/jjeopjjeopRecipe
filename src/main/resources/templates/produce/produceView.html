@@ -71,7 +71,7 @@
                         <!--장바구니 넣을 때 user_id도 같이 넣어주기-->
                         <input type="hidden" th:value="${session.user_id}" name="user_id">
                         <!-- 장바구니넣을때 produce_num을 넣어주기위해-->
-                        <input type="hidden" th:value="${produceDTO.produce_num}" name="produce_num" placeholder="게시글번호" />
+                        <input type="hidden" th:value="${produceDTO.produce_num}" name="produce_num" placeholder="게시글番号" />
                         <div class="row m-1">
                             <button class="btn btn-lg btn-warning col-md-4" onclick="javascript: form.action='/cart/write/';">カート</button>
                             <span class="col-md-1"></span>

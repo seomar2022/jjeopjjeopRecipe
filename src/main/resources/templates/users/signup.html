@@ -112,7 +112,7 @@
                                 maxlength="30"
                         />
                         <input type="button" class="btn btn-outline-warning" value="중복OK" onclick="checkUserIdExist()" />
-                        <div class="invalid-feedback" th:errors="*{user_id}">ID 오류</div>
+                        <div class="invalid-feedback" th:errors="*{user_id}">ID を正しく入力してください。</div>
                     </div>
                 </div>
                 <div class="mb-3 py-1 px-5">
@@ -125,7 +125,7 @@
                             th:errorclass="is-invalid"
                             placeholder="パスワード를 入力하세요"
                     />
-                    <div class="invalid-feedback" th:errors="*{password}">パスワード 오류</div>
+                    <div class="invalid-feedback" th:errors="*{password}">パスワード を正しく入力してください。</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
                     <label for="password2" class="form-label">パスワード 재入力</label>
@@ -151,7 +151,7 @@
                             placeholder="名前을 入力하세요"
                             maxlength="30"
                     />
-                    <div class="invalid-feedback" th:errors="*{username}">名前오류</div>
+                    <div class="invalid-feedback" th:errors="*{username}">名前を正しく入力してください。</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
                     <label for="nickname" class="form-label">ニックネーム</label>
@@ -163,7 +163,7 @@
                             th:errorclass="is-invalid"
                             placeholder="ニックネーム을 入力하세요"
                     />
-                    <div class="invalid-feedback" th:errors="*{nickname}">ニックネーム 오류</div>
+                    <div class="invalid-feedback" th:errors="*{nickname}">ニックネーム を正しく入力してください。</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
                     <label for="email" class="form-label">이메일</label>
@@ -175,10 +175,10 @@
                             th:errorclass="is-invalid"
                             placeholder="ex) abc@test.tt"
                     />
-                    <div class="invalid-feedback" th:errors="*{email}">이메일 오류</div>
+                    <div class="invalid-feedback" th:errors="*{email}">이메일 を正しく入力してください。</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
-                    <label for="phone" class="form-label">전화번호</label>
+                    <label for="phone" class="form-label">電話番号</label>
                     <input
                             type="text"
                             class="form-control"
@@ -187,7 +187,7 @@
                             th:errorclass="is-invalid"
                             placeholder="ex) 000-0000-0000"
                     />
-                    <div class="invalid-feedback" th:errors="*{phone}">전화번호 오류</div>
+                    <div class="invalid-feedback" th:errors="*{phone}">電話番号 を正しく入力してください。</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
                     <label for="birthday" class="form-label">生年月日</label>
@@ -198,7 +198,7 @@
                             th:field="*{birthday}"
                             th:errorclass="is-invalid"
                     />
-                    <div class="invalid-feedback" th:errors="*{birthday}">生年月日오류</div>
+                    <div class="invalid-feedback" th:errors="*{birthday}">生年月日を正しく入力してください。</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
                     <label for="gender" class="form-label">性別</label>
@@ -208,7 +208,7 @@
                         <option value="1">남</option>
                         <option value="2">여</option>
                     </select>
-                    <div class="invalid-feedback" th:errors="*{gender}">性別 오류</div>
+                    <div class="invalid-feedback" th:errors="*{gender}">性別 を正しく入力してください。</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
                     <label for="postno" class="form-label">郵便番号</label>
@@ -216,12 +216,12 @@
                         <input type="text" class="form-control" id="postno" th:field="*{postno}" size="7" readonly />
                         <input type="button" class="btn btn-outline-warning" value="郵便番号찾기" onclick="kakaopost()" />
                     </div>
-                    <div class="invalid-feedback" th:errors="*{postno}">郵便番号 오류</div>
+                    <div class="invalid-feedback" th:errors="*{postno}">郵便番号 を正しく入力してください。</div>
                 </div>
                 <div class="mb-3 py-1 px-5">
                     <label for="address" class="form-label">住所</label>
                     <input type="text" class="form-control" id="address" th:field="*{address}" size="70" />
-                    <div class="invalid-feedback" th:errors="*{address}">住所 오류</div>
+                    <div class="invalid-feedback" th:errors="*{address}">住所 を正しく入力してください。</div>
                 </div>
                 <div class="d-flex justify-content-center pt-5">
                     <input

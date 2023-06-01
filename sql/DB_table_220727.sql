@@ -47,7 +47,7 @@ COMMENT ON COLUMN User_j.nickname IS 'ニックネーム';
 
 COMMENT ON COLUMN User_j.email IS '이메일';
 
-COMMENT ON COLUMN User_j.phone IS '휴대폰번호';
+COMMENT ON COLUMN User_j.phone IS '휴대폰番号';
 
 COMMENT ON COLUMN User_j.birthday IS '生年月日';
 
@@ -73,11 +73,11 @@ COMMENT ON COLUMN Seller.user_id IS 'ID';
 
 COMMENT ON COLUMN Seller.business_name IS '상호명';
 
-COMMENT ON COLUMN Seller.registration_number IS '사업자 등록 번호';
+COMMENT ON COLUMN Seller.registration_number IS '事業者 등록 番号';
 
-COMMENT ON COLUMN Seller.seller_phone IS '사업장 전화번호';
+COMMENT ON COLUMN Seller.seller_phone IS '事業所 電話番号';
 
-COMMENT ON COLUMN Seller.seller_address IS '사업장 住所';
+COMMENT ON COLUMN Seller.seller_address IS '事業所 住所';
 
 COMMENT ON COLUMN Seller.approval IS '승인여부';
 
@@ -112,7 +112,7 @@ CREATE TABLE Produce_board (
 	produce_description	VARCHAR2(200)		NOT NULL
 );
 
-COMMENT ON COLUMN Produce_board.produce_num IS '게시글 일련번호';
+COMMENT ON COLUMN Produce_board.produce_num IS '게시글 일련番号';
 
 COMMENT ON COLUMN Produce_board.user_id IS 'ID';
 
@@ -168,7 +168,7 @@ CREATE TABLE Produce_review (
 	created_date	DATE		NOT NULL
 );
 
-COMMENT ON COLUMN Produce_review.pay_num IS '구매 일련번호';
+COMMENT ON COLUMN Produce_review.pay_num IS '구매 일련番号';
 
 COMMENT ON COLUMN Produce_review.produce_name IS '商品명(판매단위 같이 쓰기)';
 
@@ -201,11 +201,11 @@ CREATE TABLE Pay_history (
 	total_price	NUMBER		NOT NULL
 );
 
-COMMENT ON COLUMN Pay_history.pay_num IS '구매 일련번호';
+COMMENT ON COLUMN Pay_history.pay_num IS '구매 일련番号';
 
 COMMENT ON COLUMN Pay_history.user_id IS 'ID';
 
-COMMENT ON COLUMN Pay_history.produce_num IS '게시글 일련번호';
+COMMENT ON COLUMN Pay_history.produce_num IS '게시글 일련番号';
 
 COMMENT ON COLUMN Pay_history.quantity IS '수량';
 

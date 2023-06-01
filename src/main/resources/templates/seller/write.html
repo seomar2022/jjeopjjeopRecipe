@@ -20,27 +20,27 @@
 <section class="form_section layout_padding">
     <div class="container" >
         <div class="heading_container d-block text-center">
-            <h2>販売者 登録</h2>
+            <h2>販売者登録</h2>
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
                 <div class="form_container">
                     <form action="/seller/write" method="post" enctype="multipart/form-data" th:object="${sellerDTO}">
                         <div>
-                            <input type="text" class="form-control"  th:field="*{business_name}" th:errorclass="is-invalid" placeholder="상호명" />
-                            <div class="invalid-feedback" th:errors="*{business_name}">상호명 오류</div>
+                            <input type="text" class="form-control"  th:field="*{business_name}" th:errorclass="is-invalid" placeholder="ブランド名" />
+                            <div class="invalid-feedback" th:errors="*{business_name}">ブランド名を正しく入力してください。</div>
                         </div>
                         <div>
-                            <input type="text" class="form-control" name="registration_number" th:errorclass="is-invalid" placeholder="사업자登録번호(숫자만 入力하세요)" />
-                            <div class="invalid-feedback" th:errors="*{registration_number}">사업자登録번호 오류</div>
+                            <input type="text" class="form-control" name="registration_number" th:errorclass="is-invalid" placeholder="事業者登録番号(숫자만 入力하세요)" />
+                            <div class="invalid-feedback" th:errors="*{registration_number}">事業者登録番号を正しく入力してください。</div>
                         </div>
                         <div>
-                            <input type="text" class="form-control" name="seller_phone" th:errorclass="is-invalid" placeholder="사업장 전화번호(010-0000-0000)" />
-                            <div class="invalid-feedback" th:errors="*{seller_phone}">사업장 전화번호 오류</div>
+                            <input type="text" class="form-control" name="seller_phone" th:errorclass="is-invalid" placeholder="事業所 電話番号(010-0000-0000)" />
+                            <div class="invalid-feedback" th:errors="*{seller_phone}">事業所 電話番号を正しく入力してください。</div>
                         </div>
                         <div>
-                            <input type="text" class="form-control" name="seller_address" th:errorclass="is-invalid" placeholder="사업장 住所">
-                            <div class="invalid-feedback" th:errors="*{seller_address}">사업장 住所오류</div>
+                            <input type="text" class="form-control" name="seller_address" th:errorclass="is-invalid" placeholder="事業所 住所">
+                            <div class="invalid-feedback" th:errors="*{seller_address}">事業所住所を正しく入力してください。</div>
                         </div>
 
                         <div class="btn_box d-flex justify-content-center">

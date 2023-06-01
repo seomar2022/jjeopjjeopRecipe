@@ -96,21 +96,21 @@
           <button type="submit" class="btn btn-primary mb-3">検索</button>
         </div>
       </form>
-      <h4 th:if="${keyword}" th:text="|'${keyword}' 検索결과 :|">키워드 検索결과</h4>
+      <h4 th:if="${keyword}" th:text="|'${keyword}' 検索結果 :|">キーワード検索結果</h4>
       <div th:if="${NoKeyword}" class="alert alert-danger" role="alert">
-        検索어를 入力해주세요!
+        検索
       </div>
       <!-- ================商品 検索결과==================== -->
       <div th:if="${NoProduceList}">
-        <h4>연관 商品이 없습니다.</h4>
+        <h4>関連商品がありません。</h4>
       </div>
       <div class="shopping-popular bg-white mb-5" th:if="${produceList}">
         <div class="d-flex title">
-          <p>총 <h5 class="rcpSize" th:text="${produceListSize}"> 00 </h5>개의 商品이 있습니다</p>
+          <p>총 <h5 class="rcpSize" th:text="${produceListSize}"> 00 </h5>個の商品があります。</p>
 
           <!-- 품절임박한 商品 순으로 정렬된 レシピ 페이지로 이동 -->
           <h6 class="ms-auto" th:if="${produceListSize > 4}">
-            <a th:href="@{|/moreProduce?keyword=${keyword}|}">> 더보기</a>
+            <a th:href="@{|/moreProduce?keyword=${keyword}|}">> more</a>
           </h6>
         </div>
         <div class="row">
@@ -160,13 +160,13 @@
       </div>
       <!-- ===============レシピ 検索결과================ -->
       <div th:if="${NoRcpList}">
-        <h4>연관 レシピ가 없습니다.</h4>
+        <h4>関連レシピがありません。</h4>
       </div>
       <div class="recipe-popular bg-white" th:if="${rcpList}">
         <div class="d-flex title">
-          <p>총 <h5 class="rcpSize" th:text="${rcpListSize}"> 00 </h5>개의 맛있는 レシピ가 있습니다</p>
+          <p>合計<h5 class="rcpSize" th:text="${rcpListSize}"> 00 </h5>個のレシピがあります。</p>
           <!-- 保存 순으로 정렬된 レシピ 페이지로 이동 -->
-          <h6 class="ms-auto" th:if="${rcpListSize > 8}"><a th:href="@{|/moreRecipe?keyword=${keyword}|}">> 더보기</a></h6>
+          <h6 class="ms-auto" th:if="${rcpListSize > 8}"><a th:href="@{|/moreRecipe?keyword=${keyword}|}">> more</a></h6>
         </div>
         <div class="row">
           <div th:each="rcp : ${rcpList}" class="col-3">
@@ -186,17 +186,17 @@
                 class="rounded float"
               />
               <p th:text="${rcp.rcp_name}" class="text-start fw-bold">
-                レシピ タイトル
+                レシピタイトル
               </p>
             </a>
             <p class="d-flex justify-content-between">
               <span th:text="${rcp.user_id}" class="left">ニックネーム</span
               ><span th:text="'♥'+${rcp.scrap}" class="right mx-2"
-                >保存수</span
+                >保存数</span
               >
             </p>
             <p class="d-flex justify-content-between">
-              <span th:text="${rcp.time}" class="left">時間</span><span th:text="${rcp.difficulty}">難易度 하</span
+              <span th:text="${rcp.time}" class="left">時間</span><span th:text="${rcp.difficulty}">難易度 易</span
               ><span th:text="${rcp.amount}" class="right">3人分</span>
             </p>
           </div>

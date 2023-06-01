@@ -16,13 +16,13 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class SellerDTO {
     private String user_id;
-    @NotBlank(message = "상호명을 入力해주세요.")
+    @NotBlank(message = "ブランド名을 入力해주세요.")
     private String business_name;
-    @NotNull(message = "사업자登録번호를 入力해주세요.")
+    @NotNull(message = "事業者登録番号를 入力해주세요.")
     private String registration_number;
-    @NotBlank(message = "사업장 전화번호를 入力해주세요.")
+    @NotBlank(message = "事業所 電話番号를 入力해주세요.")
     private String seller_phone;
-    @NotBlank(message = "사업장 住所를 入力해주세요.")
+    @NotBlank(message = "事業所 住所를 入力해주세요.")
     private String seller_address;
     private Integer approval;
 

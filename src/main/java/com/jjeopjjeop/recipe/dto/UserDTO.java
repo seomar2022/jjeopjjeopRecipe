@@ -37,7 +37,7 @@ public class UserDTO {
    private String email;
 
    @NotBlank(message = "必須 入力 항목입니다.")
-   @Pattern(regexp = "\\d{3}-\\d{3,4}-\\d{4}", message = "전화번호 형식이 올바르지 않습니다.")
+   @Pattern(regexp = "\\d{3}-\\d{3,4}-\\d{4}", message = "電話番号 형식이 올바르지 않습니다.")
    private String phone;
 
 //   @Past(message = "미래 날짜로 入力할 수 없습니다.") //자바스크립트로 대체
