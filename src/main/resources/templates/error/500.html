@@ -23,10 +23,10 @@
 <nav th:replace="fragments/nav :: front-nav(title)"></nav>
     <div class="container d-flex justify-content-center h-100">
         <div class="row pt-5">
-            <h4>권한이 없습니다.</h4>
+            <h4>サーバー側に問題が発生しました。</h4>
             <h7 class="text-muted">ERROR 500: INTERNAL_SERVER_ERROR</h7>
             <div class="d-inline mt-4">
-                <button type="button" th:onclick="|location.href='@{/}'|" class="btn btn-secondary">홈으로</button>
+                <button type="button" th:onclick="|location.href='@{/}'|" class="btn btn-secondary">HOME</button>
             </div>
         </div>
     </div>
